@@ -15,7 +15,7 @@ window.onload = function () {
     const menu = new Menu(path);
     const footer = new Footer(path);
 
-    const styleCSS = new ScriptTag('link','',`href;${path}css/style.css`,'rel;stylesheet preload prefetch','as;style','async;true'); 
+    const styleCSS = new ScriptTag('link','',`href;${path}css/style.css`,'rel;stylesheet preload prefetch','as;style','async;true');
     const footerCSS = new ScriptTag('link','',`href;${path}css/footer.css`,'rel;stylesheet preload prefetch','as;style','async;true');
     const scriptJS = new ScriptTag('script', '', `src;${path}js/script.js`, 'as;script', 'async;true');
 

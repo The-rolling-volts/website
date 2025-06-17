@@ -8,6 +8,6 @@ export function htmlPath(){
 // la funcion accede al path en el dataset del tag html y adquiere la ruta necesitada
 	const htmlPath = document.querySelector('html').dataset.path;
 	if( htmlPath == 'root' || htmlPath =='' || htmlPath == '')
-		return '';
+		return './';
 	else return htmlPath+'/';
 }

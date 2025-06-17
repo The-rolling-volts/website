@@ -1,4 +1,3 @@
-
 export class Menu { 
 	constructor(path){
 		this.path = path;
