@@ -1,0 +1,41 @@
+<svg version="1.1"
+     viewBox="0 0 1000 1000"
+     width="64" height="64"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <circle cx="200" cy="759.8076211" r="50" fill="black"/> <!-- Eje rueda-->
+
+    <circle cx="200" cy="759.8076211" r="165" fill="transparent" stroke="black" stroke-width="30"/> <!-- Dado que el grosor del stroke es 30 y el diametro del circulo real debe ser 360, se resta 15 a 180 --> <!-- Rueda-->
+
+    <line x1="200" y1="759.8076211" x2="381.25" y2="445.8734122" stroke="black" stroke-width="30" stroke-linecap="round"/><!-- Horquilla de la bicicleta -->
+    
+    <line x1="318.75" y1="445.8734122" x2="381.25" y2="445.8734122" stroke="black" stroke-width="30" stroke-linecap="round"/> <!-- manubrio de la bicileta-->
+    
+    <line x1="350" y1="500" x2="500" y2="759.8076211" stroke="black" stroke-width="30" stroke-linecap="round"/> <!-- Lina de parte de marco de la bicicleta-->
+
+    <g transform="rotate(120 500 586.6025404)">
+        <circle cx="200" cy="759.8076211" r="50" fill="black"/><!-- Eje rueda-->
+        
+        <circle cx="200" cy="759.8076211" r="165" fill="transparent" stroke="black" stroke-width="30"/> <!-- Dado que el grosor del stroke es 30 y el diametro del circulo real debe ser 360, se resta 15 a 180 --> <!-- Rueda-->
+
+        <line x1="200" y1="759.8076211" x2="381.25" y2="445.8734122" stroke="black" stroke-width="30" stroke-linecap="round"/><!-- Horquilla de la bicicleta -->
+        
+        <line x1="318.75" y1="445.8734122" x2="381.25" y2="445.8734122" stroke="black" stroke-width="30" stroke-linecap="round"/> <!-- manubrio de la bicileta-->
+        
+        <line x1="350" y1="500" x2="500" y2="759.8076211" stroke="black" stroke-width="30" stroke-linecap="round"/> <!-- Lina de parte de marco de la bicicleta-->
+    </g>
+
+    <g transform="rotate(240 500 586.6025404)">
+        <circle cx="200" cy="759.8076211" r="50" fill="black"/><!-- Eje rueda-->
+        
+        <circle cx="200" cy="759.8076211" r="165" fill="transparent" stroke="black" stroke-width="30"/> <!-- Dado que el grosor del stroke es 30 y el diametro del circulo real debe ser 360, se resta 15 a 180 --> <!-- Rueda-->
+
+        <line x1="200" y1="759.8076211" x2="381.25" y2="445.8734122" stroke="black" stroke-width="30" stroke-linecap="round"/><!-- Horquilla de la bicicleta -->
+        
+        <line x1="318.75" y1="445.8734122" x2="381.25" y2="445.8734122" stroke="black" stroke-width="30" stroke-linecap="round"/> <!-- manubrio de la bicileta-->
+        
+        <line x1="350" y1="500" x2="500" y2="759.8076211" stroke="black" stroke-width="30" stroke-linecap="round"/> <!-- Lina de parte de marco de la bicicleta-->
+    </g>
+
+</svg>
+<!-- 240 y 120-->

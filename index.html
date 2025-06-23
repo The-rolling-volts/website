@@ -4,13 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Rolling Volts</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body, html {
+        overflow: hidden; /* evita barras de scroll */
+        width: 100%;
+        height: 100%;
+      }
+
+      canvas {
+        position:fixed;
+        top:0;
+        left:0;
+      }
+      #canvas2 {
+        filter:blur(8px);
+        background:rgba(0,0,0,0)
+      }
+      header {
+        width: 100vw;
+        height: 80vh; /* O el alto que desees para el efecto */
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+        margin:0;
+      }
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+      }
+    </style>
   </head>
   <body>
 
     <nav class="navbar sticky" ></nav>
     
     <header>
-      <h1></h1>
+      <canvas id = "canvas1"></canvas>
+      <canvas id = "canvas2"></canvas>
     </header>
 
     <main>
@@ -31,6 +69,6 @@
     <div class="overlay"></div>
 
     <script type="module" src="./js/main.js"></script>
-  
+    <script src="./js/headerHome.js"></script>
   </body>
 </html>
