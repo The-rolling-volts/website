@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Rolling Volts</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
 
-      body, html {
-        overflow: hidden; /* evita barras de scroll */
-        width: 100%;
-        height: 100%;
-      }
+        body, html {
+          overflow-x:hidden; /* evita barras de scroll */
+          width: 100%;
+          height: 100%;
+        }
 
       canvas {
         position:fixed;
@@ -28,7 +28,8 @@
       }
       header {
         width: 100vw;
-        height: 80vh; /* O el alto que desees para el efecto */
+        height: 70vh; /* O el alto que desees para el efecto */
+        min-height:70vh;
         position: relative;
         overflow: hidden;
         padding: 0;
@@ -40,8 +41,19 @@
         left: 0;
         display: block;
       }
+      #rollingVoltsLogo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200px; /* ajusta el tamaño según tu diseño */
+        transform: translate(-50%,  -50% );
+        z-index: 10; /* asegura que esté por encima del canvas */
+        pointer-events: none; /* para que no interfiera con clicks */
+      }
+
     </style>
   </head>
+
   <body>
 
     <nav class="navbar sticky" ></nav>
@@ -49,6 +61,7 @@
     <header>
       <canvas id = "canvas1"></canvas>
       <canvas id = "canvas2"></canvas>
+      <img id="rollingVoltsLogo" src="./img/simbolos/logoParaCirculo.svg" alt="Logo The_Rolling_Volts"> 
     </header>
 
     <main>
@@ -71,4 +84,7 @@
     <script type="module" src="./js/main.js"></script>
     <script src="./js/headerHome.js"></script>
   </body>
+
+
+
 </html>

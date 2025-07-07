@@ -5,7 +5,7 @@ var ctx = can1.getContext("2d");
 var ctx2 = can2.getContext("2d");
 
 var lightning = [];
-var core = { x: 0, y: 0, r: 30 };
+var core = { x: 0, y: 0, r: 120 }; //Medidas que sirven para cambiar el tamaño del toroide
 var wallRadius = 0;
 var num = 6;
 var hue = 240; // Azul en HSL
@@ -67,8 +67,8 @@ function light(ang, hue) {
   var amp = 20;
 
   this.draw = function () {
-    ctx.lineWidth = this.width * 1.3;
-    ctx.strokeStyle = "hsl(" + hue + ",100%,50%)";
+    ctx.lineWidth = this.width * 10; //ANCHO DEL RAYO?
+    ctx.strokeStyle = "white";//"hsl(" + hue + ",100%,50%)";
     ctx.save();
     ctx.translate(core.x, core.y);
     ctx.rotate(this.ang);
@@ -82,7 +82,7 @@ function light(ang, hue) {
 
     // Glow render
     ctx2.lineWidth = this.width * 3;
-    ctx2.strokeStyle = "hsl(" + hue + ",100%,50%)";
+    ctx2.strokeStyle = "white";//"hsl(" + hue + ",100%,50%)";
     ctx2.save();
     ctx2.translate(core.x, core.y);
     ctx2.rotate(this.ang);
@@ -144,27 +144,27 @@ function gameMove() {
   // Drawing core
   ctx.lineWidth = randFrom(3, 6);
   ctx2.lineWidth = ctx.lineWidth * 2;
-  ctx.fillStyle = "rgb(50,50,50)";
-  ctx.strokeStyle = "hsl(" + hue + ",100%,50%)";
+  ctx.fillStyle = "rgb(50,50,50)"; //azul este es el criculo entre la circunferencia y circulo interno
+  ctx.strokeStyle ="white";// "hsl(" + hue + ",100%,50%)";
   ctx.beginPath();
   ctx.arc(core.x, core.y, core.r, 0, 2 * Math.PI);
   ctx.fill();
   ctx.stroke();
 
-  ctx2.strokeStyle = "hsl(" + hue + ",100%,50%)";
+  ctx2.strokeStyle = "white";//"hsl(" + hue + ",100%,50%)";
   ctx2.beginPath();
   ctx2.arc(core.x, core.y, core.r, 0, 2 * Math.PI);
   ctx2.stroke();
 
-  ctx.fillStyle = "hsl(" + hue + ",100%,50%)";
+  ctx.fillStyle = "white";//"hsl(" + hue + ",100%,50%)";
   ctx.beginPath();
   ctx.arc(core.x, core.y, core.r / 3, 0, 2 * Math.PI);
   ctx.fill();
   ctx.stroke();
 
-  ctx2.fillStyle = "hsl(" + hue + ",100%,50%)";
+  ctx2.fillStyle = "white";//"hsl(" + hue + ",100%,50%)"; //ESTE ES EL CIRCULO INTERNO DEL CORE
   ctx2.beginPath();
-  ctx2.arc(core.x, core.y, core.r / 3, 0, 2 * Math.PI);
+  ctx2.arc(core.x, core.y, core.r / 1.0625, 0, 2 * Math.PI); // en el tercer parametro se pone el ancho del circulo interno
   ctx2.fill();
   ctx2.stroke();
 
@@ -193,3 +193,37 @@ window.addEventListener('resize', () => {
   lightning = [];
   gameMake();
 });
+
+
+// Existing code...
+window.addEventListener('resize', () => {
+  resizeCanvasToHeader();
+  lightning = [];
+  gameMake();
+});
+
+// --- Place the logo rotation code below this line ---
+
+const logo = document.getElementById("rollingVoltsLogo");
+
+if (logo) {
+  const rpm = 5;
+  const degreesPerMs = (rpm * 360) / 60000;
+
+  let lastTime = performance.now();
+  let angle = 0;
+
+  function rotateLogo(currentTime) {
+    const delta = currentTime - lastTime;
+    lastTime = currentTime;
+
+    angle += degreesPerMs * delta;
+    angle %= 360;
+
+    logo.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+
+    requestAnimationFrame(rotateLogo);
+  }
+
+  requestAnimationFrame(rotateLogo);
+}
