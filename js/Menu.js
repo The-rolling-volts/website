@@ -19,16 +19,17 @@ export class Menu {
 
 				// Aquí defines las rutas relativas a reemplazar
 				const hrefMap = {
+					'The Rolling Volts':'index.html',
 					'Inicio': 'index.html',
 					'Gestión de Proyecto': 'aprendizaje/gestion.html',
 					'Trabajo Colaborativo': 'aprendizaje/colaborativo.html',
 					'Proceso de Aprendizaje': 'aprendizaje/proceso.html',
 					'Recomendaciones': 'aprendizaje/recomendaciones.html',
 					// Añade los demás según los textos del menú
-					'Nosotros': 'nosotros.html',
+					'Nosotros': 'Nosotros/index.html',
 				};
 
-				document.querySelectorAll('.menu-item').forEach(link => {
+				document.querySelectorAll('.menu-item,.logo').forEach(link => {
 					const text = link.textContent.trim();
 					if (hrefMap[text]) {
 						link.setAttribute('href', base + hrefMap[text]);

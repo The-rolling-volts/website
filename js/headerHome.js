@@ -58,9 +58,9 @@ function light(ang, hue) {
 
   this.drift = Math.random() * 0.02 - 0.01;
   this.timer = 1;
-  this.timerRate = 0.01;
+  this.timerRate = 0.05;
   this.width = 3;
-  this.fadeRate = randFrom(0.09, 0.2);
+  this.fadeRate = randFrom(0.01, 0.03);  //randFrom(0.09, 0.2);
   this.angVel = 0.05;
   this.phase = 0;
   this.phaseDiff = randFrom(1.5, 1.9);
@@ -107,8 +107,8 @@ function light(ang, hue) {
       this.ang = Math.random() * 2 * Math.PI;
       this.width = 3;
       this.phaseDiff = randFrom(1.5, 1.9);
-      this.fadeRate = randFrom(0.09, 0.2);
-      this.timerRate = randFrom(0.01, 0.1);
+      this.fadeRate = randFrom(0.01, 0.03);
+      this.timerRate = randFrom(0.05, 0.2);
     }
 
     if (this.timer <= 0) {
@@ -170,12 +170,14 @@ function gameMove() {
 
   // Drawing wall
   var grd = ctx.createRadialGradient(core.x, core.y, wallRadius, core.x, core.y, wallRadius + 100);
-  grd.addColorStop(0, "rgba(0,0,0,0)");
-  grd.addColorStop(0.01, "rgb(40,40,40)");
-  grd.addColorStop(0.333, "rgb(40,40,40)");
-  grd.addColorStop(0.343, "rgb(20,20,20)");
-  grd.addColorStop(0.666, "rgb(20,20,20)");
-  grd.addColorStop(0.766, "rgb(0,0,0)");
+grd.addColorStop(0.00, "rgba(0, 0, 0, 0.0)");
+grd.addColorStop(0.15, "rgba(60, 60, 60, 0.1)");
+grd.addColorStop(0.30, "rgba(90, 90, 90, 0.15)");
+grd.addColorStop(0.45, "rgba(110, 110, 110, 0.2)");
+grd.addColorStop(0.60, "rgba(130, 130, 130, 0.25)");
+grd.addColorStop(0.75, "rgba(140, 140, 140, 0.3)");
+grd.addColorStop(0.90, "rgba(150, 150, 150, 0.35)");
+grd.addColorStop(1.00, "rgba(160, 160, 160, 0.4)");
   ctx.fillStyle = grd;
   ctx.beginPath();
   ctx.arc(core.x, core.y, Math.max(can1.width, can1.height), 0, 2 * Math.PI);
