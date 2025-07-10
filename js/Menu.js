@@ -5,7 +5,7 @@ export class Menu {
 		this.path = path;
 		this.nav = document.querySelector('.navbar.sticky');
 		this.load = this.load.bind(this);
-		this.load();
+		this.load(); 
 	}
 
 	load() {

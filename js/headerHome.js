@@ -5,10 +5,11 @@ var ctx = can1.getContext("2d");
 var ctx2 = can2.getContext("2d");
 
 var lightning = [];
-var core = { x: 0, y: 0, r: 120 }; //Medidas que sirven para cambiar el tamaño del toroide
+var core = { x: 0, y: 0, r: 120 };
 var wallRadius = 0;
 var num = 6;
-var hue = 240; // Azul en HSL
+var hue = 240;
+var scale = 1;
 
 function resizeCanvasToHeader() {
   const width = header.clientWidth;
@@ -19,15 +20,22 @@ function resizeCanvasToHeader() {
   can2.width = width;
   can2.height = height;
 
+  scale = Math.min(width, height) / 1000;
+
   core.x = width / 2;
   core.y = height / 2;
+  core.r = Math.min(width, height) / 8; // escalar el núcleo también
   wallRadius = Math.min(width / 2, height / 2);
+
+  const logo = document.getElementById("rollingVoltsLogo");
+  if (logo) {
+    logo.style.width = `${core.r * 2}px`; // el logo tiene el mismo diámetro que el core
+    logo.style.height = `${core.r * 2}px`; // por si el SVG no es cuadrado
+  }
 }
 
 function dis(x, y, x2, y2) {
-  var xl = x2 - x;
-  var yl = y2 - y;
-  return Math.sqrt(xl ** 2 + yl ** 2);
+  return Math.hypot(x2 - x, y2 - y);
 }
 
 function randFrom(min, max) {
@@ -35,40 +43,38 @@ function randFrom(min, max) {
 }
 
 function map(val, min, max, min2, max2) {
-  var diff1 = max - min;
-  var diff2 = max2 - min2;
-  return diff2 / diff1 * val;
+  return ((val - min) * (max2 - min2)) / (max - min) + min2;
 }
 
 function randBet(c1, c2) {
-  var nArr = [c1, c2];
-  return nArr[randFrom(0, 1)];
+  return [c1, c2][Math.floor(randFrom(0, 2))];
 }
 
 function light(ang, hue) {
   this.ang = ang;
-  this.x = core.x + core.r;
-  this.y = 0;
   this.num = 8;
   this.points = [];
 
   for (let j = 0; j < this.num; j++) {
-    this.points.push({ x: core.r + (j / (this.num - 1)) * (wallRadius - core.r), y: 0 });
+    this.points.push({
+      x: core.r + (j / (this.num - 1)) * (wallRadius - core.r),
+      y: 0
+    });
   }
 
   this.drift = Math.random() * 0.02 - 0.01;
   this.timer = 1;
   this.timerRate = 0.05;
-  this.width = 3;
-  this.fadeRate = randFrom(0.01, 0.03);  //randFrom(0.09, 0.2);
+  this.width = 3 * scale;
+  this.fadeRate = randFrom(0.01, 0.03);
   this.angVel = 0.05;
   this.phase = 0;
   this.phaseDiff = randFrom(1.5, 1.9);
   var amp = 20;
 
   this.draw = function () {
-    ctx.lineWidth = this.width * 10; //ANCHO DEL RAYO?
-    ctx.strokeStyle = "white";//"hsl(" + hue + ",100%,50%)";
+    ctx.lineWidth = this.width * 10;
+    ctx.strokeStyle = "white";
     ctx.save();
     ctx.translate(core.x, core.y);
     ctx.rotate(this.ang);
@@ -80,9 +86,9 @@ function light(ang, hue) {
     ctx.stroke();
     ctx.restore();
 
-    // Glow render
+    // Glow
     ctx2.lineWidth = this.width * 3;
-    ctx2.strokeStyle = "white";//"hsl(" + hue + ",100%,50%)";
+    ctx2.strokeStyle = "white";
     ctx2.save();
     ctx2.translate(core.x, core.y);
     ctx2.rotate(this.ang);
@@ -105,7 +111,7 @@ function light(ang, hue) {
 
     if (this.width <= 0) {
       this.ang = Math.random() * 2 * Math.PI;
-      this.width = 3;
+      this.width = 3 * scale;
       this.phaseDiff = randFrom(1.5, 1.9);
       this.fadeRate = randFrom(0.01, 0.03);
       this.timerRate = randFrom(0.05, 0.2);
@@ -120,7 +126,7 @@ function light(ang, hue) {
 
     for (let j = 0; j < this.num; j++) {
       this.phase -= this.angVel;
-      this.points[j].y = amp * (j - 0) * (this.num - 1 - j) * 0.1 * Math.sin(this.phase + (j * this.phaseDiff));
+      this.points[j].y = amp * (j) * (this.num - 1 - j) * 0.1 * Math.sin(this.phase + (j * this.phaseDiff));
     }
   }
 }
@@ -141,43 +147,43 @@ function gameMove() {
     lightning[i].upd();
   }
 
-  // Drawing core
-  ctx.lineWidth = randFrom(3, 6);
+  // Core
+  ctx.lineWidth = randFrom(3, 6) * scale;
   ctx2.lineWidth = ctx.lineWidth * 2;
-  ctx.fillStyle = "rgb(50,50,50)"; //azul este es el criculo entre la circunferencia y circulo interno
-  ctx.strokeStyle ="white";// "hsl(" + hue + ",100%,50%)";
+  ctx.fillStyle = "rgb(50,50,50)";
+  ctx.strokeStyle = "white";
   ctx.beginPath();
   ctx.arc(core.x, core.y, core.r, 0, 2 * Math.PI);
   ctx.fill();
   ctx.stroke();
 
-  ctx2.strokeStyle = "white";//"hsl(" + hue + ",100%,50%)";
+  ctx2.strokeStyle = "white";
   ctx2.beginPath();
   ctx2.arc(core.x, core.y, core.r, 0, 2 * Math.PI);
   ctx2.stroke();
 
-  ctx.fillStyle = "white";//"hsl(" + hue + ",100%,50%)";
+  ctx.fillStyle = "white";
   ctx.beginPath();
   ctx.arc(core.x, core.y, core.r / 3, 0, 2 * Math.PI);
   ctx.fill();
   ctx.stroke();
 
-  ctx2.fillStyle = "white";//"hsl(" + hue + ",100%,50%)"; //ESTE ES EL CIRCULO INTERNO DEL CORE
+  ctx2.fillStyle = "white";
   ctx2.beginPath();
-  ctx2.arc(core.x, core.y, core.r / 1.0625, 0, 2 * Math.PI); // en el tercer parametro se pone el ancho del circulo interno
+  ctx2.arc(core.x, core.y, core.r / 1.0625, 0, 2 * Math.PI);
   ctx2.fill();
   ctx2.stroke();
 
-  // Drawing wall
+  // Glow Wall
   var grd = ctx.createRadialGradient(core.x, core.y, wallRadius, core.x, core.y, wallRadius + 100);
-grd.addColorStop(0.00, "rgba(0, 0, 0, 0.0)");
-grd.addColorStop(0.15, "rgba(60, 60, 60, 0.1)");
-grd.addColorStop(0.30, "rgba(90, 90, 90, 0.15)");
-grd.addColorStop(0.45, "rgba(110, 110, 110, 0.2)");
-grd.addColorStop(0.60, "rgba(130, 130, 130, 0.25)");
-grd.addColorStop(0.75, "rgba(140, 140, 140, 0.3)");
-grd.addColorStop(0.90, "rgba(150, 150, 150, 0.35)");
-grd.addColorStop(1.00, "rgba(160, 160, 160, 0.4)");
+  grd.addColorStop(0.00, "rgba(0, 0, 0, 0.0)");
+  grd.addColorStop(0.15, "rgba(60, 60, 60, 0.1)");
+  grd.addColorStop(0.30, "rgba(90, 90, 90, 0.15)");
+  grd.addColorStop(0.45, "rgba(110, 110, 110, 0.2)");
+  grd.addColorStop(0.60, "rgba(130, 130, 130, 0.25)");
+  grd.addColorStop(0.75, "rgba(140, 140, 140, 0.3)");
+  grd.addColorStop(0.90, "rgba(150, 150, 150, 0.35)");
+  grd.addColorStop(1.00, "rgba(160, 160, 160, 0.4)");
   ctx.fillStyle = grd;
   ctx.beginPath();
   ctx.arc(core.x, core.y, Math.max(can1.width, can1.height), 0, 2 * Math.PI);
@@ -185,7 +191,7 @@ grd.addColorStop(1.00, "rgba(160, 160, 160, 0.4)");
   ctx.stroke();
 }
 
-// Inicialización
+// Inicializar
 resizeCanvasToHeader();
 gameMake();
 gameMove();
@@ -196,22 +202,11 @@ window.addEventListener('resize', () => {
   gameMake();
 });
 
-
-// Existing code...
-window.addEventListener('resize', () => {
-  resizeCanvasToHeader();
-  lightning = [];
-  gameMake();
-});
-
-// --- Place the logo rotation code below this line ---
-
+// Rotación del logo
 const logo = document.getElementById("rollingVoltsLogo");
-
 if (logo) {
   const rpm = 5;
   const degreesPerMs = (rpm * 360) / 60000;
-
   let lastTime = performance.now();
   let angle = 0;
 

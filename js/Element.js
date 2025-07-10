@@ -32,13 +32,11 @@ export class Element {
 		// tipo string, que luego se evaluan en switch para
 		// cambiar los valores de diferentes atributos.
 
-		let value = '',
-			attribute = '';
-
 		for (let i = 0; i < valueAttribute.length; i++) {
 			
-			value = valueAttribute[i].split(';')[0];
-			attribute = valueAttribute[i].split(';')[1];
+			let [value, ...rest] = valueAttribute[i].split(';');
+			let attribute = rest.join(';');
+			
 			switch (value) {
 				case 'class':
 					this.element.className = attribute;

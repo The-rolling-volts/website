@@ -13,7 +13,7 @@ export class WebComponent  extends Element{
 		this.load = this.load.bind(this);
 		if(!(this.htmlFile == undefined || this.hrefMap == undefined || this.hrefClass == undefined))
 			this.load();
-		
+
 		this.addToElement(undefined,this.position);
 	}
 
@@ -21,6 +21,7 @@ export class WebComponent  extends Element{
 		fetch(`${this.path}webComponents/${this.htmlFile}`)
 			.then(res => res.text())
 			.then(data => { 
+    			//console.log("Contenido del footer cargado:", data);
 				this.setAttributes(`innerHTML;${data}`)
 				//this.element.innerHTML = data;
 				const base = htmlPath();//Después de insertar el elemento, actualiza los href
