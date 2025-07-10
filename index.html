@@ -26,6 +26,7 @@
         filter:blur(8px);
         background:rgba(0,0,0,0)
       }
+
       header {
         width: 100vw;
         height: 70vh; /* O el alto que desees para el efecto */
@@ -35,6 +36,21 @@
         padding: 0;
         margin:0;
       }
+
+      header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(0, 0, 0, 0) 40%,
+          rgba(230, 74, 25, 0.4) 85%,
+          rgba(230, 74, 25, 0.6) 100%
+        );
+        z-index: 0;
+        pointer-events: none;
+      }
+
       canvas {
         position: absolute;
         top: 0;
@@ -52,27 +68,29 @@
       }
 
       .pulser {
-        width: 90vmin;
-        height: 90vmin;
-        border-radius: 50%;
-        mix-blend-mode: screen;
-        background: #d84578;
         position: absolute;
-        animation: filtered 10000ms 0ms infinite alternate linear;
-        will-change: filter, transform;
-        z-index: 0;
+        background: #ff5722; /* color fijo, sin hue-rotate */
+        border-radius: 50%;
+        mix-blend-mode: lighten;
+        filter: blur(10vmin) brightness(1.8); /* efecto suave */
+        will-change: transform, filter;
+        animation: pulserEffect 8s infinite ease-in-out alternate;
         pointer-events: none;
+        z-index: 0;
+        left: 0;
+        top: 0;
+        transform: translate(-50%, -50%);
       }
-
-      @keyframes filtered {
+      @keyframes pulserEffect {
         0% {
-          filter: hue-rotate(0deg) blur(3vmin);
+          transform: translate(-50%, -50%) scale(1);
+          filter: blur(6vmin) brightness(1.5);
         }
         100% {
-          filter: hue-rotate(360deg) blur(20vmin);
+          transform: translate(-50%, -50%) scale(1.1);
+          filter: blur(12vmin) brightness(2.2);
         }
       }
-
     </style>
     
   </head>

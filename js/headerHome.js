@@ -1,3 +1,4 @@
+// Canvas setup
 var header = document.querySelector('header');
 var can1 = document.getElementById("canvas1");
 var can2 = document.getElementById("canvas2");
@@ -10,6 +11,7 @@ var wallRadius = 0;
 var num = 6;
 var hue = 240;
 var scale = 1;
+let pulseFactor = 1;
 
 function resizeCanvasToHeader() {
   const width = header.clientWidth;
@@ -24,30 +26,28 @@ function resizeCanvasToHeader() {
 
   core.x = width / 2;
   core.y = height / 2;
-  core.r = Math.min(width, height) / 8; // escalar el núcleo también
+  core.r = Math.min(width, height) / 8;
   wallRadius = Math.min(width / 2, height / 2);
 
   const logo = document.getElementById("rollingVoltsLogo");
   if (logo) {
-    logo.style.width = `${core.r * 2}px`; // el logo tiene el mismo diámetro que el core
-    logo.style.height = `${core.r * 2}px`; // por si el SVG no es cuadrado
+    logo.style.width = `${core.r * 2}px`;
+    logo.style.height = `${core.r * 2}px`;
   }
-}
 
-function dis(x, y, x2, y2) {
-  return Math.hypot(x2 - x, y2 - y);
+  const pulsers = document.querySelectorAll(".pulser");
+  pulsers.forEach(p => {
+    const size = core.r * 4.5;
+    p.style.width = `${size}px`;
+    p.style.height = `${size}px`;
+    p.style.left = `${core.x}px`;
+    p.style.top = `${core.y}px`;
+    p.style.transform = `translate(-50%, -50%)`;
+  });
 }
 
 function randFrom(min, max) {
-  return (Math.random() * (max - min)) + min;
-}
-
-function map(val, min, max, min2, max2) {
-  return ((val - min) * (max2 - min2)) / (max - min) + min2;
-}
-
-function randBet(c1, c2) {
-  return [c1, c2][Math.floor(randFrom(0, 2))];
+  return Math.random() * (max - min) + min;
 }
 
 function light(ang, hue) {
@@ -86,7 +86,6 @@ function light(ang, hue) {
     ctx.stroke();
     ctx.restore();
 
-    // Glow
     ctx2.lineWidth = this.width * 3;
     ctx2.strokeStyle = "#ffffff";
     ctx2.save();
@@ -147,13 +146,13 @@ function gameMove() {
     lightning[i].upd();
   }
 
-  // Core
-  ctx.lineWidth = randFrom(3, 6) * scale;
-  ctx2.lineWidth = ctx.lineWidth * 2;
   ctx.fillStyle = "rgb(255,255,255)";
   ctx.shadowColor = "white";
   ctx.shadowBlur = 30;
   ctx.strokeStyle = "#ffffff";
+  ctx.lineWidth = randFrom(3, 6) * scale;
+  ctx2.lineWidth = ctx.lineWidth * 2;
+
   ctx.beginPath();
   ctx.arc(core.x, core.y, core.r, 0, 2 * Math.PI);
   ctx.fill();
@@ -176,20 +175,22 @@ function gameMove() {
   ctx2.fill();
   ctx2.stroke();
 
-  // Glow Wall
-  var grd = ctx.createRadialGradient(core.x, core.y, wallRadius * 0.2, core.x, core.y, wallRadius + 200);
-grd.addColorStop(0.0, "rgba(0,0,0,0.0)");
-grd.addColorStop(0.4, "rgba(30,0,50,0.3)");
-grd.addColorStop(0.7, "rgba(60,0,80,0.5)");
-grd.addColorStop(1.0, "rgba(20,0,40,0.7)");
-ctx.fillStyle = grd;
+  // Gradiente dinámico adaptable
+  let scaleFactor = Math.min(can1.width, can1.height);
+  let gradSize = wallRadius + (header.clientWidth / 2)*pulseFactor;// + scaleFactor * 0.3 + scaleFactor * 0.2 * pulseFactor + (header.clientWidth/3.75);
+  var grd = ctx.createRadialGradient(core.x, core.y, wallRadius * 0.2, core.x, core.y, gradSize);
+  grd.addColorStop(0.0, "rgba(39, 40, 41, 0.0)");
+  grd.addColorStop(0.4, "rgba(39, 40, 41, 0.5)");
+  grd.addColorStop(0.65, "rgba(39, 40, 41, 0.7)");
+  grd.addColorStop(0.85, "rgba(230, 74, 25, 0.25)");
+  grd.addColorStop(1.0, "rgba(230, 74, 25, 0.4)");
+  ctx.fillStyle = grd;
   ctx.beginPath();
   ctx.arc(core.x, core.y, Math.max(can1.width, can1.height), 0, 2 * Math.PI);
   ctx.fill();
   ctx.stroke();
 }
 
-// Inicializar
 resizeCanvasToHeader();
 gameMake();
 gameMove();
@@ -200,7 +201,6 @@ window.addEventListener('resize', () => {
   gameMake();
 });
 
-// Rotación del logo
 const logo = document.getElementById("rollingVoltsLogo");
 if (logo) {
   const rpm = 5;
@@ -222,3 +222,33 @@ if (logo) {
 
   requestAnimationFrame(rotateLogo);
 }
+
+function initPulsers() {
+  const pulsers = Array.from(document.querySelectorAll('.pulser'));
+  pulsers.forEach((p, i) => {
+    p.animate([
+      { transform: 'translate(-50%, -50%) scale(1.25)', filter: 'blur(10vmin) brightness(1)' },
+      { transform: 'translate(-50%, -50%) scale(2.5)', filter: 'blur(22vmin) brightness(2)' },
+      { transform: 'translate(-50%, -50%) scale(1.75)', filter: 'blur(10vmin) brightness(1)' },
+      { transform: 'translate(-50%, -50%) scale(3.5)', filter: 'blur(22vmin) brightness(2)' },
+      { transform: 'translate(-50%, -50%) scale(1.25)', filter: 'blur(10vmin) brightness(1)' }
+    ], {
+      duration: 5000,
+      iterations: Infinity,
+      easing: 'ease-in-out'
+    });
+
+    p.style.animationDelay = (-5000 * i / pulsers.length) + 'ms';
+    p.style.background = "#e64a19";
+  });
+
+  let startTime = performance.now();
+  function updatePulseFactor(time) {
+    const elapsed = (time - startTime) / 1000;
+    pulseFactor = 1 + 0.15 * Math.sin(elapsed * 2 * Math.PI / 5);
+    requestAnimationFrame(updatePulseFactor);
+  }
+  requestAnimationFrame(updatePulseFactor);
+}
+
+initPulsers();
