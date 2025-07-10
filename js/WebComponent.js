@@ -11,7 +11,9 @@ export class WebComponent  extends Element{
 		this.position = position; //es si se añade primero o ultimo al body
 		this.setAttributes(`class;${className}`);
 		this.load = this.load.bind(this);
-		this.load();
+		if(!(this.htmlFile == undefined || this.hrefMap == undefined || this.hrefClass == undefined))
+			this.load();
+		
 		this.addToElement(undefined,this.position);
 	}
 

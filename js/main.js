@@ -2,7 +2,7 @@ import { Element } from "./Element.js";
 import { ScriptTag } from "./ScriptTag.js";
 import { htmlPath } from "./htmlPath.js";
 //import { Menu } from "./Menu.js";
-import { Footer } from "./footer.js";
+//import { Footer } from "./footer.js";
 import { WebComponent } from "./WebComponent.js";
 /*
 Se creo una clase que reemplaza las antiguas clases Menu y Footer, Footer es dependiente de un elemento llamado overlay entonces hay que ver se añade ese elemento usando la clase WebComponent para que este justo despues del footer
@@ -22,13 +22,14 @@ window.onload = function () {
         'Nosotros': 'Nosotros/index.html',
     };
     const menu = new WebComponent(path, document.createElement('nav'), hrefMap, 'navbar sticky', 'menu.html', '.menu-item,.logo', 'first');
-    const footer = new Footer(path);
-    //const footer = new WebComponent(path,document.createElement('footer'),'footer','footer.html','footer-item')
-
+    //const footer = new Footer(path);
+    const footer = new WebComponent(path,document.createElement('footer'),hrefMap,'footer','footer.html','footer-item')
+    const overlayFooter = new WebComponent(path, document.createElement('div'), undefined, 'overlay', undefined, undefined);
     const styleCSS = new ScriptTag('link', '', `href;${path}css/style.css`, 'rel;stylesheet preload prefetch', 'as;style', 'async;true');
     const favicon = new ScriptTag('link','',`href;${path}img/simbolos/logoWhite.svg`,'type;image/svg+xml','async;true','rel;icon');
     const footerCSS = new ScriptTag('link','',`href;${path}css/footer.css`,'rel;stylesheet preload prefetch','as;style','async;true');
     const scriptJS = new ScriptTag('script', '', `src;${path}js/script.js`, 'as;script', 'async;true');
+    const headerHomeJS = new ScriptTag('script','',`src;${path}js/headerHome.js`);
 
 
     
