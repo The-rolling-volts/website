@@ -112,6 +112,30 @@ color: #000000;
   text-transform: uppercase;
   text-decoration: none;
 }
+
+/* Por defecto, oculta la imagen y muestra el texto */
+.logo-img {
+  display: none;
+  height: 100%;
+  width: auto;
+}
+.logo-text {
+  display: inline;
+}
+/* En pantallas pequeñas, muestra la imagen y oculta el texto */
+@media (max-width: 768px) {
+  .logo-img {
+    display: inline-block;
+    height: 55px;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  .logo-text {
+    display: none;
+  }
+}
+
 .navbar .menu-items {
   display: flex;
   align-items: center;

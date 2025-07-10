@@ -67,6 +67,9 @@ export class Element {
 				case 'type':
 					this.element.type = attribute;
 					break;
+				case 'innerHTML':
+					this.element.innerHTML = attribute;
+					break;
 				case 'innerText':
 					this.element.innerText = attribute;
 					break;
@@ -182,7 +185,7 @@ export class Element {
 		else elementAfter.getElement().parentNode.insertBefore(this.element,elementAfter.getElement()); // si es, entonces se tiene que llamar a getElement()
 	}
 
-	addToElement(father) {
+	addToElement(father,firstOrLast = 'last') {
 		// El metodo puede recibir o un string o un objeto.
 		// Si recibe un objeto añade directamente el elemento
 		// this.element, sino toma el string y accede al elemento
@@ -191,12 +194,23 @@ export class Element {
 		// al body.
 		if (typeof father == 'string') {
 			if (document.getElementById(father))
-				document.getElementById(father).appendChild(this.element);
+				if(firstOrLast == 'last') //Por defecto se añade el elemento al final
+					document.getElementById(father).appendChild(this.element);
+				else //sino se pone al inicio
+					document.getElementById(father).prepend(this.element);
 		} else if (typeof father == 'object')
-			father.appendChild(this.element);
+			if (firstOrLast == 'last')
+				father.appendChild(this.element);
+			else
+				father.prepend(this.element);
+			
 		else {
 			if (document.getElementsByTagName('body')[0])
-				document.getElementsByTagName('body')[0].appendChild(this.element);
+				if(firstOrLast == 'last') //Por defecto se añade el elemento al final
+					document.getElementsByTagName('body')[0].appendChild(this.element);
+				else //sino se pone al inicio
+					document.getElementsByTagName('body')[0].prepend(this.element);
+				
 		}
 	}
 
