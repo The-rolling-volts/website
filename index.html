@@ -51,6 +51,28 @@
         pointer-events: none; /* para que no interfiera con clicks */
       }
 
+      .pulser {
+        width: 90vmin;
+        height: 90vmin;
+        border-radius: 50%;
+        mix-blend-mode: screen;
+        background: #d84578;
+        position: absolute;
+        animation: filtered 10000ms 0ms infinite alternate linear;
+        will-change: filter, transform;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      @keyframes filtered {
+        0% {
+          filter: hue-rotate(0deg) blur(3vmin);
+        }
+        100% {
+          filter: hue-rotate(360deg) blur(20vmin);
+        }
+      }
+
     </style>
     
   </head>
@@ -58,6 +80,14 @@
   <body>
 
     <header style="background-color:rgba(160, 160, 160, 0.4);">
+      <div class="pulser"></div>
+      <div class="pulser"></div>
+      <div class="pulser"></div>
+      <div class="pulser"></div>
+      <div class="pulser"></div>
+      <div class="pulser"></div>
+      <div class="pulser"></div>
+  
       <canvas id = "canvas1"></canvas>
       <canvas id = "canvas2"></canvas>
       <img id="rollingVoltsLogo" src="./img/simbolos/logoHeader.svg" alt="Logo The_Rolling_Volts"> 

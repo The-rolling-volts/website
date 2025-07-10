@@ -74,7 +74,7 @@ function light(ang, hue) {
 
   this.draw = function () {
     ctx.lineWidth = this.width * 10;
-    ctx.strokeStyle = "white";
+    ctx.strokeStyle = "#ffffff";
     ctx.save();
     ctx.translate(core.x, core.y);
     ctx.rotate(this.ang);
@@ -88,7 +88,7 @@ function light(ang, hue) {
 
     // Glow
     ctx2.lineWidth = this.width * 3;
-    ctx2.strokeStyle = "white";
+    ctx2.strokeStyle = "#ffffff";
     ctx2.save();
     ctx2.translate(core.x, core.y);
     ctx2.rotate(this.ang);
@@ -150,14 +150,16 @@ function gameMove() {
   // Core
   ctx.lineWidth = randFrom(3, 6) * scale;
   ctx2.lineWidth = ctx.lineWidth * 2;
-  ctx.fillStyle = "rgb(50,50,50)";
-  ctx.strokeStyle = "white";
+  ctx.fillStyle = "rgb(255,255,255)";
+  ctx.shadowColor = "white";
+  ctx.shadowBlur = 30;
+  ctx.strokeStyle = "#ffffff";
   ctx.beginPath();
   ctx.arc(core.x, core.y, core.r, 0, 2 * Math.PI);
   ctx.fill();
   ctx.stroke();
 
-  ctx2.strokeStyle = "white";
+  ctx2.strokeStyle = "#ffffff";
   ctx2.beginPath();
   ctx2.arc(core.x, core.y, core.r, 0, 2 * Math.PI);
   ctx2.stroke();
@@ -168,23 +170,19 @@ function gameMove() {
   ctx.fill();
   ctx.stroke();
 
-  ctx2.fillStyle = "white";
+  ctx2.fillStyle = "#ffffff";
   ctx2.beginPath();
   ctx2.arc(core.x, core.y, core.r / 1.0625, 0, 2 * Math.PI);
   ctx2.fill();
   ctx2.stroke();
 
   // Glow Wall
-  var grd = ctx.createRadialGradient(core.x, core.y, wallRadius, core.x, core.y, wallRadius + 100);
-  grd.addColorStop(0.00, "rgba(0, 0, 0, 0.0)");
-  grd.addColorStop(0.15, "rgba(60, 60, 60, 0.1)");
-  grd.addColorStop(0.30, "rgba(90, 90, 90, 0.15)");
-  grd.addColorStop(0.45, "rgba(110, 110, 110, 0.2)");
-  grd.addColorStop(0.60, "rgba(130, 130, 130, 0.25)");
-  grd.addColorStop(0.75, "rgba(140, 140, 140, 0.3)");
-  grd.addColorStop(0.90, "rgba(150, 150, 150, 0.35)");
-  grd.addColorStop(1.00, "rgba(160, 160, 160, 0.4)");
-  ctx.fillStyle = grd;
+  var grd = ctx.createRadialGradient(core.x, core.y, wallRadius * 0.2, core.x, core.y, wallRadius + 200);
+grd.addColorStop(0.0, "rgba(0,0,0,0.0)");
+grd.addColorStop(0.4, "rgba(30,0,50,0.3)");
+grd.addColorStop(0.7, "rgba(60,0,80,0.5)");
+grd.addColorStop(1.0, "rgba(20,0,40,0.7)");
+ctx.fillStyle = grd;
   ctx.beginPath();
   ctx.arc(core.x, core.y, Math.max(can1.width, can1.height), 0, 2 * Math.PI);
   ctx.fill();
