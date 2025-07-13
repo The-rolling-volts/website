@@ -16,8 +16,11 @@ export class ScriptTag extends Element{
 			this.typeOfClass = 'ScriptTag'; // se pone el nombre de la clase
 
 			this.setAttributes(...valueAttribute);// se añaden los atributos adicionales
-			if(location == 'default'||location == '')location = document.getElementsByTagName('head')[0];
-			this.addToElement(location); // se pone la etiqueta script en un parte del dom ya seleccionada
+			if (!(location === null || location === undefined)) {
+				if(location == 'default'||location == '')location = document.getElementsByTagName('head')[0];
+				this.addToElement(location); // se pone la etiqueta script en un parte del dom ya seleccionada
+				//console.log(`Se ha añadido automaticamente : ${this.element.src}`);
+			}
 		}else	console.warn(`The parameter in class ${this.typeOfClass} is incorrect`);
 		
 	}

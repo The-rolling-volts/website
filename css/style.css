@@ -108,6 +108,7 @@ color: #000000;
   align-items: center;
   justify-content: space-between;
   height: 65px;
+  min-height:65px;
   padding: 0 60px;
   background:#272829;/*background: #000000;*/
   box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.05);

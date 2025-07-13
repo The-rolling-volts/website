@@ -4,7 +4,7 @@ import { htmlPath } from "./htmlPath.js";
 import { WebComponent } from "./WebComponent.js";
 
 window.onload = function () {
-    const HTML = new Element(document.getElementsByTagName('html')[0]);
+    //const HTML = new Element(document.getElementsByTagName('html')[0]);
     const path = htmlPath();
     console.log(path);
     const hrefMap = {
@@ -50,14 +50,17 @@ window.onload = function () {
         'Mountain E-Bike':'productos/index.html',
         'Nosotros': 'Nosotros/index.html',
     };
-    const menu = new WebComponent(path, document.createElement('nav'), hrefMap, 'navbar sticky', 'menu.html', '.menu-item,.logo', 'first');
-    const footer = new WebComponent(path,document.createElement('footer'),hrefMap,'footer','footer.html','footer-item')
-    const overlayFooter = new WebComponent(path, document.createElement('div'), undefined, 'overlay', undefined, undefined);
     const styleCSS = new ScriptTag('link', '', `href;${path}css/style.css`, 'rel;stylesheet preload prefetch', 'as;style', 'async;true');
     const favicon = new ScriptTag('link','',`href;${path}img/simbolos/logoWhite.svg`,'type;image/svg+xml','async;true','rel;icon');
     const footerCSS = new ScriptTag('link','',`href;${path}css/footer.css`,'rel;stylesheet preload prefetch','as;style','async;true');
-    const scriptJS = new ScriptTag('script', '', `src;${path}js/script.js`, 'as;script', 'async;true');
-    //const headerHomeJS = new ScriptTag('script','',`src;${path}js/headerHome.js`);
+    const scriptJS = new ScriptTag('script', null , `src;${path}js/menu.js`, 'as;script', 'async;true'); //se pasa null para que no se añada automaticamente el script
+
+    const menu = new WebComponent(
+        path, document.createElement('nav'), hrefMap, 'navbar sticky', 'menu.html', '.menu-item,.logo', 'first',
+        { onload: () => { scriptJS.addToElement(); } } // esta función carga el script menu.js despues de que se cargo el webcomponent
+    );
+    const overlayMenu = new WebComponent(path, document.createElement('div'), undefined, 'overlay', undefined, undefined); //CREO QUE ESTO SE PUEDE HACER CON ELEMENT
+    const footer = new WebComponent(path, document.createElement('footer'), hrefMap, 'footer', 'footer.html', 'footer-item');
 
     //Usar esto para acceder a las rutas en vez de data-path en cada pagina
     const currentURL = window.location.href;

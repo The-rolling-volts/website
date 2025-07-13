@@ -77,7 +77,9 @@
   color: #ffffff;
   margin-bottom: 10px;
   white-space: nowrap;
-  width:325px;
+  width:calc(100% - 10px);
+  min-width:275px;
+  max-width:325px;
 }
 
 /* Mensaje clic */

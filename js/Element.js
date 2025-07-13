@@ -118,6 +118,9 @@ export class Element {
 			case 'value':
 				return this.element.value;
 				break;
+			case 'src':
+				return this.element.src;
+				break;
 			case '':
 				console.warn(`there is no given attribute for \"${value}\"
 					in class ${this.typeOfClass}`);
