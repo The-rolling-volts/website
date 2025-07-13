@@ -1,17 +1,3 @@
-/* Reset y caja */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* Fondo general */
-body {
-  background: #757575;
-  overflow-x: hidden;
-  font-family: "Open Sans", sans-serif;
-}
-
 /* Grid de tarjetas */
 .card-grid {
   display: flex;
@@ -27,7 +13,7 @@ body {
   flex: 0 0 350px;
   width: 350px;
 
-  color: #fff;
+  color: #ffffff;
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -38,7 +24,7 @@ body {
   position: relative;
   width: 100%;
   height: 400px;
-  background: #141414;
+  background: #272829; /* tono más cercano al fondo de style.css */
   box-shadow: 0 3px 6px rgba(0,0,0,0.16),
               0 3px 6px rgba(0,0,0,0.23);
   transform-style: preserve-3d;
@@ -51,13 +37,12 @@ body {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  /* Fix Chrome rendering bug */
   transform: rotate(0deg) translateZ(1px);
 }
 
 /* Hover: gira la tarjeta */
 .presentationCard:hover .card ,
-.presentationCard .back{
+.presentationCard .back {
   transform: rotateY(-180deg);
 }
 
@@ -84,12 +69,12 @@ body {
 
 /* Logo / Nombre visible */
 .presentationCard .logo {
-  outline: 1px solid #19F6E8;
+  outline: 1px solid #ff5722; /* antes: #19F6E8 */
   padding: 15px 0px;
   text-transform: uppercase;
   font-size: 1.4em;
   letter-spacing: 6px;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 10px;
   white-space: nowrap;
   width:325px;
@@ -98,42 +83,42 @@ body {
 /* Mensaje clic */
 .presentationCard .click-msg {
   font-size: 0.5em;
-  color: #19F6E8;
+  color: #ff5722; /* antes: #19F6E8 */
   letter-spacing: 2px;
 }
 
 /* Back styling */
 .presentationCard .back {
-  background: #15CCC0;
+  background: #ff5722; /* color naranja consistente con la paleta */
   padding: 30px;
   font-size: 0.8em;
+  color: #ffffff;
 }
 
 .presentationCard .name {
-  color: #3B3B3B;
+  color: #272829; /* resalta el nombre */
   margin-bottom: 0;
   font-size: 1.4em;
 }
 
 .presentationCard p {
   margin: 0.8em 0;
+  color: #dddddd;
 }
 
 .presentationCard .info {
   position: absolute;
   bottom: 30px;
   left: 30px;
-  color: #3b3b3b;
+  color: #bbbbbb;
 }
 
 .presentationCard .property {
-  color: #fff;
+  color: #ffffff;
 }
 
 /* === BREAKPOINTS === */
 
-/* 2 por fila en pantallas medianas */
-/* ——— Cuando el contenedor se estreche: 2 tarjetas/ fila ——— */
 @media (max-width: 1000px) {
   .presentationCard {
     flex: 0 0 calc(50% - 30px);
@@ -141,7 +126,6 @@ body {
   }
 }
 
-/* ——— Móviles: 1 tarjeta/ fila ——— */
 @media (max-width: 600px) {
   .presentationCard {
     flex: 0 0 100%;

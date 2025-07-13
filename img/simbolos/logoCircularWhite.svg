@@ -1,0 +1,41 @@
+<svg version="1.1"
+     width="1113" height="1113"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <circle cx="556.5" cy="556.5" r="556.5" fill="white"/> <!--  circulo delimitante -->
+
+    <circle cx="256.5" cy="729.8076211" r="50" fill="black"/> <!-- Eje rueda -->
+    
+    <circle cx="256.5" cy="729.8076211" r="165" fill="transparent" stroke="black" stroke-width="60"/> <!-- Rueda -->
+
+    <line x1="256.5" y1="729.8076211" x2="437.75" y2="415.8734122" stroke="black" stroke-width="60" stroke-linecap="round"/><!-- Horquilla -->
+
+    <line x1="375.25" y1="415.8734122" x2="437.75" y2="415.8734122" stroke="black" stroke-width="60" stroke-linecap="round"/> <!-- Manubrio -->
+
+    <line x1="406.5" y1="470" x2="556.5" y2="729.8076211" stroke="black" stroke-width="60" stroke-linecap="round"/> <!-- Marco -->
+
+    <g transform="rotate(120 556.5 556.6025404)">
+        <circle cx="256.5" cy="729.8076211" r="50" fill="black"/>
+        
+        <circle cx="256.5" cy="729.8076211" r="165" fill="transparent" stroke="black" stroke-width="60"/>
+
+        <line x1="256.5" y1="729.8076211" x2="437.75" y2="415.8734122" stroke="black" stroke-width="60" stroke-linecap="round"/>
+        
+        <line x1="375.25" y1="415.8734122" x2="437.75" y2="415.8734122" stroke="black" stroke-width="60" stroke-linecap="round"/>
+        
+        <line x1="406.5" y1="470" x2="556.5" y2="729.8076211" stroke="black" stroke-width="60" stroke-linecap="round"/>
+    </g>
+
+    <g transform="rotate(240 556.5 556.6025404)">
+        <circle cx="256.5" cy="729.8076211" r="50" fill="black"/>
+        
+        <circle cx="256.5" cy="729.8076211" r="165" fill="transparent" stroke="black" stroke-width="60"/>
+
+        <line x1="256.5" y1="729.8076211" x2="437.75" y2="415.8734122" stroke="black" stroke-width="60" stroke-linecap="round"/>
+        
+        <line x1="375.25" y1="415.8734122" x2="437.75" y2="415.8734122" stroke="black" stroke-width="60" stroke-linecap="round"/>
+        
+        <line x1="406.5" y1="470" x2="556.5" y2="729.8076211" stroke="black" stroke-width="60" stroke-linecap="round"/>
+    </g>
+
+</svg>
