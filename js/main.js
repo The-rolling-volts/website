@@ -4,7 +4,8 @@ import { htmlPath } from "./htmlPaths.js";
 import { WebComponent } from "./WebComponent.js";
 
 window.onload = function () {
-    const path = htmlPath();
+    const paths = htmlPath();
+    const path = paths.absolute + '/';
     console.log(path);
     const urlMap = {
         'index.html':'index.html',

@@ -1,25 +1,38 @@
 
-// htmlPath.js mejorado: usa data-path si está definido, y si no, deduce la ruta base desde la URL
+// htmlPath.js: maneja correctamente entorno local con subcarpetas (ej. /Website_The_Rolling_Volts/Nosotros/)
 
 export function htmlPath() {
-    const htmlElement = document.querySelector('html');
-    const datasetPath = htmlElement ? htmlElement.dataset.path : null;
+    const currentURL = window.location.href;
+    const urlObj = new URL(currentURL);
+    const isLocalhost = urlObj.hostname === 'localhost';
 
-    if (datasetPath && datasetPath !== '' && datasetPath !== 'root') {
-        return datasetPath.endsWith('/') ? datasetPath : datasetPath + '/';
+    const pathname = urlObj.pathname;
+    const pathSegments = pathname.split('/').filter(Boolean); // elimina strings vacíos
+
+    let basePath = '';
+    let relativePath = '/';
+
+    if (isLocalhost) {
+        // Ej: /Website_The_Rolling_Volts/Nosotros/ => base: /Website_The_Rolling_Volts, relativa: /Nosotros/
+        if (pathSegments.length > 0) {
+            basePath = '/' + pathSegments[0];
+        }
+        if (pathSegments.length > 1) {
+            relativePath += pathSegments.slice(1).join('/') + '/';
+        }
+    } else {
+        // Producción: base solo es dominio, relative es todo el path
+        basePath = '';
+        relativePath = pathname.endsWith('/') ? pathname : pathname + '/';
     }
 
-    // Si no hay dataset válido, deduce la ruta base desde la URL actual
-    const currentURL = window.location.href;
-    const pathParts = currentURL.split('/');
+    const absolute = isLocalhost ? urlObj.origin + basePath : urlObj.origin;
 
-    // Quita todo después del último "/"
-    pathParts.pop();
+    console.log('🌐 Ruta absoluta:', absolute);
+    console.log('📁 Ruta relativa:', relativePath);
 
-    // Reconstruye la ruta base relativa
-    const basePath = pathParts.join('/') + '/';
-
-    // Extrae solo la parte después del dominio
-    const url = new URL(basePath);
-    return url.pathname.startsWith('/') ? url.pathname : '/' + url.pathname;
+    return {
+        absolute,
+        relative: relativePath
+    };
 }
