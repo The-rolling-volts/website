@@ -125,13 +125,14 @@
     <aside></aside>
     <script type="module" src="./js/main.js"></script>
     <script src="./js/headerHome.js"></script>
-    <script type="module">/*
+    <script type="module">
       import { Element } from "./js/Element.js";
       import { ScriptTag } from "./js/ScriptTag.js";
       import { htmlPath } from "./js/htmlPath.js";
       import { WebComponent } from "./js/WebComponent.js";
-      
-      const path = htmlPath();
+      const paths = htmlPath();
+      const path = paths.absolute + '/';
+      console.log(path);
       const urlMapModulos = {
         './img/gestion.webp' : 'modulos/img/gestion.webp',
         './img/industry4.webp' : 'modulos/img/industry4.webp',
@@ -159,7 +160,7 @@
         'modulos.html',
         '.thumbnail',
         'last'
-      );*/
+      );
     </script>
   </body>
 </html>
