@@ -30,9 +30,11 @@ export function htmlPath() {
 
     console.log('🌐 Ruta absoluta:', absolute);
     console.log('📁 Ruta relativa:', relativePath);
-
+	/*
     return {
         absolute,
         relative: relativePath
     };
+	*/
+	return absolute + '/';
 }
