@@ -1,6 +1,6 @@
 import { Element } from "./Element.js";
 import { ScriptTag } from "./ScriptTag.js";
-import { htmlPath } from "./htmlPath.js";
+import { htmlPath } from "./htmlPaths.js";
 import { WebComponent } from "./WebComponent.js";
 
 window.onload = function () {
