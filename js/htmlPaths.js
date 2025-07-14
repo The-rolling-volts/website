@@ -1,16 +1,25 @@
-export function htmlPath(){
-	const baseURL = window.location.origin;
-	const pathname = window.location.pathname;
 
-	// Si estás en GitHub Pages o en dominio personalizado
-	const subdir = pathname.split('/')[1]; // ['', 'Website_The_Rolling_Volts', 'index.html']
+// htmlPath.js mejorado: usa data-path si está definido, y si no, deduce la ruta base desde la URL
 
-	if (subdir && (location.hostname.includes("github.io") || location.hostname.includes("therollingvolts.com"))) {
-		return `/${subdir}/`;
-	}
+export function htmlPath() {
+    const htmlElement = document.querySelector('html');
+    const datasetPath = htmlElement ? htmlElement.dataset.path : null;
 
-	// En entorno local
-	const htmlPath = document.querySelector('html').dataset.path;
-	if (htmlPath === 'root' || htmlPath === '') return './';
-	else return htmlPath + '/';
+    if (datasetPath && datasetPath !== '' && datasetPath !== 'root') {
+        return datasetPath.endsWith('/') ? datasetPath : datasetPath + '/';
+    }
+
+    // Si no hay dataset válido, deduce la ruta base desde la URL actual
+    const currentURL = window.location.href;
+    const pathParts = currentURL.split('/');
+
+    // Quita todo después del último "/"
+    pathParts.pop();
+
+    // Reconstruye la ruta base relativa
+    const basePath = pathParts.join('/') + '/';
+
+    // Extrae solo la parte después del dominio
+    const url = new URL(basePath);
+    return url.pathname.startsWith('/') ? url.pathname : '/' + url.pathname;
 }
