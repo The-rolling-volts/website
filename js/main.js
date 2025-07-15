@@ -8,7 +8,8 @@ window.onload = function () {
     //const path = paths.absolute + '/';
     console.log(path);
     const urlMap = {
-        'index.html':'index.html',
+        'index.html': 'index.html',
+        './img/simbolos/logoWhite.svg':'img/simbolos/logoWhite.svg',
         './procesoDeAprendizaje/index.html':'procesoDeAprendizaje/index.html',
         './productoDeIngenieria/index.html':'productoDeIngenieria/index.html', //
         './modulos/index.html':'modulos/index.html', //
@@ -22,6 +23,9 @@ window.onload = function () {
         './modulos/SCADA/index.html':'modulos/SCADA/index.html', // //
         './productos/index.html':'productos/index.html', //
         './Nosotros/index.html': 'Nosotros/index.html',
+        './img/mountainBike.png': 'img/mountainBike.png',
+        './img/scooter.PNG': 'img/scooter.PNG',
+        './img/cargoBike.PNG': 'img/cargoBike.PNG',
         '#': 'index.html'
     };
     const urlMapFooter = {
@@ -34,7 +38,9 @@ window.onload = function () {
     }
     const styleCSS = new ScriptTag('link', '', `href;${path}css/style.css`, 'rel;stylesheet preload prefetch', 'as;style', 'async;true');
     const favicon = new ScriptTag('link','',`href;${path}img/simbolos/logoWhite.svg`,'type;image/svg+xml','async;true','rel;icon');
-    const footerCSS = new ScriptTag('link','',`href;${path}css/footer.css`,'rel;stylesheet preload prefetch','as;style','async;true');
+    const footerCSS = new ScriptTag('link', '', `href;${path}css/footer.css`, 'rel;stylesheet preload prefetch', 'as;style', 'async;true');
+    const articleTemplateCSS = new ScriptTag('link','',`href;${path}css/article-template.css`,'rel;stylesheet preload prefetch','as;style','async;true');
+
     const menuJS = new ScriptTag('script', null , `src;${path}js/menu.js`, 'as;script', 'async;true'); //se pasa null para que no se añada automaticamente el script
     const overlayMenu = new Element(document.createElement('div')); //overlay es un elemento que no esta dentro del nav del menu pero es importante para su funcionamiento
     overlayMenu.setAttributes('class;overlay');
