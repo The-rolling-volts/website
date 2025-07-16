@@ -27,7 +27,7 @@
   padding: 0;                                    /* los enlaces añaden su propio padding */
   transform: translateX(calc(-100% + var(--toggle-width))); /* ⬅️ oculto por defecto */
   transition: transform var(--transition) ease;
-  z-index: 1000;
+  z-index: 300;
 }
 
 /* estado abierto */

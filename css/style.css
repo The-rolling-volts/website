@@ -118,16 +118,22 @@ color: #000000;
   padding: 0 60px;
   background:#272829;/*background: #000000;*/
   box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.05);
+  z-index:1100;
+}
+.overlay{
+  z-index:1100;
 }
 @media (max-width: 1023px) {
   .navbar {
     padding: 10px 20px;
+
   }
 }
 .navbar.sticky {
   position: sticky;
   z-index: 999;
   top: 0;
+  z-index:1100;
 }
 .navbar .logo {
   color: #ffffff;
@@ -135,6 +141,7 @@ color: #000000;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
+  z-index:1100;
 }
 
 /* Por defecto, oculta la imagen y muestra el texto */
