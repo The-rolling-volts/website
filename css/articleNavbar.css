@@ -1,24 +1,82 @@
+/* ---------- variables ---------- */
 :root {
-  --hauptfarbe:#333333;
-  --schriftfarbe-dunkel:#333333;
-  --schriftfarbe-hell:beige;
-  --gelb-transparent:#ffff0020;
+  --hauptfarbe: #333333;
+  --schriftfarbe-dunkel: #333333;
+  --schriftfarbe-hell: beige;
+  --gelb-transparent: #ffff0020;
+
+  /* ancho total del panel desplegado            */
+  --navbar-width: 220px;
+  /* “asa” visible cuando el panel está oculto   */
+  --toggle-width: 1.6rem;          /* más delgado */
+  --navbar-top: 100px;
+  --transition: .3s;
 }
 
+/* ---------- contenedor ---------- */
 #navbarArticle {
-    position: fixed;
-    top: 100px;
-    left: 0;
-    width: 200px;
-    background: #f8f9fa;
+  position: fixed;
+  top: var(--navbar-top);
+  left: 0;
+  width: var(--navbar-width);
+  max-height: calc(100vh - var(--navbar-top));
+  overflow-y: auto;
+  background: #f8f9fa;
+  box-shadow: 2px 0 8px rgb(0 0 0 / .15);
+  border-right: 1px solid rgba(0,0,0,.1);
+  padding: 0;                                    /* los enlaces añaden su propio padding */
+  transform: translateX(calc(-100% + var(--toggle-width))); /* ⬅️ oculto por defecto */
+  transition: transform var(--transition) ease;
+  z-index: 1000;
 }
+
+/* estado abierto */
+#navbarArticle.is-open {
+  transform: translateX(0);
+}
+
+/* ---------- botón “Índice” ---------- */
+#navbarArticleToggle {
+  position: absolute;
+  top: 0;
+  right: 0;                                  /* ahora a la derecha */
+  width: var(--toggle-width);
+  height: 100%;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font: 700 0.75rem/1 sans-serif;
+  writing-mode: vertical-rl;                 /* texto de arriba a abajo */
+  /* sin rotate: la lectura es top → bottom   */
+  border-radius: 4px 0 0 4px;
+  transition: background .2s;
+}
+
+#navbarArticleToggle:hover {
+  background: #005dc1;
+}
+
+/* ---------- enlaces ---------- */
 #navbarArticle a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
+  display: block;
+  padding: .5rem calc(var(--toggle-width) + .75rem) .5rem .75rem; /* deja hueco para el botón */
+  text-decoration: none;
+  color: var(--schriftfarbe-dunkel);
+  font-size: .95rem;
+  border-left: 4px solid transparent;
+  transition: background .2s, color .2s, border-color .2s;
 }
+
+#navbarArticle a:hover {
+  background: var(--gelb-transparent);
+}
+
 #navbarArticle a.active {
-    background: #007bff;
-    color: white;
+  background: #007bff;
+  color: #fff;
+  border-color: #007bff;
 }
+
+/* ---------- nada especial para móviles ----------
+   El panel siempre arranca oculto y se abre con la clase .is-open */
