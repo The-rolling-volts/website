@@ -32,7 +32,7 @@ function initNavbar() {
     const scrollY = scrollContainer === window
       ? window.pageYOffset
       : scrollContainer.scrollTop;
-
+      console.log('scrolleando: ',scrollY);
     let current = '';
     articles.forEach(article => {
       const top    = article.offsetTop;
