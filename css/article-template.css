@@ -1,112 +1,91 @@
+/*  ────────────────────────────────────────────────────────────────────
+    article-template.css ─ Versión completa 15-07-2025 (v4)
+    Cambios clave de esta revisión
+    • <article> ya no crea scroll interno (se mantiene de v3)
+    • Párrafos y encabezados ocupan el 100 % del ancho disponible
+      ‒ Eliminamos los “max-width” que los limitaban (p. ej. .max-width-xs)
+      ‒ Sobrescribimos los contenedores .container dentro del artículo
+    ──────────────────────────────────────────────────────────────────── */
+
+/* — Import opcional de fuente — */
 /*@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");*/
 
-article p{
+/* ──────────────────────────────────────
+   1. ESTILOS BÁSICOS DEL ARTÍCULO
+   ──────────────────────────────────────*/
+article p {
   text-align: justify;
 }
-article a{
+
+article a {
   color: #1746a2;
   font-weight: 600;
 }
-article h1{
+
+article h1 {
   font-size: 2.5rem;
-
   color: #ff5722;
 }
-article h2{
+
+article h2 {
   font-size: 2rem;
-
   color: #ff5722;
 }
-article h3{
+
+article h3 {
   font-size: 1.6rem;
-
   color: #ff5722;
 }
-/* variables */
+
+/* ──────────────────────────────────────
+   2. VARIABLES (prefijo ad5-)
+   ──────────────────────────────────────*/
 :root {
-  /* colors */
   --ad5-color-primary-hsl: #ff5722;
   --ad5-color-bg-hsl: #272829;
   --ad5-color-contrast-high-hsl: #ffffff;
   --ad5-color-contrast-higher-hsl: #f0f0f0;
   --ad5-color-contrast-medium-hsl: #bbbbbb;
-  --ad5-color-accent-hsl: #ff5722;
   --ad5-color-contrast-lower-hsl: #555555;
+  --ad5-color-accent-hsl: #ff5722;
 
-  /* spacing */
-  --ad5-space-xs: 0.5rem;
+  --ad5-space-xs: .5rem;
+  --ad5-space-sm: .75rem;
   --ad5-space-md: 1.25rem;
   --ad5-space-lg: 2rem;
-  --ad5-space-sm: 0.75rem;
 
-  /* typography */
-  --ad5-text-md: 1.2rem;
+  --ad5-text-sm: .833rem;
   --ad5-text-base: 1rem;
-  --ad5-text-sm: 0.833rem;
-  --ad5-text-sm: 0.833rem;
+  --ad5-text-md: 1.2rem;
 }
 
-@media (min-width: 64rem) {
+@media (min-width:64rem) {
   :root {
-    /* spacing */
-    --ad5-space-xs: 0.75rem;
+    --ad5-space-xs: .75rem;
+    --ad5-space-sm: 1.125rem;
     --ad5-space-md: 2rem;
     --ad5-space-lg: 3.125rem;
-    --ad5-space-sm: 1.125rem;
 
-    /* typography */
-    --ad5-text-md: 1.5625rem;
+    --ad5-text-sm: 1rem;
     --ad5-text-base: 1.25rem;
-    --ad5-text-sm: 1rem;
-    --ad5-text-sm: 1rem;
+    --ad5-text-md: 1.5625rem;
   }
 }
 
-/* component */
-
-/* utility classes */
-:where(.media-wrapper-16\:9) {
-  position: relative;
-  height: 0;
+/* ──────────────────────────────────────
+   3. UTILIDADES (grid, flex, etc.)
+   ──────────────────────────────────────*/
+.container {
+  width: calc(100% - 2*var(--ad5-space-md));
+  margin-inline: auto;
 }
 
-.media-wrapper-16\:9 {
-  padding-bottom: 56.25%;
+.block {
+  display: block;
 }
 
-.media-wrapper-16\:9 > * {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.media-wrapper-16\:9 > *:not(iframe) {
-  object-fit: cover;
-}
-
-@media (min-width: 90rem) {
-  .text-component__block--outset {
-    width: calc(100% + 12rem);
-  }
-
-  .text-component__block--outset img {
-    display: block;
-    width: 100%;
-  }
-
-  .text-component__block--outset: not(.text-component__block--right) {
-    margin-left: -6rem;
-  }
-
-  .text-component__block--right.text-component__block--outset {
-    margin-right: -6rem;
-  }
-}
-
-.gap-xs {
-  gap: var(--ad5-space-xs);
+.flex {
+  display: flex;
 }
 
 .grid {
@@ -114,43 +93,60 @@ article h3{
   grid-template-columns: repeat(12, 1fr);
 }
 
-.grid > * {
+.grid>* {
   min-width: 0;
   grid-column-end: span 12;
 }
 
-@media (min-width: 48rem) {
-  .text-component__block--left,
-  .text-component__block--right {
-    width: 45%;
-  }
+.gap-xs {
+  gap: var(--ad5-space-xs);
+}
 
-  .text-component__block--left img,
-  .text-component__block--right img {
-    display: block;
-    width: 100%;
-  }
+.radius-lg {
+  border-radius: .5em;
+}
 
-  .text-component__block--left {
-    float: left;
-    margin-right: calc(var(--ad5-space-sm) * var(--ad5-space-multiplier, 1));
-  }
+.max-width-xs {
+  max-width: 38rem;
+}
 
-  .text-component__block--right {
-    float: right;
-    margin-left: calc(var(--ad5-space-sm) * var(--ad5-space-multiplier, 1));
+.max-width-adaptive-sm {
+  max-width: 32rem;
+}
+
+@media (min-width:48rem) {
+  .max-width-adaptive-sm {
+    max-width: 48rem;
   }
 }
 
-@media (min-width: 90rem) {
-  .text-component__block--left,
-  .text-component__block--right {
-    width: 50%;
-  }
+.max-width-lg {
+  max-width: 80rem;
+  aspect-ratio: 16/9;
+}
+
+.margin-bottom-lg {
+  margin-bottom: var(--ad5-space-lg);
+}
+
+.margin-bottom-md {
+  margin-bottom: var(--ad5-space-md);
+}
+
+.padding-y-lg {
+  padding-block: var(--ad5-space-lg);
 }
 
 .text-center {
   text-align: center;
+}
+
+.text-md {
+  font-size: var(--ad5-text-md);
+}
+
+.color-contrast-medium {
+  color: hsla(var(--ad5-color-contrast-medium-hsl), 1);
 }
 
 .text-gap-md {
@@ -161,28 +157,32 @@ article h3{
   line-height: 1.58;
 }
 
+/* ──────────────────────────────────────
+   4. COMPONENTE “text-component”
+   (sin cambios respecto a v3)
+   ──────────────────────────────────────*/
 .text-component :where(h1, h2, h3, h4) {
-  line-height: var(--ad5-heading-line-height, 1.2);
-  margin-top: calc(var(--ad5-space-md) * var(--ad5-space-multiplier, 1));
-  margin-bottom: calc(var(--ad5-space-sm) * var(--ad5-space-multiplier, 1));
+  line-height: var(--ad5-heading-line, 1.2);
+  margin-block-start: calc(var(--ad5-space-md)*var(--ad5-space-multiplier, 1));
+  margin-block-end: calc(var(--ad5-space-sm)*var(--ad5-space-multiplier, 1));
 }
 
 .text-component :where(p, blockquote, ul li, ol li) {
-  line-height: var(--ad5-body-line-height, 1.4);
+  line-height: var(--ad5-body-line, 1.4);
 }
 
 .text-component :where(ul, ol, p, blockquote, .text-component__block) {
-  margin-bottom: calc(var(--ad5-space-sm) * var(--ad5-space-multiplier, 1));
+  margin-block-end: calc(var(--ad5-space-sm)*var(--ad5-space-multiplier, 1));
 }
 
 .text-component :where(ul, ol) {
-  padding-left: 1.25em;
+  padding-inline-start: 1.25em;
 }
 
 .text-component ul :where(ul, ol),
 .text-component ol :where(ul, ol) {
-  padding-left: 1em;
-  margin-bottom: 0;
+  padding-inline-start: 1em;
+  margin-block-end: 0;
 }
 
 .text-component ul {
@@ -195,188 +195,215 @@ article h3{
 
 .text-component img {
   display: block;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .text-component figcaption {
-  margin-top: calc(var(--ad5-space-xs) * var(--ad5-space-multiplier, 1));
+  margin-top: calc(var(--ad5-space-xs)*var(--ad5-space-multiplier, 1));
   font-size: var(--ad5-text-sm);
   text-align: center;
 }
 
-.text-component em {
-  font-style: italic;
-}
-
-.text-component strong {
-  font-weight: bold;
-}
-
-.text-component s {
-  text-decoration: line-through;
-}
-
-.text-component u {
-  text-decoration: underline;
-}
-
-.text-component mark {
-  background-color: hsla(var(--ad5-color-accent-hsl), 0.2);
-  color: inherit;
-}
-
 .text-component blockquote {
-  padding-left: 1em;
-  border-left: 4px solid hsl(var(--ad5-color-contrast-lower-hsl));
+  padding-inline-start: 1em;
+  border-inline-start: 4px solid hsl(var(--ad5-color-contrast-lower-hsl));
   font-style: italic;
 }
-p.color-contrast-medium.text-md {
-  text-align: center;
-  font-size: 1.2rem;
-}
+
 .text-component hr {
-  margin: calc(var(--ad5-space-md) * var(--ad5-space-multiplier, 1)) auto;
+  margin: calc(var(--ad5-space-md)*var(--ad5-space-multiplier, 1)) auto;
   background: hsl(var(--ad5-color-contrast-lower-hsl));
   height: 1px;
 }
 
-.text-component > *:first-child {
+.text-component>*:first-child {
   margin-top: 0;
 }
 
-.text-component > *:last-child {
+.text-component>*:last-child {
   margin-bottom: 0;
 }
 
 .text-component.line-height-xs {
-  --ad5-heading-line-height: 1;
-  --ad5-body-line-height: 1.1;
+  --ad5-heading-line: 1;
+  --ad5-body-line: 1.1;
 }
 
 .text-component.line-height-sm {
-  --ad5-heading-line-height: 1.1;
-  --ad5-body-line-height: 1.2;
+  --ad5-heading-line: 1.1;
+  --ad5-body-line: 1.2;
 }
 
 .text-component.line-height-md {
-  --ad5-heading-line-height: 1.15;
-  --ad5-body-line-height: 1.4;
+  --ad5-heading-line: 1.15;
+  --ad5-body-line: 1.4;
 }
 
 .text-component.line-height-lg {
-  --ad5-heading-line-height: 1.22;
-  --ad5-body-line-height: 1.58;
+  --ad5-heading-line: 1.22;
+  --ad5-body-line: 1.58;
 }
 
 .text-component.line-height-xl {
-  --ad5-heading-line-height: 1.3;
-  --ad5-body-line-height: 1.72;
+  --ad5-heading-line: 1.3;
+  --ad5-body-line: 1.72;
 }
 
-.max-width-adaptive-sm {
-  max-width: 32rem;
+/* ──────────────────────────────────────
+   5. MEDIA-WRAPPER 16 : 9
+   ──────────────────────────────────────*/
+.media-wrapper-16\:9 {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
 }
 
-@media (min-width: 48rem) {
-  .max-width-adaptive-sm {
-    max-width: 48rem;
+.media-wrapper-16\:9>* {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.media-wrapper-16\:9>*:not(iframe) {
+  object-fit: cover;
+}
+
+/* ──────────────────────────────────────
+   6. BLOQUES OUTSET + FLOTE
+   (sin cambios respecto a v3)
+   ──────────────────────────────────────*/
+@media (min-width:90rem) {
+  .text-component__block--outset {
+    width: calc(100% + 12rem);
+  }
+
+  .text-component__block--outset img {
+    width: 100%;
+    display: block;
+  }
+
+  .text-component__block--outset:not(.text-component__block--right) {
+    margin-left: -6rem;
+  }
+
+  .text-component__block--right.text-component__block--outset {
+    margin-right: -6rem;
   }
 }
 
-.container {
-  width: calc(100% - 2 * var(--ad5-space-md));
-  margin-left: auto;
-  margin-right: auto;
+@media (min-width:48rem) {
+
+  .text-component__block--left,
+  .text-component__block--right {
+    width: 45%;
+  }
+
+  .text-component__block--left img,
+  .text-component__block--right img {
+    width: 100%;
+    display: block;
+  }
+
+  .text-component__block--left {
+    float: left;
+    margin-right: calc(var(--ad5-space-sm)*var(--ad5-space-multiplier, 1));
+  }
+
+  .text-component__block--right {
+    float: right;
+    margin-left: calc(var(--ad5-space-sm)*var(--ad5-space-multiplier, 1));
+  }
 }
 
-.radius-lg {
-  border-radius: 0.5em;
+@media (min-width:90rem) {
+
+  .text-component__block--left,
+  .text-component__block--right {
+    width: 50%;
+  }
 }
 
-.width-100\% {
+/* ──────────────────────────────────────
+   7. AJUSTES SOLICITADOS
+   ──────────────────────────────────────*/
+article.article-wrapper {
+  /* ancho máximo y centrado */
+  width: 90vw;
+  max-width: 1200px;
+  margin-inline: auto;
+
+  /* evita scroll internos */
+  overflow-x: clip;
+  overflow-y: visible;
+  height: auto;
+}
+
+@media (min-width:1200px) {
+  article.article-wrapper {
+    width: 1200px;
+  }
+}
+
+@media (max-width:949.98px) {
+  article.article-wrapper {
+    width: 95vw;
+  }
+}
+
+/* 7.1 — Contenedores de texto y utilidades de anchura  */
+article.article-wrapper .container,
+article.article-wrapper .max-width-xs,
+article.article-wrapper .max-width-adaptive-sm {
+  /* los forzamos a ocupar todo el ancho del <article>                  */
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* 7.2 — Garantizamos que párrafos y títulos abarquen la fila completa  */
+article.article-wrapper p,
+article.article-wrapper :where(h1, h2, h3, h4, h5, h6) {
   width: 100%;
+  max-width: 100%;
 }
 
-.block {
-  display: block;
+/* 7.3 — Multimedia: no superar el 100 %                                */
+article.article-wrapper img,
+article.article-wrapper figure,
+article.article-wrapper video,
+article.article-wrapper iframe {
+  max-width: 100%;
+  height: auto;
 }
 
-.margin-bottom-lg {
-  margin-bottom: var(--ad5-space-lg);
+/* 7.4 — Outset centrados SIN left/right dentro del article             */
+article.article-wrapper .text-component__block--outset:not(.text-component__block--left):not(.text-component__block--right) {
+  width: 100%;
+  margin-inline: 0;
 }
 
-.max-width-lg {
-  max-width: 80rem;
-  aspect-ratio: 16/9;
-}
-img.block.width-100\%.radius-lg {
-  object-fit: cover;
-}
-.color-contrast-medium {
-  --ad5-color-o: 1;
-  color: hsla(var(--ad5-color-contrast-medium-hsl), var(--ad5-color-o, 1));
+/* 7.5 — Outset flotados: márgenes neutros                              */
+article.article-wrapper .text-component__block--outset.text-component__block--left,
+article.article-wrapper .text-component__block--outset.text-component__block--right {
+  margin-inline: 0;
 }
 
-.text-sm {
-  font-size: var(--ad5-text-sm);
+@media (min-width:48rem) {
+
+  article.article-wrapper .text-component__block--left,
+  article.article-wrapper .text-component__block--right {
+    width: 45%;
+  }
 }
 
-.text-base {
-  font-size: var(--ad5-text-base);
+@media (min-width:90rem) {
+
+  article.article-wrapper .text-component__block--left,
+  article.article-wrapper .text-component__block--right {
+    width: 50%;
+  }
 }
 
-.text-gap-2xs {
-  --ad5-space-multiplier: 0.25;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.flex {
-  display: flex;
-}
-
-.text-md {
-  font-size: var(--ad5-text-md);
-}
-
-.margin-bottom-md {
-  margin-bottom: var(--ad5-space-md);
-}
-
-.max-width-xs {
-  max-width: 38rem;
-}
-
-.padding-y-lg {
-  padding-top: var(--ad5-space-lg);
-  padding-bottom: var(--ad5-space-lg);
-}
-
-.col-6 {
-  grid-column-end: span 6;
-}
-
-a.author__img-wrapper {
-  height: 45px;
-  aspect-ratio: 1;
-  border-radius: 100vw;
-  overflow: hidden;
-}
-a.author__img-wrapper img {
-  height: 100%;
-}
-.author.author--meta {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-.author.author--meta a {
-  color: #000;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-.author.author--meta p {
-  font-size: 0.8rem;
-}
+/* ──────────────────────────────────────
+   Fin del archivo
+   ──────────────────────────────────────*/

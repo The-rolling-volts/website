@@ -17,8 +17,9 @@ export class ScriptTag extends Element{
 
 			this.setAttributes(...valueAttribute);// se añaden los atributos adicionales
 			if (!(location === null || location === undefined)) {
-				if(location == 'default'||location == '')location = document.getElementsByTagName('head')[0];
-				this.addToElement(location); // se pone la etiqueta script en un parte del dom ya seleccionada
+				if (location == 'default' || location == '') location = document.getElementsByTagName('head')[0];
+				if (location == 'first' || location == 'last') this.addToElement(undefined, location); //si es una de esas dos palabras, el tag se pone al final o inicio del body
+				else this.addToElement(location); // se pone la etiqueta script en un parte del dom ya seleccionada
 				//console.log(`Se ha añadido automaticamente : ${this.element.src}`);
 			}
 		}else	console.warn(`The parameter in class ${this.typeOfClass} is incorrect`);

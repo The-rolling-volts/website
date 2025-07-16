@@ -1,0 +1,24 @@
+:root {
+  --hauptfarbe:#333333;
+  --schriftfarbe-dunkel:#333333;
+  --schriftfarbe-hell:beige;
+  --gelb-transparent:#ffff0020;
+}
+
+#navbarArticle {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 200px;
+    background: #f8f9fa;
+}
+#navbarArticle a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+#navbarArticle a.active {
+    background: #007bff;
+    color: white;
+}

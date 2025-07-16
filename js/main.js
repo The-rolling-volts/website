@@ -55,6 +55,8 @@ window.onload = function () {
         } 
     );
     const footer = new WebComponent(path, document.createElement('footer'), urlMapFooter, 'footer', 'footer.html', 'footer-item');
+
+    const articleNavbar = new ScriptTag('script','last',`src;${path}js/articleNavbar.js`,'as;script','async;true','type;text/javascript');
     //Usar esto para acceder a las rutas en vez de data-path en cada pagina
     //const currentURL = window.location.href;
     //console.log(currentURL);
