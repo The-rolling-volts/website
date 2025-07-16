@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------
-   articleNavbar.js  (versión móvil-segura)
+   articleNavbar.js  —  versión que funciona en móvil y PC
    ---------------------------------------------------------- */
 console.log('Se cargó articleNavbar');
 
@@ -10,7 +10,7 @@ function initNavbar() {
   const navLinks = document.querySelectorAll('#navbarArticle a');
   if (!articles.length || !navLinks.length) return;
 
-  /* --- ¿qué elemento se desplaza? --- */
+  /* --- detectamos qué se desplaza --- */
   let scrollContainer = window;
   const root = document.scrollingElement || document.documentElement;
 
@@ -23,14 +23,12 @@ function initNavbar() {
         ) || window;
   }
 
-  /* --- resalta enlace activo --- */
+  /* --- función principal --- */
   function updateActiveLink() {
     const scrollY =
-      scrollContainer === window
-        ? (document.scrollingElement || document.documentElement).scrollTop
-        : scrollContainer.scrollTop;
+      scrollContainer === window ? root.scrollTop : scrollContainer.scrollTop;
 
-    console.log('scrolleando:', scrollY);
+    console.log('scrolleando nuevo:', scrollY);
 
     let current = '';
     articles.forEach(article => {
@@ -46,11 +44,17 @@ function initNavbar() {
 
   updateActiveLink();
 
-  /* --- listeners para todas las plataformas --- */
-  window.addEventListener('scroll',   updateActiveLink, { passive: true });
-  document.addEventListener('scroll', updateActiveLink, { passive: true });
+  /* --- listeners --- */
+  const rootScroller = document.scrollingElement || document.documentElement;
 
-  /* --- toggle de visibilidad --- */
+  if (scrollContainer !== window) {
+    scrollContainer.addEventListener('scroll', updateActiveLink, { passive: true });
+  }
+
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
+  rootScroller.addEventListener('scroll', updateActiveLink, { passive: true });
+
+  /* --- toggle del panel lateral --- */
   const navbar    = document.getElementById('navbarArticle');
   const toggleBtn = document.getElementById('navbarArticleToggle');
 
