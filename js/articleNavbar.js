@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------
-   articleNavbar.js  —  versión que funciona en móvil y PC
+   articleNavbar.js  —  Versión con IntersectionObserver
    ---------------------------------------------------------- */
 console.log('Se cargó articleNavbar');
 
@@ -10,51 +10,29 @@ function initNavbar() {
   const navLinks = document.querySelectorAll('#navbarArticle a');
   if (!articles.length || !navLinks.length) return;
 
-  /* --- detectamos qué se desplaza --- */
-  let scrollContainer = window;
-  const root = document.scrollingElement || document.documentElement;
+  /* ---------- 1. Resaltado de sección activa ---------- */
+  const observerOptions = {
+    /* Queremos que el callback dispare cuando
+       el centro vertical del artículo entra en pantalla */
+    root: null,                 // viewport
+    rootMargin: '-50% 0px -50% 0px',
+    threshold: 0                // con rootMargin basta
+  };
 
-  if (root.scrollHeight <= root.clientHeight) {
-    scrollContainer =
-      Array.from(document.querySelectorAll('*'))
-        .find(el =>
-          el.scrollHeight > el.clientHeight &&
-          /auto|scroll/.test(getComputedStyle(el).overflowY)
-        ) || window;
-  }
-
-  /* --- función principal --- */
-  function updateActiveLink() {
-    const scrollY =
-      scrollContainer === window ? root.scrollTop : scrollContainer.scrollTop;
-
-    console.log('scrolleando nuevo:', scrollY);
-
-    let current = '';
-    articles.forEach(article => {
-      const top = article.offsetTop;
-      const h   = article.clientHeight;
-      if (scrollY >= top - h / 3) current = article.id;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link =>
+          link.classList.toggle('active', link.hash === `#${id}`)
+        );
+      }
     });
+  }, observerOptions);
 
-    navLinks.forEach(link =>
-      link.classList.toggle('active', link.hash === `#${current}`)
-    );
-  }
+  articles.forEach(article => io.observe(article));
 
-  updateActiveLink();
-
-  /* --- listeners --- */
-  const rootScroller = document.scrollingElement || document.documentElement;
-
-  if (scrollContainer !== window) {
-    scrollContainer.addEventListener('scroll', updateActiveLink, { passive: true });
-  }
-
-  window.addEventListener('scroll', updateActiveLink, { passive: true });
-  rootScroller.addEventListener('scroll', updateActiveLink, { passive: true });
-
-  /* --- toggle del panel lateral --- */
+  /* ---------- 2. Botón “Índice” para abrir/cerrar ---------- */
   const navbar    = document.getElementById('navbarArticle');
   const toggleBtn = document.getElementById('navbarArticleToggle');
 
@@ -67,7 +45,7 @@ function initNavbar() {
   }
 }
 
-/* --- bootstrap --- */
+/* ---------- bootstrap ---------- */
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initNavbar);
 } else {
