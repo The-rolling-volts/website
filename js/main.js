@@ -5,8 +5,6 @@ import { WebComponent } from "./WebComponent.js";
 
 window.onload = function () {
     const path = htmlPath();
-    //const path = paths.absolute + '/';
-    console.log(path);
     const urlMap = {
         'index.html': 'index.html',
         './img/simbolos/logoWhite.svg':'img/simbolos/logoWhite.svg',
@@ -39,14 +37,15 @@ window.onload = function () {
     const styleCSS = new ScriptTag('link', '', `href;${path}css/style.css`, 'rel;stylesheet preload prefetch', 'as;style', 'async;true');
     const favicon = new ScriptTag('link','',`href;${path}img/simbolos/logoWhite.svg`,'type;image/svg+xml','async;true','rel;icon');
     const footerCSS = new ScriptTag('link', '', `href;${path}css/footer.css`, 'rel;stylesheet preload prefetch', 'as;style', 'async;true');
-    const articleTemplateCSS = new ScriptTag('link','',`href;${path}css/article-template.css`,'rel;stylesheet preload prefetch','as;style','async;true');
+    const articleTemplateCSS = new ScriptTag('link', '', `href;${path}css/article-template.css`, 'rel;stylesheet preload prefetch', 'as;style', 'async;true');
+    const headerArticleCSS = new ScriptTag('link','',`href;${path}css/headerArticle.css`,'rel;stylesheet preload prefetch','as;style','async;true');
 
     const menuJS = new ScriptTag('script', null , `src;${path}js/menu.js`, 'as;script', 'async;true'); //se pasa null para que no se añada automaticamente el script
     const overlayMenu = new Element(document.createElement('div')); //overlay es un elemento que no esta dentro del nav del menu pero es importante para su funcionamiento
     overlayMenu.setAttributes('class;overlay');
 
     const menu = new WebComponent(
-        path, document.createElement('nav'), urlMap, 'navbar sticky', 'menu.html', '.menu-item,.logo', 'first',
+        path, document.createElement('nav'), urlMap, 'navbar sticky', 'menu.html', '.navbar', 'first',
         {
             onload: () => {
                 overlayMenu.addToElement();//se carga overlay al body
@@ -54,10 +53,10 @@ window.onload = function () {
             }
         } 
     );
-    const footer = new WebComponent(path, document.createElement('footer'), urlMapFooter, 'footer', 'footer.html', 'footer-item');
+    const footer = new WebComponent(path, document.createElement('footer'), urlMapFooter, 'footer', 'footer.html', '.footer');
 
-    const articleNavbar = new ScriptTag('script','last',`src;${path}js/articleNavbar.js`,'as;script','async;true','type;text/javascript');
-    //Usar esto para acceder a las rutas en vez de data-path en cada pagina
-    //const currentURL = window.location.href;
-    //console.log(currentURL);
+    const articleNavbarJS = new ScriptTag('script', 'last', `src;${path}js/articleNavbar.js`, 'as;script', 'async;true', 'type;text/javascript');
+    
+    const headerArticleJS = new ScriptTag('script','last',`src;${path}js/headerArticle.js`,'as;script','async;true','type;text/javascript');
+
 }

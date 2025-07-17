@@ -1,0 +1,413 @@
+/*=================================================================
+  Slider styles – palette aligned with footer.css & global style.css
+  -----------------------------------------------------------------
+  • Accent colour: #ff5722 (orange)
+  • Dark background: #272829
+  • BACKGROUND IMAGES DESDE HTML → usa la variable --slide-image
+    Ejemplo en el markup:   <li style="--slide-image:url('imgs/slide1.jpg')" ...>
+=================================================================*/
+
+/***************************
+    CUSTOM SCROLL BAR
+****************************/
+:root {
+    --white: #ffffff;
+    --black: #232323;
+    --lite: rgba(255, 255, 255, 0.6);
+    --gray: rgba(1, 1, 1, 0.6);
+    --dark: #3c3d3c;
+    /* brand palette */
+    --primary: linear-gradient(145deg, #ff5722, #ff8a50);
+    --primary_dark: #bf360c;
+    --primary_lite: #ff5722;
+    --secondary: #272829;
+    --default_font: 'Ysabeau Infant', sans-serif;
+    --title_font: 'Outfit', sans-serif;
+}
+
+::-webkit-scrollbar {
+    height: 12px;
+    width: 8px;
+    background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: gray;
+    box-shadow: 0 1px 2px var(--dark);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--dark);
+}
+
+/***************************
+            DEFAULT
+****************************/
+
+header.headerArticle .slider a {
+    text-decoration: none !important;
+    min-width: fit-content;
+    width: fit-content;
+}
+
+header.headerArticle .slider a,
+header.headerArticle .slider button {
+    transition: .5s;
+}
+
+header.headerArticle .slider em {
+    font-style: normal;
+    background: var(--primary);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+header.headerArticle .slider a,
+header.headerArticle .slider p,
+header.headerArticle .slider .btn {
+    font-size: 15px;
+}
+
+header.headerArticle .slider p {
+    line-height: 1.9em;
+    color: var(--lite);
+}
+
+header.headerArticle .slider a,
+header.headerArticle .slider button,
+header.headerArticle .slider input,
+header.headerArticle .slider textarea,
+header.headerArticle .slider select {
+    outline: none !important;
+}
+
+header.headerArticle .slider fieldset {
+    border: 0;
+}
+
+header.headerArticle .slider h1,
+header.headerArticle .slider h2,
+header.headerArticle .slider h3,
+header.headerArticle .slider h4,
+header.headerArticle .slider h5,
+header.headerArticle .slider h6 {
+    margin: 0;
+}
+
+header.headerArticle .slider .title,
+header.headerArticle .slider .sub_title {
+    font-family: var(--title_font);
+    font-weight: 400;
+    margin: 0;
+}
+
+header.headerArticle .slider .flex,
+header.headerArticle .slider .fixed_flex {
+    display: flex;
+}
+
+header.headerArticle .slider .flex_content {
+    width: 100%;
+    position: relative;
+}
+
+header.headerArticle .slider .padding_1x {
+    padding: 1rem;
+}
+
+header.headerArticle .slider .padding_2x {
+    padding: 2rem;
+}
+
+header.headerArticle .slider .padding_3x {
+    padding: 3rem;
+}
+
+header.headerArticle .slider .padding_4x {
+    padding: 4rem;
+}
+
+header.headerArticle .slider .big {
+    font-size: 3.5em;
+}
+
+header.headerArticle .slider .medium {
+    font-size: 2em;
+}
+
+header.headerArticle .slider .small {
+    font-size: 1.3em;
+}
+
+/*---------------------------------------------------------------
+  Buttons – ripple shade switched from white to accent orange
+----------------------------------------------------------------*/
+header.headerArticle .slider .btn {
+    padding: 1rem;
+    border-radius: 5px;
+    color: var(--white);
+    position: relative;
+    border: 0;
+    text-align: center;
+}
+
+header.headerArticle .slider .btn_3 {
+    display: block;
+    background-color: transparent;
+    color: var(--white);
+    position: relative;
+    font-family: var(--default_font);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+header.headerArticle .slider .btn_3:before {
+    content: "";
+    border-radius: 50%;
+    background-color: rgba(255, 87, 34, 0.2);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    transition: .5s;
+    transform: translate(0, -50%);
+}
+
+header.headerArticle .slider .btn_3:after {
+    content: "\f178";
+    font-family: "FontAwesome";
+    margin-left: 5px;
+}
+
+header.headerArticle .slider .btn_3:hover:before {
+    border-radius: 40px;
+    width: 100%;
+    background-color: rgba(255, 87, 34, 0.15);
+}
+
+@media (max-width:920px) {
+    header.headerArticle .slider .flex {
+        flex-wrap: wrap;
+    }
+
+    header.headerArticle .slider .padding_1x,
+    header.headerArticle .slider .padding_2x,
+    header.headerArticle .slider .padding_3x,
+    header.headerArticle .slider .padding_4x {
+        padding: 1rem;
+    }
+
+    header.headerArticle .slider .big {
+        font-size: 1.8em;
+    }
+
+    header.headerArticle .slider .medium {
+        font-size: 1.3em;
+    }
+
+    header.headerArticle .slider .small {
+        font-size: 1.1em;
+    }
+
+    header.headerArticle .slider .btn {
+        padding: .5rem 1rem;
+    }
+
+    header.headerArticle .slider a,
+    header.headerArticle .slider p,
+    header.headerArticle .slider .btn {
+        font-size: 12px;
+    }
+}
+
+/*===============================================================
+  SLIDER CONTAINER
+===============================================================*/
+header.headerArticle .slider {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+}
+
+header.headerArticle .slider ul {
+    padding: 0;
+    margin: 0;
+}
+
+header.headerArticle .slider .title {
+    font-weight: 400;
+}
+
+header.headerArticle .slider li {
+    /* variable de imagen */
+    --slide-image: none;
+    /* degradado negro → gris + imagen */
+    background:
+        linear-gradient(to right,
+            rgba(0,0,0,1) 10%,
+            rgba(0,0,0,.8) 51%,
+            rgba(0,0,0,.2) 100%),
+        var(--slide-image);
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    /* aquí dejamos el clip original porque
+       el JS ahora añade/quita las clases .current / .prev */
+    clip: rect(0, 100vw, 100vh, 100vw);
+    transition: clip .7s ease-in-out, z-index 0s .7s;
+}
+
+/* Decorative shape bottom-left (mantiene imagen PNG azul) */
+header.headerArticle .slider li:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background-size: 100% 100%;
+    background-position: center left;
+    transform: rotate(360deg);
+    transition: all 1.5s cubic-bezier(0, 0, .2, 1);
+    z-index: 1;
+}
+
+/*===============================================================
+  MODULE LABEL – on ::before (replaces old top-right square)
+===============================================================*/
+header.headerArticle .slider li:before {
+    content: attr(data-modulo);
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: var(--primary_dark);
+    color: var(--white);
+    padding: .6rem 1.2rem;
+    font-family: var(--title_font);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity .5s ease, transform .5s ease;
+    z-index: 12;
+}
+
+header.headerArticle .slider li.current:before {
+    opacity:1;
+    transform:translateY(0);   /* baja hacia su posición */
+    transition-delay:1s;       /* sincronizado con h3, p, botón… */
+}
+
+/*===============================================================
+  Content fade‑in
+===============================================================*/
+header.headerArticle .slider article {
+    width: 60%;
+    margin-top: 4rem;
+    color: #fff;
+    z-index: 11;
+}
+
+header.headerArticle .slider h3+p {
+    display: inline-block;
+    color: var(--lite);
+    font-weight: 300;
+}
+
+header.headerArticle .slider h3,
+header.headerArticle .slider h3 + p,
+header.headerArticle .slider p + .btn,
+header.headerArticle .slider li::after{
+    opacity: 0;
+    transform: translate3d(0, 50%, 0);
+    transition: opacity .7s 0s, transform .5s .2s;
+}
+
+header.headerArticle .slider li.current h3,
+header.headerArticle .slider li.current h3+p,
+header.headerArticle .slider li.current p+.btn,
+header.headerArticle .slider li.current:after {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 1s;
+}
+
+/*----------- Clipping logic -----------*/
+header.headerArticle .slider li.current {
+    z-index: 1;
+    clip: rect(0, 100vw, 100vh, 0);
+}
+
+header.headerArticle .slider li.prev {
+    clip: rect(0, 0, 100vh, 0);
+}
+
+/*----------- Pagination dots -----------*/
+header.headerArticle .slider aside {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    text-align: center;
+    z-index: 10;
+}
+
+header.headerArticle .slider aside a {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    min-height: 8px;
+    background-color: var(--white);
+    margin: 0 .2rem;
+    transition: transform .3s;
+}
+
+header.headerArticle .slider a.current_dot {
+    transform: scale(1.4);
+    background: var(--primary_lite) !important;
+}
+
+/*===============================================================
+  Responsive tweaks
+===============================================================*/
+@media screen and (max-width:920px) {
+    header.headerArticle .slider header.headerArticle {
+        height: 70vh;
+        position: relative;
+    }
+
+    header.headerArticle .slider .cs-down {
+        display: none;
+    }
+
+    header.headerArticle .slider {
+        height: 70vh;
+    }
+
+    header.headerArticle .slider article {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    header.headerArticle .slider li:before {
+        top: 20px;
+        right: 20px;
+        font-size: 12px;
+        padding: .4rem .8rem;
+    }
+}

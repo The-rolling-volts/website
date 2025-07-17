@@ -1,16 +1,21 @@
+/* ----------------------------------------------------------
+   articleNavbar.css  –  paleta unificada (gris-oscuro + naranja)
+   ---------------------------------------------------------- */
+
 /* ---------- variables ---------- */
 :root {
-  --hauptfarbe: #333333;
-  --schriftfarbe-dunkel: #333333;
-  --schriftfarbe-hell: beige;
-  --gelb-transparent: #ffff0020;
+  /* colores base igual que footer.css y navbar */
+  --bg-dark:        #272829;
+  --accent:         #ff5722;
+  --text-light:     #ffffff;
+  --text-dark:      #1d2731;
+  --hover-bg:       #ff572225;   /* acento transparente para hover */
 
-  /* ancho total del panel desplegado            */
-  --navbar-width: 220px;
-  /* “asa” visible cuando el panel está oculto   */
-  --toggle-width: 1.6rem;          /* más delgado */
-  --navbar-top: 100px;
-  --transition: .3s;
+  /* medidas del panel */
+  --navbar-width:   220px;
+  --toggle-width:   1.6rem;      /* “asa” estrecha */
+  --navbar-top:     100px;
+  --transition:     .3s;
 }
 
 /* ---------- contenedor ---------- */
@@ -21,13 +26,13 @@
   width: var(--navbar-width);
   max-height: calc(100vh - var(--navbar-top));
   overflow-y: auto;
-  background: #f8f9fa;
-  box-shadow: 2px 0 8px rgb(0 0 0 / .15);
-  border-right: 1px solid rgba(0,0,0,.1);
-  padding: 0;                                    /* los enlaces añaden su propio padding */
-  transform: translateX(calc(-100% + var(--toggle-width))); /* ⬅️ oculto por defecto */
+  background: var(--bg-dark);
+  box-shadow: 2px 0 8px rgb(0 0 0 / 0.15);
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 0;  /* los enlaces llevan su propio padding */
+  transform: translateX(calc(-100% + var(--toggle-width))); /* oculto por defecto */
   transition: transform var(--transition) ease;
-  z-index: 300;
+  z-index: 300;  /* debajo de la barra de navegación principal */
 }
 
 /* estado abierto */
@@ -39,44 +44,44 @@
 #navbarArticleToggle {
   position: absolute;
   top: 0;
-  right: 0;                                  /* ahora a la derecha */
+  right: 0;                /* a la derecha del panel */
   width: var(--toggle-width);
   height: 100%;
-  background: #007bff;
-  color: #fff;
+  background: var(--accent);
+  color: var(--text-light);
   border: none;
   cursor: pointer;
   font: 700 0.75rem/1 sans-serif;
-  writing-mode: vertical-rl;                 /* texto de arriba a abajo */
-  /* sin rotate: la lectura es top → bottom   */
+  writing-mode: vertical-rl;      /* texto vertical */
   border-radius: 4px 0 0 4px;
-  transition: background .2s;
+  transition: background 0.2s;
 }
-
 #navbarArticleToggle:hover {
-  background: #005dc1;
+  background: #e04e1d;     /* acento un poco más oscuro */
 }
 
 /* ---------- enlaces ---------- */
 #navbarArticle a {
   display: block;
-  padding: .5rem calc(var(--toggle-width) + .75rem) .5rem .75rem; /* deja hueco para el botón */
+  padding: 0.5rem calc(var(--toggle-width) + 0.75rem) 0.5rem 0.75rem;
+  color: var(--text-light);
   text-decoration: none;
-  color: var(--schriftfarbe-dunkel);
-  font-size: .95rem;
+  font-size: 0.95rem;
   border-left: 4px solid transparent;
-  transition: background .2s, color .2s, border-color .2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 
 #navbarArticle a:hover {
-  background: var(--gelb-transparent);
+  background: var(--hover-bg);
+  color: var(--accent);
 }
 
 #navbarArticle a.active {
-  background: #007bff;
-  color: #fff;
-  border-color: #007bff;
+  background: var(--accent);
+  color: var(--text-light);
+  border-color: var(--accent);
 }
 
-/* ---------- nada especial para móviles ----------
-   El panel siempre arranca oculto y se abre con la clase .is-open */
+/* ---------- responsive ---------- */
+/* El panel siempre arranca oculto y se abre mediante .is-open;
+   no se necesitan reglas específicas para móvil aquí. */

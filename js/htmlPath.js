@@ -28,8 +28,8 @@ export function htmlPath() {
 
     const absolute = isLocalhost ? urlObj.origin + basePath : urlObj.origin;
 
-    console.log('🌐 Ruta absoluta:', absolute);
-    console.log('📁 Ruta relativa:', relativePath);
+    //console.log('🌐 Ruta absoluta:', absolute);
+    //console.log('📁 Ruta relativa:', relativePath);
 	/*
     return {
         absolute,
