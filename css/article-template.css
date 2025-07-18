@@ -404,6 +404,52 @@ article.article-wrapper .text-component__block--outset.text-component__block--ri
   }
 }
 
+
+/* ── NUEVOS NIVELES DE ENCABEZADO ──────────────────────────────── */
+.article h4 {
+  font-size: 1.3rem;     /* un paso lógico debajo de h3 (1.6 rem)   */
+  color: #ff5722;        /* mantiene el color corporativo           */
+}
+
+.article h5 {
+  font-size: 1.1rem;     /* ligeramente mayor que el body (1 rem)   */
+  color: #ff5722;
+  font-weight: 600;      /* coherente con h3-h4                     */
+}
+
+.article h6 {
+  font-size: 1rem;       /* igual que el texto base, pero en negrita */
+  color: #ff5722;
+  font-weight: 600;
+}
+
+/* ── AJUSTE EN TEXT-COMPONENT (márgenes + line-height) ─────────── */
+.text-component :where(h1, h2, h3, h4, h5, h6) {
+  line-height: var(--ad5-heading-line, 1.2);
+  margin-block-start: calc(var(--ad5-space-md)*var(--ad5-space-multiplier, 1));
+  margin-block-end:   calc(var(--ad5-space-sm)*var(--ad5-space-multiplier, 1));
+}
+
+.article .table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95rem;
+}
+
+.article .table th,
+.article .table td {
+  border: 1px solid #ddd; /* Borde gris claro */
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.article .table th {
+  background-color: #f5f5f5; /* Fondo más claro para encabezados */
+  font-weight: bold;
+}
+
 /* ──────────────────────────────────────
    Fin del archivo
    ──────────────────────────────────────*/

@@ -15,6 +15,7 @@ body, html {
   background-color: hsl(0, 0%, 100%);
   font-family: system-ui, sans-serif;
   font-size: 1.15rem;
+  scroll-behavior: smooth;
 }
 
 a {
