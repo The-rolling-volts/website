@@ -220,6 +220,15 @@ header.headerArticle .slider .btn_3:hover:before {
         font-size: 12px;
     }
 }
+/* ==============================================================
+   Compensar índice lateral: margen interno a todo el texto del slider
+   ============================================================== */
+@media (min-width:600px){ /* sólo aplica cuando hay sitio */
+  header.headerArticle .slider article{
+    margin-left: var(--content-offset);     /* NEW – ≈ pestaña + 1 rem */
+    margin-right: var(--content-offset);    /* opcional, simetría a la derecha */
+  }
+}
 
 /*===============================================================
   SLIDER CONTAINER

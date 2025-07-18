@@ -55,8 +55,29 @@ window.onload = function () {
     );
     const footer = new WebComponent(path, document.createElement('footer'), urlMapFooter, 'footer', 'footer.html', '.footer');
 
-    const articleNavbarJS = new ScriptTag('script', 'last', `src;${path}js/articleNavbar.js`, 'as;script', 'async;true', 'type;text/javascript');
-    
-    const headerArticleJS = new ScriptTag('script','last',`src;${path}js/headerArticle.js`,'as;script','async;true','type;text/javascript');
+    if (document.documentElement.hasAttribute('data-article-navbar')) { 
+/* ----------------------------------------------------------
+➊ Construir dinámicamente el índice de artículo
+---------------------------------------------------------- */
+        const navBarArticle = new Element(document.createElement('nav'));
+        navBarArticle.setAttributes('id;navbarArticle', 'class;navbarArticle');
+
+        const navToggle = new Element(document.createElement('button'));
+        navToggle.setAttributes(
+        'id;navbarArticleToggle',
+        'class;navbarArticle__toggle',
+        'type;button',
+        'aria-expanded;true',
+        'innerText;Índice'
+        );
+
+        navBarArticle.addChild(navToggle);         // <button> → <nav>
+        navBarArticle.addToElement(document.body,  'first');// <nav>   → <body> (al principio)
+                                    
+        const articleNavbarJS = new ScriptTag('script', 'last', `src;${path}js/articleNavbar.js`, 'as;script', 'async;true', 'type;text/javascript');
+
+        const headerArticleJS = new ScriptTag('script', 'last', `src;${path}js/headerArticle.js`, 'as;script', 'async;true', 'type;text/javascript');
+        
+    }
 
 }

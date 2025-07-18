@@ -92,6 +92,9 @@ export class Element {
 				case 'content':
 					this.element.content = attribute;
 					break;
+				case 'aria-expanded':
+					this.element.ariaExpanded = attribute;
+					break;
 				case '':
 					console.warn(`there is no given attribute for \"${value}\" in class ${this.typeOfClass}`);
 					break;
