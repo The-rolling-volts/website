@@ -18,6 +18,37 @@ body, html {
   scroll-behavior: smooth;
 }
 
+/* ══════════════════════════════════════════════════════════════
+   SCROLLBAR GLOBAL PERSONALIZADO (toda la página)
+   ══════════════════════════════════════════════════════════════*/
+:root{
+  --scroll-track:#272829;      /* mismo fondo dark que navbar/footer */
+  --scroll-thumb:#ff5722;      /* acento corporativo */
+  --scroll-thumb-hover:#ff784e;/* un tono más claro al pasar el ratón */
+}
+
+/* Firefox */
+*{
+  scrollbar-width:thin;                       /* grosor fino */
+  scrollbar-color:var(--scroll-thumb) var(--scroll-track);
+}
+/* Chromium/WebKit */
+*::-webkit-scrollbar{
+  width:8px;
+  height:8px;
+}
+*::-webkit-scrollbar-track{
+  background:var(--scroll-track);
+}
+*::-webkit-scrollbar-thumb{
+  background:var(--scroll-thumb);
+  border-radius:4px;
+  border:2px solid var(--scroll-track);       /* “acolcha” el pulgar */
+}
+*::-webkit-scrollbar-thumb:hover{
+  background:var(--scroll-thumb-hover);
+}
+/* ----*/
 a {
   all: unset;
   color: inherit;
@@ -504,3 +535,47 @@ color: #000000;
     visibility: visible;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   TABLAS RESPONSIVE + TIPOGRAFÍA ADAPTABLE
+   ══════════════════════════════════════════════════════════════*/
+
+/* 1. La tabla se convierte en bloque con scroll horizontal
+      si su ancho supera el contenedor */
+.article .table{               /* estilo base ya existente */
+  display:block;               /* NEW – permite overflow */
+  overflow-x:auto;             /* NEW – activa scroll cuando haga falta */
+  width:100%;
+  scrollbar-gutter: stable;    /* evita “saltos” al aparecer el scroll */
+}
+
+/* 2. Escalonamos la fuente y padding para pantallas estrechas */
+@media (max-width: 768px){
+  .article .table{
+    font-size:0.85rem;        /* NEW – 15 % menos */
+  }
+  .article .table th,
+  .article .table td{
+    padding:8px;              /* NEW – celdas algo más compactas */
+  }
+}
+@media (max-width: 560px){
+  .article .table{
+    font-size:0.75rem;        /* NEW – 25 % menos sobre desktop */
+  }
+  .article .table th,
+  .article .table td{
+    padding:6px;
+  }
+}
+
+/* 3. Colores coherentes con la paleta corporativa */
+.article .table th{            /* ya existía, añadimos borde y color */
+  background:#272829;          /* NEW – fondo oscuro (mismo que navbar/footer) */
+  color:#ffffff;               /* NEW – texto claro */
+  border-color:#272829;        /* ribete integrado */
+}
+.article .table tr:nth-child(even){           /* NEW – zebrado suave */
+  background:#f5f5f5;
+}
+

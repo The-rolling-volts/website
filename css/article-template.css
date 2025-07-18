@@ -449,6 +449,44 @@ article.article-wrapper .text-component__block--outset.text-component__block--ri
   background-color: #f5f5f5; /* Fondo más claro para encabezados */
   font-weight: bold;
 }
+/* ══════════════════════════════════════════════════════════════
+   <table class="table"> — Cabeceras con columnas diferenciadas
+   (sustituye cualquier regla previa de .table thead th)
+   ══════════════════════════════════════════════════════════════*/
+.article .table thead th{
+  /* color principal pero más compacto */
+  background:#ff5722;
+  color:#ffffff;
+  font-weight:600;
+  padding:10px 12px;              /* reduce un poco la altura */
+  border:none;
+  white-space:nowrap;
+  text-align:center;      /* centra horizontalmente */
+  vertical-align:middle;  /* centra verticalmente   */
+  /* separador sutil entre columnas */
+  border-right:1px solid rgba(255,255,255,0.25);  /* NEW */
+}
+/* quita el borde en la última cabecera */
+.article .table thead th:last-child{
+  border-right:none;
+}
+
+/* Alternamos un tono más claro en columnas pares
+   para mejorar la legibilidad visual */
+.article .table thead th:nth-child(even){
+  background:#ff6d3a;            /* NEW – naranja 10 % más claro */
+}
+
+/* Bordes redondeados sólo en las esquinas extremas */
+.article .table thead th:first-child{ border-top-left-radius:4px; }
+.article .table thead th:last-child { border-top-right-radius:4px; }
+
+
+/* Pequeño “highlight” al pasar el ratón por filas del tbody */
+.article .table tbody tr:hover{
+  background:rgba(255,87,34,0.08); /* naranja 8 % */
+}
+
 
 /* ──────────────────────────────────────
    Fin del archivo

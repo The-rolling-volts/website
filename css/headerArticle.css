@@ -225,8 +225,8 @@ header.headerArticle .slider .btn_3:hover:before {
    ============================================================== */
 @media (min-width:600px){ /* sólo aplica cuando hay sitio */
   header.headerArticle .slider article{
-    margin-left: var(--content-offset);     /* NEW – ≈ pestaña + 1 rem */
-    margin-right: var(--content-offset);    /* opcional, simetría a la derecha */
+    margin-left: calc(var(--content-offset) * 4);     /* NEW – ≈ pestaña + 1 rem */
+    margin-right: 0;    /* opcional, simetría a la derecha */
   }
 }
 

@@ -14,7 +14,7 @@
   /* medidas del panel */
   --navbar-width:   220px;
   --toggle-width: 1.2rem;         /* NEW – pestaña 25 px aprox.  (antes 1.6 rem) */
-  --content-offset: calc(var(--toggle-width) + 1rem); /* NEW – lo usaremos como padding lateral común */
+  --content-offset: calc(var(--toggle-width)); /*+ 1rem); NEW – lo usaremos como padding lateral común */
   --navbar-top:     100px;
   --transition:     .3s;
 }
