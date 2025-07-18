@@ -1,0 +1,125 @@
+/* --------------------------------------------------------------------
+   Business Model Canvas – light palette (v5) – mobile legibility fix
+   -------------------------------------------------------------------- */
+@charset "UTF-8";
+
+/* 1. Brand palette -------------------------------------------------------- */
+:root {
+  --clr-bg-dark: #272829;
+  --clr-bg-surface: #f4f4f4;
+  --clr-bg-card: #ffffff;
+  --clr-accent: #ff5722;
+  --clr-accent-tint: #ff7b47;
+  --clr-text: #1d2731;
+  --clr-text-invert: #ffffff;
+
+  --elevation-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --elevation-2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+* { box-sizing: border-box; }
+
+/* 2. Canvas wrapper ------------------------------------------------------- */
+.businessModelCanvas {
+  margin-inline: auto;
+  margin-block: 2rem;
+  width: 960px;           /* logical canvas width */
+  max-width: 960px;
+  transform-origin: top left; /* used when scaled */
+}
+
+/* 3. Grid --------------------------------------------------------------- */
+.businessModelCanvas .bmc {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(3, 200px);
+  gap: 8px;
+}
+
+/* 4. Cell --------------------------------------------------------------- */
+.businessModelCanvas .bmc > div {
+  background: var(--clr-bg-card);
+  border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 6px;
+  box-shadow: var(--elevation-1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 5. Anchor ------------------------------------------------------------- */
+.businessModelCanvas .bmc > div > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  block-size: 100%;
+  padding: 0 4px;
+  font-size: 0.9rem;          /* desktop base */
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--clr-text);
+  text-align: center;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+.businessModelCanvas .bmc > div > a:hover,
+.businessModelCanvas .bmc > div > a:focus-visible {
+  background: var(--clr-accent);
+  color: var(--clr-text-invert);
+  box-shadow: var(--elevation-2);
+  outline: none;
+}
+
+.businessModelCanvas .note.green { background: #79D12A; }
+
+/* 7. Spanning ----------------------------------------------------------- */
+.businessModelCanvas .bmc > div:nth-child(1),
+.businessModelCanvas .bmc > div:nth-child(4),
+.businessModelCanvas .bmc > div:nth-child(7) { grid-area: span 2 / span 2; }
+.businessModelCanvas .bmc > div:nth-child(2),
+.businessModelCanvas .bmc > div:nth-child(5) { grid-column: span 2; }
+.businessModelCanvas .bmc > div:nth-child(3) { grid-column: 3 / span 2; grid-row: 2; }
+.businessModelCanvas .bmc > div:nth-child(6) { grid-column: 7 / span 2; grid-row: 2; }
+.businessModelCanvas .bmc > div:nth-child(8) { grid-column: 1 / span 5; grid-row: 3; }
+.businessModelCanvas .bmc > div:nth-child(9) { grid-column: 6 / span 5; grid-row: 3; }
+
+/* Remove internal grid for bottom cells */
+.businessModelCanvas .bmc > div:nth-child(8),
+.businessModelCanvas .bmc > div:nth-child(9) { display: block; }
+
+/* 8. Responsive scaling ------------------------------------------------- */
+@media (max-width: 960px) {
+  .businessModelCanvas {
+    --scale: calc(92vw / 960); /* a bit smaller for gutter */
+    width: 92vw;               /* bounding box */
+    transform: scale(var(--scale));
+  }
+  .businessModelCanvas .bmc > div > a {
+    font-size: clamp(0.45rem, 0.9rem, 0.9rem);
+  }
+}
+
+/* 8b. Ultra–small screens: vertical labels for narrow cells ------------- */
+@media (max-width: 680px) {
+  /* Rotate labels of the first seven cells (tall, narrow blocks) */
+  .businessModelCanvas .bmc > div:nth-child(-n+7) > a {
+    writing-mode: vertical-rl; /* top-to-bottom reading */
+    text-orientation: mixed;
+    font-size: 0.7rem;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+  /* Keep bottom cost/revenue horizontal */
+  .businessModelCanvas .bmc > div:nth-child(8) > a,
+  .businessModelCanvas .bmc > div:nth-child(9) > a {
+    writing-mode: horizontal-tb;
+  }
+}
+
+/* 9. Accessibility ------------------------------------------------------ */
+.businessModelCanvas .bmc > div > a:focus-visible {
+  outline: 2px dashed var(--clr-accent);
+  outline-offset: 2px;
+}

@@ -1,0 +1,170 @@
+/* --------------------------------------------------------------------
+   Business Model Canvas – Material Design + Responsive
+   Palette synchronized with style.css & footer.css
+   -------------------------------------------------------------------- */
+@charset "UTF-8";
+
+/* 1.  CSS Custom Properties (shared palette) */
+:root {
+  --clr-dark-bg: #272829; /* navbar/footer background */
+  --clr-light-bg: #ffffff; /* cards/background */
+  --clr-surface: #f4f4f4; /* page background from body */
+  --clr-accent: #ff5722;   /* primary accent */
+  --clr-accent-light: #ff7b47; /* hover accent tint */
+  --clr-text-primary: #1d2731;
+  --clr-text-invert: #ffffff;
+  --elevation-1: 0 1px 3px rgba(0, 0, 0, 0.12),
+                 0 1px 2px rgba(0, 0, 0, 0.24);
+  --elevation-2: 0 3px 6px rgba(0, 0, 0, 0.16),
+                 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* 2.  Global Reset (minimal – style.css already provides a full reset) */
+* {
+  box-sizing: border-box;
+}
+
+/* 3.  Wrapper -------------------------------------------------------- */
+.businessModelCanvas {
+  margin-inline: auto;
+  margin-block: 2rem;
+  max-width: 960px;
+  width: 100%;
+  padding: 1rem;
+  background: var(--clr-light-bg);
+  border-radius: 8px;
+  box-shadow: var(--elevation-2);
+}
+
+/* 4.  Grid Layout ---------------------------------------------------- */
+.businessModelCanvas .bmc {
+  display: grid;
+  grid-template-rows: repeat(3, 200px);
+  grid-template-columns: repeat(10, 1fr);
+  gap: 8px;
+}
+
+/* Preserve original canvas topology on large screens */
+.businessModelCanvas .bmc > div {
+  position: relative;
+  background: var(--clr-light-bg);
+  border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 4px;
+  box-shadow: var(--elevation-1);
+  display: grid;           /* allows stacking of links & notes */
+  grid-template-rows: 40px auto; /* header & body slots */
+  padding: 8px;
+  overflow: hidden;
+}
+
+/* 5.  Clickable area (anchor) --------------------------------------- */
+.businessModelCanvas .bmc > div > a {
+  grid-row: 1 / -1; /* occupy whole cell */
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--clr-text-primary);
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+.businessModelCanvas .bmc > div > a:hover,
+.businessModelCanvas .bmc > div > a:focus {
+  background: var(--clr-accent);
+  color: var(--clr-text-invert);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .15);
+}
+
+/* 6.  Notes ---------------------------------------------------------- */
+.businessModelCanvas .note {
+  grid-row: auto / span 1;
+  padding: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--clr-text-invert);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: var(--elevation-1);
+}
+.businessModelCanvas .note.orange { background: var(--clr-accent); }
+.businessModelCanvas .note.green  { background: #79D12A; }
+
+/* 7.  Original BMC cell spanning rules (unchanged) ------------------- */
+.businessModelCanvas .bmc > div:nth-child(1),
+.businessModelCanvas .bmc > div:nth-child(4),
+.businessModelCanvas .bmc > div:nth-child(7) {
+  grid-area: span 2 / span 2;
+}
+.businessModelCanvas .bmc > div:nth-child(2),
+.businessModelCanvas .bmc > div:nth-child(5) {
+  grid-column: span 2;
+}
+.businessModelCanvas .bmc > div:nth-child(3) {
+  grid-column: 3 / span 2;
+  grid-row: 2;
+}
+.businessModelCanvas .bmc > div:nth-child(6) {
+  grid-column: 7 / span 2;
+  grid-row: 2;
+}
+.businessModelCanvas .bmc > div:nth-child(8),
+.businessModelCanvas .bmc > div:nth-child(9) {
+  grid-area: -2 / span 5;
+}
+
+/* Columns within bottom Cost/Revenue cells */
+.businessModelCanvas .bmc > div:nth-child(8),
+.businessModelCanvas .bmc > div:nth-child(9) {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 65px;
+}
+.businessModelCanvas .bmc > div:nth-child(8) a,
+.businessModelCanvas .bmc > div:nth-child(9) a {
+  grid-column: 1 / -1; /* full width */
+}
+
+/* 8.  Responsive Behaviour ------------------------------------------ */
+@media (max-width: 1024px) {
+  /* shrink row heights */
+  .businessModelCanvas .bmc {
+    grid-template-rows: repeat(3, 160px);
+  }
+}
+
+@media (max-width: 768px) {
+  .businessModelCanvas {
+    padding: 0.5rem;
+  }
+  .businessModelCanvas .bmc {
+    /* collapse to two‑column layout */
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+  }
+  /* remove custom spans so cells stack naturally */
+  .businessModelCanvas .bmc > div {
+    grid-area: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .businessModelCanvas .bmc {
+    /* single column */
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 9.  Accessibility tweaks ------------------------------------------ */
+.businessModelCanvas .bmc > div > a:focus-visible {
+  outline: 2px dashed var(--clr-accent);
+  outline-offset: 2px;
+}
