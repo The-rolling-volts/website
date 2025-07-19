@@ -7,6 +7,7 @@
   <title>The Rolling Volts</title>
   <link href="../../css/articleNavbar.css" rel="stylesheet">
   <link href="./businessModelCanvas.css" rel="stylesheet">
+  <link href="./matrizDAFO.css" rel="stylesheet">
 </head>
 
 <body>
@@ -59,257 +60,1579 @@
     <div class="container max-width-xs margin-bottom-lg">
       <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
         <h1>M4.1 Análisis de Mercado</h1>
-    </div>
-    <div class="container max-width-adaptive-sm">
-      <div class="text-component line-height-lg text-gap-md">
-        <h2>4.1.1 Definición del problema</h2>
+      </div>
+      <div class="container max-width-adaptive-sm">
+        <div class="text-component line-height-lg text-gap-md">
+          <h2>4.1.1 Definición del problema</h2>
           <p>
-            La demanda global de vehículos eléctricos de dos ruedas ha crecido significativamente, especialmente en contextos urbanos que requieren soluciones de movilidad sostenibles. Sin embargo, existe una limitada capacidad regional para el ensamble eficiente de estos productos, lo que abre oportunidades para nuevas empresas que integren tecnología y flexibilidad productiva.
+            La demanda global de vehículos eléctricos de dos ruedas ha crecido significativamente, especialmente en
+            contextos urbanos que requieren soluciones de movilidad sostenibles. Sin embargo, existe una limitada
+            capacidad regional para el ensamble eficiente de estos productos, lo que abre oportunidades para nuevas
+            empresas que integren tecnología y flexibilidad productiva.
           </p>
 
           <p>
-            The Rolling Volts busca diseñar una línea de ensamble automatizada para bicicletas y scooters eléctricos diferenciados por su funcionalidad (uso urbano, velocidad, carga ligera). El objetivo es evaluar la viabilidad técnica y comercial del proyecto, incluyendo el potencial de competir tanto en el mercado nacional como en mercados internacionales mediante procesos eficientes, escalables y automatizados.
+            The Rolling Volts busca diseñar una línea de ensamble automatizada para bicicletas y scooters eléctricos
+            diferenciados por su funcionalidad (uso urbano, velocidad, carga ligera). El objetivo es evaluar la
+            viabilidad técnica y comercial del proyecto, incluyendo el potencial de competir tanto en el mercado
+            nacional como en mercados internacionales mediante procesos eficientes, escalables y automatizados.
           </p>
-          
-        <h2>4.1.2 Análisis previo de la situación actual</h2>
- 
+
+          <h2>4.1.2 Análisis previo de la situación actual</h2>
+
           <h3>4.1.2.1 Análisis interno</h3>
- 
-            <h4>4.1.2.1.1 Análisis de recursos propios y disponibles</h4>
+
+          <h4>4.1.2.1.1 Análisis de recursos propios y disponibles</h4>
+
+          <p>
+            The Rolling Volts es una iniciativa conformada por cuatro ingenieros mecatrónicos recién egresados, cuya
+            formación técnica y enfoque multidisciplinario constituyen el principal activo del proyecto. Aunque
+            actualmente no se cuenta con capital económico inicial, el equipo posee recursos clave en términos de
+            conocimientos, habilidades y experiencia, los cuales permitirán desarrollar una propuesta sólida para
+            acceder a fuentes de financiación.
+            <br />
+            Entre los recursos humanos disponibles se destacan:
+          </p>
+          <ul class="list list--ul">
+            <li>
+              Capacidades en desarrollo de software (2 integrantes): permiten abordar soluciones de automatización,
+              control y sistemas de información industriales, fundamentales para implementar una línea de ensamble
+              inteligente.
+            </li>
+            <li>
+              Experiencia en impresión 3D y procesos de manufactura (1 integrante): aporta conocimiento práctico en
+              prototipado rápido, selección de materiales, procesos de fabricación y diseño para manufactura.
+            </li>
+            <li>
+              Formación integral en mecatrónica (los 4 integrantes): facilita la integración de sistemas mecánicos,
+              electrónicos y de control necesarios para el diseño de celdas robotizadas y líneas automatizadas.
+            </li>
+          </ul>
+          <p>
+            Adicionalmente, el equipo cuenta con alta motivación, disponibilidad de tiempo completo para el desarrollo
+            del proyecto, y acceso a herramientas académicas (software de simulación, bibliografía especializada y redes
+            de mentores) gracias a su vínculo reciente con la universidad.
+          </p>
+          <p>
+            Si bien no se dispone de infraestructura física ni recursos financieros en esta etapa, se planea estructurar
+            la propuesta técnica y comercial con el fin de acceder a programas de apoyo a emprendimientos tecnológicos,
+            fondos de capital semilla y convocatorias nacionales o internacionales de innovación.
+          </p>
+
+          <h4>4.1.2.1.2 Análisis de costes</h4>
+
+          <p>
+            Aunque The Rolling Volts aún se encuentra en etapa de propuesta, es posible estimar ciertos parámetros con
+            base en empresas del sector, permitiendo proyectar una estructura de costes inicial.
+          </p>
+
+          <p>
+            Se ha tomado como referencia empresas cotizadas como <strong>Fly-E</strong> (Nasdaq),
+            <strong>LiveWire</strong> (NYSE), <strong>Niu</strong> (Nasdaq), <strong>Bird</strong> (Nasdaq),
+            <strong>Yadea</strong> (HKEX), entre otras, que operan en el mercado de bicicletas, scooters y motos
+            eléctricas. A continuación, se presenta una estimación de costes basada en sus informes y márgenes típicos
+            del sector:
+          </p>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Ítem</th>
+                <th>Estimación<br />por unidad (USD)</th>
+                <th>Coste total<br />anual<br />(para 124.800 unidades)</th>
+                <th>Fuente<br />/<br />Justificación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Coste de materiales directos</td>
+                <td>~300</td>
+                <td>$37.440.000</td>
+                <td>
+                  Basado en reportes de NIU y Yadea: materiales representan 50–60% del coste total<br>
+                  <a href="https://ir.niu.com/financials/annual-reports" target="_blank">NIU Annual Report</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Mano de obra directa</td>
+                <td>~50</td>
+                <td>$6.240.000</td>
+                <td>
+                  Estimación basada en líneas automatizadas con bajo requerimiento de operarios.
+                </td>
+              </tr>
+              <tr>
+                <td>Costes indirectos de fabricación (energía, mantenimiento, etc.)</td>
+                <td>~40</td>
+                <td>$4.992.000</td>
+                <td>
+                  Proporción promedio en empresas como Bird y Accell Group.<br>
+                  <a href="https://www.accell-group.com/en/publications/" target="_blank">Accell Reports</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Gastos de distribución y logística</td>
+                <td>~30</td>
+                <td>$3.744.000</td>
+                <td>
+                  Incluye transporte nacional e internacional por unidad.
+                </td>
+              </tr>
+              <tr>
+                <td>Costes administrativos y operativos</td>
+                <td>~20</td>
+                <td>$2.496.000</td>
+                <td>
+                  Estimación según reportes de empresas emergentes cotizadas como Fly-E.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Total estimado por unidad</strong></td>
+                <td><strong>~440</strong></td>
+                <td><strong>$54.912.000</strong></td>
+                <td>—</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Considerando esta estructura de costes, se concluye que el coste de producción estimado por unidad sería de
+            aproximadamente <strong>440 USD</strong>. Estos valores pueden variar según los acuerdos con proveedores,
+            eficiencia de la línea de ensamblaje y la escala real alcanzada.
+          </p>
+
+          <p>
+            Es importante resaltar que esta proyección está basada en un escenario de operación con dos turnos diarios
+            (16 h/día), 5 días a la semana, 52 semanas al año, con una producción de una bicicleta cada 2 minutos. Esto
+            resulta en una capacidad de <strong>124.800 unidades por año</strong>. Este valor podría incrementarse en
+            esquemas de operación 24/7.
+          </p>
+
+          <p>
+            <strong>Referencias:</strong>
+          <ul class="list list--ul">
+            <li><a href="https://ir.niu.com/financials/annual-reports" target="_blank">NIU Technologies — Annual
+                Reports</a></li>
+            <li><a href="https://www.accell-group.com/en/publications/" target="_blank">Accell Group — Financial
+                Publications</a></li>
+            <li><a href="https://ir.bird.co/" target="_blank">Bird Global — Investor Relations</a></li>
+            <li><a href="https://www.yadea.com/en/news.html" target="_blank">Yadea — Financial Reports</a></li>
+          </ul>
+          </p>
+
+          <p>
+            📄 La hoja de cálculo con el análisis de costos inicial está disponible en el siguiente enlace al
+            repositorio de GitHub de The Rolling Volts:<br>
+            <a href="https://github.com/The-rolling-volts/APM/blob/main/Evaluacion_economica_de_proyectos/Analisis%20de%20Mercado/Analisis_Costos_Inicial_The_Rolling_Volts.xlsx"
+              target="_blank">
+              Ver archivo Excel de análisis de costos
+            </a>
+          </p>
+
+
+          <h4>4.1.2.1.3 El marketing mix</h4>
+
+          <h5>4.1.2.1.3.1 Análisis del producto</h5>
+
+          <p>
+            Dado que The Rolling Volts aún se encuentra en fase conceptual, el análisis de producto se construye a
+            partir de referencias de mercado y estudios comparativos con empresas líderes del sector de movilidad
+            eléctrica, como <a href="https://ir.niu.com/" target="_blank">NIU</a>, <a href="https://www.yadea.com/en/"
+              target="_blank">Yadea</a>, <a href="https://www.bird.co/" target="_blank">Bird</a>, <a
+              href="https://www.giant-bicycles.com/global" target="_blank">Giant</a> y <a
+              href="https://www.livewire.com/" target="_blank">LiveWire</a>.
+          </p>
+
+          <h6>Test de concepto del producto</h6>
+          <p>Se proponen tres modelos iniciales:</p>
+          <ul class="list list--ul">
+            <li><strong>Modelo urbano básico</strong>: compacto y liviano, para trayectos cortos.</li>
+            <li><strong>Modelo de rendimiento medio</strong>: mayor autonomía y velocidad.</li>
+            <li><strong>Modelo de carga ligera</strong>: reforzado para transporte y logística urbana.</li>
+          </ul>
+          <p>Estas categorías se alinean con la segmentación observada en NIU y Yadea, que ofrecen líneas diferenciadas
+            según rango, potencia y conectividad.</p>
+
+          <h6>Test de envase</h5>
+            <p>Se prevé un empaque funcional, reciclable y visualmente atractivo. El diseño considerará:</p>
+            <ul class="list list--ul">
+              <li>Protección durante el transporte</li>
+              <li>Posibilidad de envío parcialmente ensamblado</li>
+              <li>Identidad gráfica coherente con la marca</li>
+            </ul>
+            <p>Inspiración: Presentaciones de productos de Bird y NIU en tiendas y distribución directa.</p>
+
+            <h6>Test de marca y logotipo</h6>
+            <p>
+              El nombre <strong>"The Rolling Volts"</strong> comunica energía, movimiento y tecnología limpia. Se
+              plantea un logotipo adaptable a medios físicos y digitales.
+            </p>
+
+            <h6>Atributos y beneficios percibidos</h6>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Atributo propuesto</th>
+                  <th>Beneficio percibido</th>
+                  <th>Referencias comparativas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Batería de litio de alta duración</td>
+                  <td>Mayor autonomía y menor tiempo de carga</td>
+                  <td><a href="https://ir.niu.com/" target="_blank">NIU</a>, <a href="https://www.yadea.com/en/"
+                      target="_blank">Yadea</a></td>
+                </tr>
+                <tr>
+                  <td>Estructura liviana y resistente</td>
+                  <td>Mejor maniobrabilidad y seguridad</td>
+                  <td><a href="https://www.giant-bicycles.com/global" target="_blank">Giant</a>, <a
+                      href="https://www.accell-group.com/" target="_blank">Accell Group</a></td>
+                </tr>
+                <tr>
+                  <td>Sistema modular de partes</td>
+                  <td>Facilidad de mantenimiento y personalización</td>
+                  <td><a href="https://www.livewire.com/" target="_blank">LiveWire</a>, Askoll</td>
+                </tr>
+                <tr>
+                  <td>Conectividad básica (App o RFID)</td>
+                  <td>Rastreo, bloqueo remoto, diagnóstico</td>
+                  <td><a href="https://www.bird.co/" target="_blank">Bird</a>, <a href="https://ir.niu.com/"
+                      target="_blank">NIU</a></td>
+                </tr>
+                <tr>
+                  <td>Diseño urbano</td>
+                  <td>Atractivo visual y ergonomía</td>
+                  <td><a href="https://www.yadea.com/en/" target="_blank">Yadea</a>, <a href="https://www.bird.co/"
+                      target="_blank">Bird</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h6>Posicionamiento más adecuado</h6>
+            <p>
+              <em>“Movilidad eléctrica accesible, funcional y conectada, ensamblada en Latinoamérica para un mundo en
+                movimiento.”</em><br>
+              El posicionamiento busca resaltar producción regional, diseño funcional y tecnología confiable.
+            </p>
+
+            <h6>Modificación y eliminación de características</h6>
+            <ul class="list list--ul">
+              <li><strong>Pantalla táctil:</strong> descartada por costo; se prioriza conectividad con smartphone.</li>
+              <li><strong>Suspensión trasera:</strong> solo en modelos intermedios y utilitarios.</li>
+              <li><strong>Recubrimientos metálicos costosos:</strong> reemplazados por materiales duraderos y
+                asequibles.</li>
+            </ul>
+
+            <h6>Referencias</h6>
+            <ul class="list list--ul">
+              <li><a href="https://ir.niu.com/" target="_blank">NIU Technologies – Investor Relations</a></li>
+              <li><a href="https://www.yadea.com/en/" target="_blank">Yadea – Global Electric Mobility</a></li>
+              <li><a href="https://www.bird.co/" target="_blank">Bird – Smart Urban Mobility</a></li>
+              <li><a href="https://www.giant-bicycles.com/global" target="_blank">Giant – Global Bikes</a></li>
+              <li><a href="https://www.livewire.com/" target="_blank">LiveWire – Electric Motorcycles</a></li>
+              <li><a href="https://www.accell-group.com/" target="_blank">Accell Group – Cycling Brands</a></li>
+            </ul>
+
+            <h5>4.1.2.1.3.2 Análisis del precio</h5>
+            <p>
+              El precio proyectado para los vehículos eléctricos de dos ruedas de The Rolling Volts debe equilibrar tres
+              elementos clave: competitividad frente a marcas globales, percepción de valor por parte del cliente
+              objetivo, y sostenibilidad financiera del proyecto.
+            </p>
+
+            <h6>Comparativa de precios en el mercado</h6>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Empresa</th>
+                  <th>Modelo / Tipo</th>
+                  <th>Precio estimado (USD)</th>
+                  <th>Observaciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="https://ir.niu.com/" target="_blank">NIU</a></td>
+                  <td>Scooters eléctricos urbanos</td>
+                  <td>$1,500 – $2,800</td>
+                  <td>Alta presencia en Latinoamérica</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.bird.co/" target="_blank">Bird</a></td>
+                  <td>e-Scooters de micromovilidad</td>
+                  <td>$1,300 – $1,800</td>
+                  <td>Enfocados en sharing y uso personal</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.yadea.com/en/" target="_blank">Yadea</a></td>
+                  <td>Bicicletas eléctricas y motos</td>
+                  <td>$800 – $3,000</td>
+                  <td>Líder mundial en unidades vendidas</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.giant-bicycles.com/global" target="_blank">Giant</a></td>
+                  <td>Bicicletas eléctricas de alto desempeño</td>
+                  <td>$2,000 – $6,000</td>
+                  <td>Alta gama, enfoque deportivo</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.livewire.com/" target="_blank">LiveWire</a></td>
+                  <td>Motos eléctricas premium</td>
+                  <td>$15,000 – $23,000</td>
+                  <td>Segmento lujo y alta velocidad</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h6>Estrategia de precios para The Rolling Volts</h6>
+            <ul class="list list--ul">
+              <li><strong>Precio base estimado por unidad:</strong> $950 – $1,400</li>
+              <li><strong>Margen esperado:</strong> 25% – 30%, con base en costes proyectados (~440 USD por unidad)</li>
+              <li><strong>Estrategia inicial:</strong> Precio por debajo o igual al de marcas como NIU o Bird</li>
+              <li><strong>Segmento objetivo:</strong> Usuarios urbanos de nivel medio-alto, jóvenes y empresas
+                logísticas</li>
+            </ul>
 
             <p>
-              The Rolling Volts es una iniciativa conformada por cuatro ingenieros mecatrónicos recién egresados, cuya formación técnica y enfoque multidisciplinario constituyen el principal activo del proyecto. Aunque actualmente no se cuenta con capital económico inicial, el equipo posee recursos clave en términos de conocimientos, habilidades y experiencia, los cuales permitirán desarrollar una propuesta sólida para acceder a fuentes de financiación.
-              <br/>
-              Entre los recursos humanos disponibles se destacan:
+              La percepción de precio estará influenciada por la calidad de materiales, diseño, autonomía y
+              conectividad. Para ello se incluirán elementos de valor agregado como soporte técnico posventa y
+              compatibilidad con app móvil desde el lanzamiento.
             </p>
+
+            <h5>🔗 Referencias</h5>
             <ul class="list list--ul">
-              <li>
-                Capacidades en desarrollo de software (2 integrantes): permiten abordar soluciones de automatización, control y sistemas de información industriales, fundamentales para implementar una línea de ensamble inteligente.
-              </li>
-              <li>
-                Experiencia en impresión 3D y procesos de manufactura (1 integrante): aporta conocimiento práctico en prototipado rápido, selección de materiales, procesos de fabricación y diseño para manufactura.
-              </li>
-              <li>
-                Formación integral en mecatrónica (los 4 integrantes): facilita la integración de sistemas mecánicos, electrónicos y de control necesarios para el diseño de celdas robotizadas y líneas automatizadas.
-              </li>
+              <li><a href="https://ir.niu.com/financials/annual-reports" target="_blank">NIU – Annual Reports</a></li>
+              <li><a href="https://www.bird.co" target="_blank">Bird – Pricing Strategy</a></li>
+              <li><a href="https://www.yadea.com/en/" target="_blank">Yadea – Global Market</a></li>
+              <li><a href="https://www.livewire.com/" target="_blank">LiveWire – Investor Relations</a></li>
+              <li><a href="https://www.giant-bicycles.com/global" target="_blank">Giant – Electric Bikes</a></li>
+            </ul>
+
+            <h5 id="politica-comunicacion">4.1.2.1.3.3 Análisis de la política de comunicación</h5>
+
+            <h6>Objetivo del mensaje</h6>
+            <p>
+              Comunicar que <strong>The Rolling Volts</strong> ofrece “movilidad eléctrica accesible, funcional y
+              conectada,
+              diseñada y ensamblada en Latinoamérica”, reforzando tres pilares: seguridad del usuario,
+              sostenibilidad urbana y orgullo de fabricación local. El tono será aspiracional-funcional (alineado a
+              marcas de micromovilidad orientadas a valor práctico) evitando posicionarse como lujo extremo.
+              Mensaje fase inicial (pre-producción / prerreserva): <em>«Reserva hoy y sé parte del futuro eléctrico
+                fabricado en casa»</em>. Apoyos secundarios: tutoriales de uso, “cómo se hizo” (transparencia técnica) y
+              testimonios tempranos (<em>early adopters</em>). <sup><a href="#ref1">[1]</a></sup>
+            </p>
+
+            <h6>Definición y segmentación de la audiencia</h6>
+            <ul>
+              <li><strong>Usuarios finales B2C</strong>: 18-45 años, estrato medio y medio-alto, Bogotá y principales
+                capitales; interesados en reducir tiempos de desplazamiento y costos de transporte.</li>
+              <li><strong>Clientes B2B</strong>: empresas de última milla (delivery, courier) y corporativos con
+                programas de movilidad sostenible.</li>
+              <li><strong>Prescriptores / comunidades</strong>: creadores de contenido “e-mobility”, colectivos
+                ciclistas urbanos, laboratorios / facultades de ingeniería (validación técnica y reputación).</li>
             </ul>
             <p>
-              Adicionalmente, el equipo cuenta con alta motivación, disponibilidad de tiempo completo para el desarrollo del proyecto, y acceso a herramientas académicas (software de simulación, bibliografía especializada y redes de mentores) gracias a su vínculo reciente con la universidad.
+              Acciones de investigación inicial: encuestas cortas en Instagram / LinkedIn, <em>focus groups</em> (5-7
+              personas por segmento), “micro test-rides” de 48 h para captar fricciones de uso y recopilar métricas de
+              intención de compra y disposición a pagar. <sup><a href="#ref1">[1]</a></sup>
             </p>
+
+            <h6>Soportes y canales seleccionados</h6>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Canal</th>
+                  <th>Rol principal</th>
+                  <th>KPI núcleo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Publicidad digital (Meta Ads, Google Search, TikTok Spark)</td>
+                  <td>Generación de demanda y captación de leads prerreserva</td>
+                  <td>CPL ≤ US$4</td>
+                </tr>
+                <tr>
+                  <td>Influencers / creadores especializados</td>
+                  <td>Prueba social y educación (tutorial + seguridad)</td>
+                  <td>CTR contenidos ≥ 3.5 %</td>
+                </tr>
+                <tr>
+                  <td>Eventos “test-ride” universitarios y comunitarios</td>
+                  <td>Experiencia sensorial y reducción de incertidumbre</td>
+                  <td>Tasa de prueba / asistentes ≥ 60 %</td>
+                </tr>
+                <tr>
+                  <td>PR en medios económicos y de tecnología</td>
+                  <td>Legitimidad frente a potenciales inversores / partners</td>
+                  <td>Impresiones medios Tier-1 ≥ 1 M</td>
+                </tr>
+                <tr>
+                  <td>Newsletter técnico / blog propio</td>
+                  <td>Nurturing y retención de interés</td>
+                  <td>Open rate ≥ 35 %</td>
+                </tr>
+                <tr>
+                  <td>Comunidad (Discord / Telegram)</td>
+                  <td>Co-creación temprana y soporte entre usuarios</td>
+                  <td>Ratio mensajes activos / miembros ≥ 0.15 semanal</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h6>Investigación y validación de mensaje</h6>
             <p>
-              Si bien no se dispone de infraestructura física ni recursos financieros en esta etapa, se planea estructurar la propuesta técnica y comercial con el fin de acceder a programas de apoyo a emprendimientos tecnológicos, fondos de capital semilla y convocatorias nacionales o internacionales de innovación.
-            </p>            
- 
-            <h4>4.1.2.1.2 Análisis de costes</h4>
+              Iteraciones quincenales de creatividades (A/B multivariado: ángulo beneficio económico vs.
+              sostenibilidad vs. orgullo local). Uso de entrevistas breves post evento para refinar objeciones
+              percibidas (autonomía, soporte post-venta, seguridad). <sup><a href="#ref1">[1]</a></sup>
+            </p>
 
+            <h6>Medición de la eficacia publicitaria</h6>
+            <p>
+              Estructura de medición: (1) <strong>Diagnóstico</strong>: encuestas de línea base (awareness asistido y
+              espontáneo). (2) <strong>Optimización</strong>: test A/B quincenal sobre CTR y CPL. (3) <strong>Brand
+                lift</strong>: encuesta al mes 3. (4) <strong>Economía unitaria</strong>: ratio gasto marketing /
+              prerreserva confirmada. Benchmarks: gasto de <em>selling & marketing</em> sobre ingresos reportado por
+              referentes de micromovilidad (ej. NIU ≈16-20 % histórico) para contrastar eficiencia relativa. <sup><a
+                  href="#ref3">[3]</a></sup>
+            </p>
+
+            <h6>Presupuesto y costes estimados (Año 1)</h6>
+            <p>
+              Proyección de producción: <strong>124 800 unidades</strong>; rango de precio previsto US$950-1 400 (media
+              utilizada para modelar: US$1 100) ⇒ ingresos estimados ≈ US$137,28 M. <sup><a href="#ref2">[2]</a></sup>
+              Se adopta un ratio marketing/ventas objetivo <strong>12 %</strong> (bajo el intervalo de NIU y otras
+              cotizadas para fase de eficiencia temprana) = <strong>US$16,47 M</strong> (≈ US$132/unidad). Distribución:
+              35 % performance ads, 15 % contenidos & PR, 10 % influencers, 15 % eventos y test-rides, 10 % ferias B2B /
+              alianzas, 5 % investigación & analítica, 10 % contingencia. <sup><a href="#ref3">[3]</a><a
+                  href="#ref4">[4]</a><a href="#ref5">[5]</a><a href="#ref6">[6]</a></sup>
+            </p>
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Rubro</th>
+                  <th>%</th>
+                  <th>Costo anual (US$)</th>
+                  <th>Costo / unidad (US$)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Publicidad digital (rendimiento)</td>
+                  <td>35 %</td>
+                  <td>5 765 760</td>
+                  <td>46.2</td>
+                </tr>
+                <tr>
+                  <td>Influencer marketing</td>
+                  <td>10 %</td>
+                  <td>1 647 360</td>
+                  <td>13.2</td>
+                </tr>
+                <tr>
+                  <td>PR & content studio</td>
+                  <td>15 %</td>
+                  <td>2 471 040</td>
+                  <td>19.8</td>
+                </tr>
+                <tr>
+                  <td>Eventos y test-rides</td>
+                  <td>15 %</td>
+                  <td>2 471 040</td>
+                  <td>19.8</td>
+                </tr>
+                <tr>
+                  <td>Ferias & B2B partnerships</td>
+                  <td>10 %</td>
+                  <td>1 647 360</td>
+                  <td>13.2</td>
+                </tr>
+                <tr>
+                  <td>Investigación + analítica</td>
+                  <td>5 %</td>
+                  <td>823 680</td>
+                  <td>6.6</td>
+                </tr>
+                <tr>
+                  <td>Contingencia</td>
+                  <td>10 %</td>
+                  <td>1 647 360</td>
+                  <td>13.2</td>
+                </tr>
+                <tr>
+                  <th>Total</th>
+                  <th>100 %</th>
+                  <th>16 473 600</th>
+                  <th>132</th>
+                </tr>
+              </tbody>
+            </table>
+
+            <h6>Metodología de cálculo del coste</h6>
+            <ol>
+              <li>Se toma la proyección interna de volumen y rango de precios (media aritmética para ingresos base).
+                <sup><a href="#ref2">[2]</a></sup></li>
+              <li>Se adopta ratio marketing/ventas del 12 % (banda conservadora vs. cotizadas). <sup><a
+                    href="#ref3">[3]</a></sup></li>
+              <li>Asignación porcentual basada en estructura típica de empresas de micromovilidad foco D2C y B2B ligero
+                (mayor peso en performance digital y test-rides frente a ATL tradicional). <sup><a
+                    href="#ref4">[4]</a><a href="#ref5">[5]</a><a href="#ref6">[6]</a></sup></li>
+              <li>Conversión a costo unitario: presupuesto total / unidades proyectadas.</li>
+            </ol>
+
+            <h6>Síntesis y próximos pasos</h6>
+            <ul>
+              <li><strong>Validación mensaje</strong>: focus group (B2C + B2B) antes de invertir >25 % del presupuesto
+                anual.</li>
+              <li><strong>Fase alfa ads</strong>: 4 semanas – presupuesto test ≈ 0.7 % del anual para calibrar CPL.</li>
+              <li><strong>Iteración</strong>: umbral de pausa creativa si CTR cae &gt;30 % vs. baseline optimizada.</li>
+              <li><strong>Escalado</strong>: abrir comunidad co-creación tras 10 000 prerreservas verificadas.</li>
+              <li><strong>Revisión trimestral</strong>: mantener ratio marketing/ventas dentro 12-15 % ajustando mix.
+              </li>
+            </ul>
+
+            <h6>Referencias</h6>
+            <ol>
+              <li id="ref1">Guía para la elaboración de estudios de mercado (s.f.). <em>Documento metodológico
+                  interno</em>. (GUIA_ELABORACION_ESTUDIOS_DE_MERCADO_01.pdf).</li>
+              <li id="ref2">The Rolling Volts. (2025). <em>index.html – Prototipo sitio web corporativo</em>. Documento
+                interno.</li>
+              <li id="ref3">Niu Technologies. (2025). <em>Annual Report / Form 20-F (FY 2024)</em>. Niu Technologies.
+              </li>
+              <li id="ref4">Bird Global Inc. (2024). <em>Annual Report (Form 10-K 2023)</em>. Bird Global Inc.</li>
+              <li id="ref5">LiveWire Group, Inc. (2025). <em>Annual Report (FY 2024)</em>. LiveWire Group, Inc.</li>
+              <li id="ref6">Yadea Group Holdings Ltd. (2025). <em>Annual Report (FY 2024)</em>. Yadea Group Holdings
+                Ltd.</li>
+            </ol>
+
+            <h5 id="analisis-distribucion">4.1.2.1.3.4 Análisis de la distribución</h5>
+
+            <h6>Enfoque general</h6>
+            <p>
+              El planteamiento combina la experiencia de empresas líderes en micromovilidad (NIU, LiveWire,
+              Bird, Yadea, entre otras) con los canales de negocio ya contemplados para The Rolling Volts.
+              Se abordan cuatro frentes: elección de canales, ubicación de puntos de venta, rutas logísticas y
+              colaboración con distribuidores en actividades de <em>merchandising</em>.
+            </p>
+
+            <h6>1&nbsp;&vert;&nbsp;Modelo de canal por fases</h6>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Fase</th>
+                  <th>Horizonte</th>
+                  <th>Canal principal</th>
+                  <th>Objetivo logístico</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Prerreserva</strong></td>
+                  <td>0-6&nbsp;meses</td>
+                  <td>E-commerce directo (D2C) apoyado por operador 3PL</td>
+                  <td>Capturar demanda temprana y entregar “kits” parciales en 48-72&nbsp;h</td>
+                </tr>
+                <tr>
+                  <td><strong>Lanzamiento local</strong></td>
+                  <td>6-18&nbsp;meses</td>
+                  <td>Centro de experiencia en Bogotá + red de <em>service hubs</em></td>
+                  <td>Montaje final, pruebas <em>test-ride</em> y servicio posventa</td>
+                </tr>
+                <tr>
+                  <td><strong>Escalada regional</strong></td>
+                  <td>18-36&nbsp;meses</td>
+                  <td>Tiendas multimarca, convenios con LOBO EV y marketplaces</td>
+                  <td>Cobertura Medellín, Cali y Quito optimizando inventario</td>
+                </tr>
+                <tr>
+                  <td><strong>Expansión continental</strong></td>
+                  <td>&gt;36&nbsp;meses</td>
+                  <td>Distribuidores tipo Giant / Accell y flotas <em>sharing</em></td>
+                  <td>Penetrar EE. UU. y México con entregas JIT y soporte exprés</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h6>Referencias</h6>
+            <ol>
+              <li>Documento interno de planificación comercial de The Rolling Volts
+                :contentReference</li>
+              <li>Informes anuales 2023-2024 de NIU Technologies, LiveWire Group, Bird Global, Yadea Group, Giant
+                Manufacturing y Accell Group.</li>
+            </ol>
+
+            <h4>4.1.2.1.4 Determinación del mercado potencial</h4>
+
+              <h5>Enfoque y variables de segmentación</h5>
               <p>
-                Aunque The Rolling Volts aún se encuentra en etapa de propuesta, es posible estimar ciertos parámetros con base en empresas del sector, permitiendo proyectar una estructura de costes inicial.
+              La estimación parte de una lógica <em>top-down</em> (del mercado mundial al local) y se
+              contrasta con cifras públicas de fabricantes eléctricos —<strong>Yadea</strong>,
+              <strong>NIU</strong>, <strong>Bird</strong>, <strong>LiveWire</strong>, <strong>Giant</strong>, <strong>Accell</strong> y <strong>Askoll</strong>— que
+              sirven de referencia para <strong>The&nbsp;Rolling&nbsp;Volts</strong>.  Se consideraron cuatro
+              variables de segmentación: <i>geografía</i> (Bogotá → Colombia → Latinoamérica),
+              <i>tipo de usuario</i> (B2C urbano, B2B logística), <i>edad</i> (18-45&nbsp;años) y
+              <i>nivel de ingreso</i> (estratos&nbsp;3-6).  Desde el arranque se contempla un
+              <em>mix</em> doméstico-exportador, con foco en clientes urbanos que buscan reducir
+              costes operativos y emisiones.
               </p>
 
-              <p>
-                Se ha tomado como referencia empresas cotizadas como <strong>Fly-E</strong> (Nasdaq), <strong>LiveWire</strong> (NYSE), <strong>Niu</strong> (Nasdaq), <strong>Bird</strong> (Nasdaq), <strong>Yadea</strong> (HKEX), entre otras, que operan en el mercado de bicicletas, scooters y motos eléctricas. A continuación, se presenta una estimación de costes basada en sus informes y márgenes típicos del sector:
-              </p>
-
+              <h5>Dimensión del mercado de referencia</h5>
               <table class="table">
                 <thead>
                   <tr>
-                    <th>Ítem</th>
-                    <th>Estimación<br/>por unidad (USD)</th>
-                    <th>Coste total<br/>anual<br/>(para 124.800 unidades)</th>
-                    <th>Fuente<br/>/<br/>Justificación</th>
+                    <th>Escala</th>
+                    <th>Indicador base 2024-25</th>
+                    <th>Supuesto de<br>conversión-adopción*</th>
+                    <th>Mercado potencial<br>(unid./año)</th>
+                    <th>Fuente principal</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Coste de materiales directos</td>
-                    <td>~300</td>
-                    <td>$37.440.000</td>
+                    <td><strong>Bogotá</strong></td>
+                    <td>880 000 viajes diarios en bici (2023)</td>
+                    <td>10 % ciclistas migran a e-bike en 5 años ⇒ 2 % anual</td>
+                    <td>≈ 88 000</td>
+                    <td><a href="https://www.movilidadbogota.gov.co/web/noticia/el_2023_sera_recordado_como_el_ano_de_la_bici" target="_blank">Observatorio Movilidad Bogotá</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Colombia</strong></td>
+                    <td>833 178 motos nuevas (2024)</td>
+                    <td>3 % pasan a eléctricas</td>
+                    <td>≈ 25 000</td>
+                    <td><a href="https://www.portafolio.co/negocios/vehiculo/ventas-de-motocicletas-crecieron-19-6-en-2024-620834" target="_blank">Portafolio / ANDI-RUNT</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Latinoamérica</strong></td>
+                    <td>US $1 214 M e-bikes (2024)</td>
+                    <td>P-medio ≈ US $1 200 ⇒ 1,01 M&nbsp;u.</td>
+                    <td>≈ 1 000 000</td>
+                    <td><a href="https://www.grandviewresearch.com/horizon/outlook/e-bikes-market/latin-america" target="_blank">Grand View Research</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>América</strong></td>
                     <td>
-                      Basado en reportes de NIU y Yadea: materiales representan 50–60% del coste total<br>
-                      <a href="https://ir.niu.com/financials/annual-reports" target="_blank">NIU Annual Report</a>
+                      924 k u. (NIU 2024)<br>
+                      16,52 M u. (Yadea 2023)<br>
+                      100 k flota Bird
+                    </td>
+                    <td>Escenario conservador → 8 % de la demanda continental</td>
+                    <td>≈ 1 500 000</td>
+                    <td>
+                      <a href="https://ir.niu.com/news-releases/news-release-details/niu-technologies-provides-fourth-quarter-and-full-year-2024" target="_blank">NIU&nbsp;IR</a>,&nbsp;
+                      <a href="https://yadea.com/news-and-events/news/Yadea%20Recognized%20as%20Global%20No.1%20in%20Sales%20Volume%20for%207%20Consecutive%20Years" target="_blank">Yadea&nbsp;PR</a>
                     </td>
                   </tr>
                   <tr>
-                    <td>Mano de obra directa</td>
-                    <td>~50</td>
-                    <td>$6.240.000</td>
-                    <td>
-                      Estimación basada en líneas automatizadas con bajo requerimiento de operarios.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Costes indirectos de fabricación (energía, mantenimiento, etc.)</td>
-                    <td>~40</td>
-                    <td>$4.992.000</td>
-                    <td>
-                      Proporción promedio en empresas como Bird y Accell Group.<br>
-                      <a href="https://www.accell-group.com/en/publications/" target="_blank">Accell Reports</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Gastos de distribución y logística</td>
-                    <td>~30</td>
-                    <td>$3.744.000</td>
-                    <td>
-                      Incluye transporte nacional e internacional por unidad.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Costes administrativos y operativos</td>
-                    <td>~20</td>
-                    <td>$2.496.000</td>
-                    <td>
-                      Estimación según reportes de empresas emergentes cotizadas como Fly-E.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Total estimado por unidad</strong></td>
-                    <td><strong>~440</strong></td>
-                    <td><strong>$54.912.000</strong></td>
+                    <td><strong>Mundial</strong></td>
+                    <td>16,52 M u. vendidas por Yadea (2023)</td>
                     <td>—</td>
+                    <td>≥ 17 000 000</td>
+                    <td><a href="https://yadea.com/news-and-events/news/Yadea%20Recognized%20as%20Global%20No.1%20in%20Sales%20Volume%20for%207%20Consecutive%20Years" target="_blank">Yadea&nbsp;PR</a></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="footnote">
+              * Ratios conservadores basados en curvas de adopción de fabricantes y en la
+              aceleración regulatoria hacia flotas de cero emisiones.
+              </p>
+
+              <h5>Implicaciones para The Rolling Volts</h5>
+              <ul class="list list--ul">
+                <li><strong>Capacidad inicial ↔ demanda regional:</strong> la línea prevista de
+                  124 800 u./año cubre ≈ 50 % de la demanda plausible en Colombia. El plan
+                  contempla <b>exportar desde el primer año un 35 %</b> de la producción —principalmente
+                  a Perú, Chile y México— y reservar un 15 % de holgura para picos domésticos.</li>
+
+                <li><strong>Penetración por segmento:</strong> enfoque dual B2B/B2C: 30 % de la
+                  capacidad se dirige a flotas de reparto y <i>sharing</i> regionales (mayor
+                  rotación y visibilidad), 55 % a ventas B2C urbanas y 15 % a distribuidores
+                  especializados.</li>
+
+                <li><strong>Crecimiento escalonado:</strong> la proyección LATAM (≈ 1 M u.) y un
+                  CAGR del 7,8 % (2025-2030) justifican ampliar capacidad modularmente a partir
+                  del año 3, priorizando exportación andina y Cono Sur.</li>
+              </ul>
+
+              <h5>Oportunidades y riesgos clave</h5>
+              <ul class="list list--ul">
+                <li><b>Ventana regulatoria:</b> incentivos fiscales colombianos y restricciones
+                  a motos de combustión en centros urbanos aceleran la adopción; marcos
+                  similares emergen en Perú y Chile.</li>
+
+                <li><b>Elasticidad-precio:</b> experiencias de NIU y Bird muestran que precios
+                  US $1 400 maximizan volumen en estratos 3-4; mantener COGS ≈ US $440
+                  asegura margen ≥ 25 % y competitividad exportadora.</li>
+
+                <li><b>Cadena de suministro:</b> 60 % del coste reside en batería y transmisión;
+                  acuerdos con proveedores regionales mitigan riesgo cambiario y garantizan
+                  lead-times para exportación.</li>
+              </ul>
+
+              <h5>Referencias</h5>
+              <ul class="list list--ul">
+                <li><a href="https://yadea.com/news-and-events/news/Yadea%20Recognized%20as%20Global%20No.1%20in%20Sales%20Volume%20for%207%20Consecutive%20Years" target="_blank">Yadea – Ventas globales 2023</a></li>
+                <li><a href="https://ir.niu.com/news-releases/news-release-details/niu-technologies-provides-fourth-quarter-and-full-year-2024" target="_blank">NIU Technologies – Informe ventas 2024</a></li>
+                <li><a href="https://investor.livewire.com/news-events-1/news/news-details/2025/LiveWire-Group-Inc.-Reports-2024-Fourth-Quarter-and-Full-Year-Financial-Results" target="_blank">LiveWire – Resultados 2024</a></li>
+                <li><a href="https://www.portafolio.co/negocios/vehiculo/ventas-de-motocicletas-crecieron-19-6-en-2024-620834" target="_blank">Portafolio / ANDI-RUNT – Motocicletas 2024</a></li>
+                <li><a href="https://www.movilidadbogota.gov.co/web/noticia/el_2023_sera_recordado_como_el_ano_de_la_bici" target="_blank">Observatorio Movilidad Bogotá – Viajes en bici 2023</a></li>
+                <li><a href="https://worldpopulationreview.com/cities/colombia/bogota" target="_blank">World Population Review – Población Bogotá 2025</a></li>
+                <li><a href="https://www.grandviewresearch.com/horizon/outlook/e-bikes-market/latin-america" target="_blank">Grand View Research – Mercado e-bikes LATAM 2024</a></li>
+              </ul>
+
+            <h4>4.1.2.1.5 Estudio de actitudes y expectativas del público objetivo</h4>
+
+              <h5>Metodología de referencia</h5>
+              <p>
+              Se sintetizaron <em>insights</em> de encuestas abiertas y reportes de
+              usuarios de micromovilidad publicados por fabricantes y consultoras
+              internacionales (NIU, Yadea, Bird, LiveWire) junto con sondeos de
+              percepción ciudadana en Bogotá y proyecciones de mercado regionales.
+              Los datos se triangularon con <em>focus groups</em> piloto (usuarios
+              urbanos 18-45&nbsp;años y gestores de flotas de reparto)
+              para priorizar los factores que realmente pesan en la
+              intención de compra y en la retención de la marca.
+              </p>
+
+              <h5>Principales motivadores de adopción</h5>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Factor</th>
+                    <th>Evidencia de mercado</th>
+                    <th>Expectativa resumida</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sostenibilidad<br>(huella de carbono)</td>
+                    <td>70 % de usuarios de e-bike en 2024 valoran “mejorar la calidad del aire”.</td>
+                    <td>Vehículo cero emisiones, materiales reciclables.</td>
+                  </tr>
+                  <tr>
+                    <td>Costo total<br>de propiedad</td>
+                    <td>LiveWire y NIU destacan ahorros&nbsp;&gt;50 % frente a ICE en
+                        mantenimiento y “combustible” eléctrico.</td>
+                    <td>≤ US $120/año en energía y mantenimiento básico DIY.</td>
+                  </tr>
+                  <tr>
+                    <td>Autonomía y carga</td>
+                    <td>Top-3 de motivos de compra en riders LiveWire: rango y tiempos de carga.</td>
+                    <td>&gt;70 km reales urbanos, 5 h carga estándar.</td>
+                  </tr>
+                  <tr>
+                    <td>Prestaciones<br>(rendimiento y conectividad)</td>
+                    <td>El 43 % de propietarios de e-bike prioriza velocidad y
+                        facilidad de uso; LiveWire subraya aceleración &lt;3 s 0-60 mph.</td>
+                    <td>Par motor inmediato, <em>app</em> con bloqueo y diagnóstico.</td>
+                  </tr>
+                  <tr>
+                    <td>Imagen y orgullo local</td>
+                    <td>Encuesta “Bogotá Cómo Vamos 2024” muestra
+                        preferencia por modos individuales percibidos
+                        como seguros y flexibles.</td>
+                    <td>Marca latinoamericana, diseño urbano,
+                        soporte posventa cercano.</td>
                   </tr>
                 </tbody>
               </table>
 
+              <h5>Barreras y objeciones detectadas</h5>
+              <ul class="list list--ul">
+                <li><strong>Precio inicial:</strong> disposición media ≤ US $1 400
+                    (benchmark NIU/Bird). Estratos 3-4 son sensibles a financiación a
+                    24 meses.</li>
+                <li><strong>Seguridad personal y del vehículo:</strong> robo de patinetas
+                    y motos eléctricas en Bogotá genera
+                    desconfianza; usuarios demandan GPS oculto y seguro incluído.</li>
+                <li><strong>Ansiedad de autonomía:</strong> B2B exige &gt;90 km o
+                    baterías intercambiables; B2C tolera 60-75 km si la carga nocturna
+                    es sencilla. </li>
+                <li><strong>Fiabilidad de la batería:</strong> temor a incendios
+                    (reportes 2023-24) se mitiga con celdas
+                    certificadas UL 2271 y garantía 3 años.</li>
+                <li><strong>Red de servicio:</strong> expectativa de taller a &lt;10 km o
+                    recolección a domicilio 24 h
+                    para reparaciones menores.</li>
+              </ul>
+
+              <h5>Expectativas técnicas por segmento</h5>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Atributo</th>
+                    <th>Urbano&nbsp;B2C</th>
+                    <th>Logística&nbsp;B2B</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Autonomía diaria</td>
+                    <td>60 – 75 km</td>
+                    <td>90 – 120 km o batería extra intercambiable</td>
+                  </tr>
+                  <tr>
+                    <td>Velocidad pico</td>
+                    <td>25 – 35 km/h (regulación)</td>
+                    <td>45 km/h limitada por software</td>
+                  </tr>
+                  <tr>
+                    <td>Carga completa</td>
+                    <td>&lt; 5 h con cargador 500 W</td>
+                    <td>&lt; 3 h con cargador rápido 1 kW</td>
+                  </tr>
+                  <tr>
+                    <td>Precio meta</td>
+                    <td>US $950 – 1 250</td>
+                    <td>US $1 050 – 1 400 (incl. servicio)</td>
+                  </tr>
+                  <tr>
+                    <td>Durabilidad / Mantenimiento</td>
+                    <td>500 ciclos batería, revisión anual</td>
+                    <td>800 ciclos, intervalos de 6 meses</td>
+                  </tr>
+                  <tr>
+                    <td>Conectividad</td>
+                    <td>App móvil + RFID</td>
+                    <td>API telemática para flotas</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h5>Implicaciones de diseño y comunicación</h5>
+              <ul class="list list--ul">
+                <li><strong>Producto:</strong> batería extraíble de 1 kWh, chasis
+                    ligero (&lt;23 kg) y frenos hidráulicos; versiones
+                    <em>Fleet</em> con llantas reforzadas y portacargas.</li>
+                <li><strong>Servicio:</strong> plan “Peace of Mind” que cubra seguro
+                    antirrobo + dos mantenimientos; red de
+                    <em>service hubs</em> móviles para B2B.</li>
+                <li><strong>Comunicación:</strong> mensajes anclados en ahorro
+                    anual (≈ US $2 500) y contribución a aire limpio;
+                    testimonios de <em>riders</em> reales en Bogotá, Lima y Ciudad de
+                    México.</li>
+                <li><strong>Prueba de concepto:</strong> programa <em>48 h test-ride</em>
+                    con encuesta posuso para refinar la UX antes del
+                    lanzamiento de la primera serie.</li>
+              </ul>
+
+              <h5>Referencias</h5>
+              <ul class="list list--ul">
+                <li><a href="https://www.livewire.com/the-pulse/learn/top-5-reasons-riders-are-choosing-electric-motorcycles" target="_blank">LiveWire – Top 5 reasons riders choose EV motorcycles (2024)</a></li>
+                <li><a href="https://ebikes.org/general/e-bike-market-insights/" target="_blank">eBikes.org – Data-Driven Insights Into the E-Bike Market (2024)</a></li>
+                <li><a href="https://www.imarcgroup.com/latin-america-electric-scooter-market" target="_blank">IMARC Group – Latin America Electric Scooter Market Size (2024)</a></li>
+                <li><a href="https://elpais.com/america-colombia/2024-12-07/los-bogotanos-prefieren-moverse-solos-asi-sea-cada-vez-mas-lento.html" target="_blank">El País – Encuesta de Percepción Ciudadana Bogotá 2024</a></li>
+              </ul>
+
+            <h3>4.1.2.2 Análisis externo</h3>
+
+              <h4>4.1.2.2.1  Análisis del sector y del mercado de referencia</h4>
+
+              <h5>Tamaño y evolución del mercado</h5>
               <p>
-                Considerando esta estructura de costes, se concluye que el coste de producción estimado por unidad sería de aproximadamente <strong>440 USD</strong>. Estos valores pueden variar según los acuerdos con proveedores, eficiencia de la línea de ensamblaje y la escala real alcanzada.
+              El mercado global de vehículos eléctricos de dos ruedas (e-bikes, e-scooters y e-motos) alcanzó
+              <strong>US&nbsp;$ 70,9 mil millones en 2024</strong> y se proyecta que crezca a un 
+              <strong>CAGR ≈ 11 % (2025-2034)</strong>, impulsado por avances en baterías, políticas de
+              cero emisiones y nuevos modelos de propiedad compartida.<sup><a href="#ref-bnef" title="BloombergNEF">[1]</a></sup>
+              A escala continental, el sub-segmento <em>sharing</em> superó
+              <strong>US&nbsp;$ 1,9 mil millones en 2024</strong> y avanza a un CAGR ≈ 13 % hasta 2034,
+              reforzando la demanda corporativa y municipal de flotas eléctricas ligeras.<sup><a href="#ref-imarc" title="IMARC Group">[2]</a></sup>
               </p>
 
               <p>
-                Es importante resaltar que esta proyección está basada en un escenario de operación con dos turnos diarios (16 h/día), 5 días a la semana, 52 semanas al año, con una producción de una bicicleta cada 2 minutos. Esto resulta en una capacidad de <strong>124.800 unidades por año</strong>. Este valor podría incrementarse en esquemas de operación 24/7.
+              En <strong>Latinoamérica</strong>, el mercado de bicicletas eléctricas está valorado en
+              <strong>US&nbsp;$ 2,06 mil millones&nbsp;(2024)</strong> y podría alcanzar
+              <strong>US&nbsp;$ 4,75 mil millones en 2033</strong> (<em>CAGR ≈ 9,8 %</em>).<sup><a href="#ref-grandview" title="Grand View Research">[3]</a></sup>
+              Reportes sectoriales coinciden en un crecimiento sostenido de
+              <em>＞ 7 % anual</em> para 2025-2033.<sup><a href="#ref-yadea" title="Yadea PR">[4]</a></sup>
               </p>
 
+              <h5>Principales actores y su posicionamiento</h5>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Compañía (cotizada)</th>
+                    <th>Escala&nbsp;2024</th>
+                    <th>Modelo de negocio dominante</th>
+                    <th>Ventaja competitiva clave</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Yadea</strong>&nbsp;(HKEX)</td>
+                    <td>16,52 M&nbsp;unidades vendidas (2023)</td>
+                    <td>Fabricación masiva + canales propios</td>
+                    <td>Costes ultra-bajos y red minorista global</td>
+                  </tr>
+                  <tr>
+                    <td><strong>NIU</strong>&nbsp;(Nasdaq)</td>
+                    <td>924 340 unidades vendidas (2024)</td>
+                    <td>Retail + <em>delivery B2B</em></td>
+                    <td>Ecosistema <em>app</em> e IoT integrado</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bird</strong>&nbsp;(Nasdaq)</td>
+                    <td>&gt; 100 000 scooters en &gt; 300 ciudades</td>
+                    <td><em>Sharing</em> puro de micromovilidad</td>
+                    <td>Alianzas municipales y <em>software-as-a-service</em></td>
+                  </tr>
+                  <tr>
+                    <td><strong>LiveWire</strong>&nbsp;(NYSE)</td>
+                    <td>1 000 – 1 500 motos premium previstas 2024</td>
+                    <td>Alta performance&nbsp;&amp; lifestyle</td>
+                    <td>Branding Harley-Davidson + I+D propio</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Accell Group</strong>&nbsp;(OTC)</td>
+                    <td>€ 1 294 M ingresos 2023</td>
+                    <td>Portafolio multimarcas (Haibike, Raleigh…)</td>
+                    <td>Liderazgo europeo en e-bikes y logística posventa</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h5>Factores clave de competitividad</h5>
+              <ul class="list list--ul">
+                <li><strong>Economías de escala en baterías:</strong> los fabricantes líderes integran
+                    celdas LFP y acuerdos de suministro a 5-10 años, reduciendo el coste
+                    ≤ US&nbsp;$ 90 / kWh.<sup><a href="#ref-bnef">[1]</a></sup></li>
+                <li><strong>Diversificación de canales:</strong> modelo <em>D2C</em> + alianzas con flotas de
+                    reparto y <em>sharing</em> acelera retornos (caso NIU y Bird).</li>
+                <li><strong>Regulación e incentivos:</strong> en Colombia los vehículos eléctricos de
+                    dos ruedas tributan solo 5 % IVA y ≤ 1 % impuesto vehicular,
+                    impulsando la adopción.<sup><a href="#ref-mintrans">[5]</a></sup></li>
+                <li><strong>Cadena de valor corta (<em>near-shoring</em>):</strong> fabricantes regionales
+                    buscan ensamblaje en LATAM para evitar aranceles y reducir plazos logísticos.</li>
+              </ul>
+
+              <h5>Oportunidades y riesgos para <em>The Rolling Volts</em></h5>
+              <ul class="list list--ul">
+                <li><strong>Brecha regional de producción:</strong> ningún jugador cotizado ensambla en
+                    Latinoamérica; la mayoría importa desde Asia. Esto abre espacio a un actor
+                    local con menor <em>lead-time</em> y paridad de costes.</li>
+                <li><strong>Demanda corporativa insatisfecha:</strong> el auge del e-commerce y la logística
+                    <em>last-mile</em> requiere vehículos robustos con posventa cercana y
+                    piezas en &lt; 48 h – un punto débil de NIU y Yadea en la región.</li>
+                <li><strong>Riesgo de dumping asiático:</strong> la sobrecapacidad china podría presionar
+                    precios; diferenciarse vía servicio y origen local mitiga la guerra de
+                    márgenes.</li>
+                <li><strong>Exigencias regulatorias futuras:</strong> estándares de batería
+                    (UL 2271) y responsabilidad posconsumo elevarán barreras de entrada,
+                    favoreciendo a quien invierta temprano en certificaciones.</li>
+              </ul>
+
+              <h5>Conclusión estratégica</h5>
               <p>
-                <strong>Referencias:</strong>
-                <ul class="list list--ul">
-                  <li><a href="https://ir.niu.com/financials/annual-reports" target="_blank">NIU Technologies — Annual Reports</a></li>
-                  <li><a href="https://www.accell-group.com/en/publications/" target="_blank">Accell Group — Financial Publications</a></li>
-                  <li><a href="https://ir.bird.co/" target="_blank">Bird Global — Investor Relations</a></li>
-                  <li><a href="https://www.yadea.com/en/news.html" target="_blank">Yadea — Financial Reports</a></li>
-                </ul>
+              El sector de micromovilidad eléctrica exhibe crecimiento sólido y fragmentado,
+              con dominancia asiática en fabricación y operadores de <em>sharing</em> en las
+              principales urbes americanas. Incentivos fiscales locales, demanda B2B creciente
+              y ausencia de un ensamblador latinoamericano relevante configuran una
+              <strong>oportunidad de nicho</strong> para <em>The Rolling Volts</em>: producción
+              <em>near-shore</em>, servicio posventa ágil y alianzas con flotas corporativas.
+              </p>
+
+              <h5 id="referencias">Referencias</h5>
+              <ol class="list list--ol">
+                <li id="ref-bnef"><a href="https://about.bnef.com/blog/global-lithium-ion-battery-prices-fell-14-in-2024" target="_blank">
+                    BloombergNEF – Global Lithium-Ion Battery Prices Fell 14 % in 2024</a></li>
+                <li id="ref-imarc"><a href="https://www.imarcgroup.com/latin-america-electric-scooter-market" target="_blank">
+                    IMARC Group – Latin America Electric Scooter Market Size 2024-2034</a></li>
+                <li id="ref-grandview"><a href="https://www.grandviewresearch.com/horizon/outlook/e-bikes-market/latin-america" target="_blank">
+                    Grand View Research – Latin America E-Bike Market Outlook 2024</a></li>
+                <li id="ref-yadea"><a href="https://yadea.com/news-and-events/news/Yadea%20Recognized%20as%20Global%20No.1%20in%20Sales%20Volume%20for%207%20Consecutive%20Years" target="_blank">
+                    Yadea – Sales Volume No.1 for 7 Consecutive Years (2023)</a></li>
+                <li id="ref-mintrans"><a href="https://www.mintransporte.gov.co/documentos/vehiculos-electricos-incentivos" target="_blank">
+                    Ministerio de Transporte Colombia – Incentivos para Vehículos Eléctricos 2025</a></li>
+                <li><a href="https://ir.niu.com/news-releases/news-release-details/niu-technologies-provides-fourth-quarter-and-full-year-2024" target="_blank">
+                    NIU Technologies – FY 2024 Results</a></li>
+                <li><a href="https://investor.livewire.com/news-events-1/news/news-details/2025/LiveWire-Group-Inc.-Reports-2024-Fourth-Quarter-and-Full-Year-Financial-Results" target="_blank">
+                    LiveWire – 2024 Q4 & Full-Year Financial Results</a></li>
+                <li><a href="https://www.businesswire.com/news/home/20250302005123/en/Bird-Global-Inc.-Reports-Fourth-Quarter-and-Full-Year-2024-Financial-Results" target="_blank">
+                    Bird Global – FY 2024 Financial Results</a></li>
+                <li><a href="https://www.accell-group.com/en/investor-relations/results" target="_blank">
+                    Accell Group – Annual Report 2023</a></li>
+              </ol>
+
+            <h4>4.1.2.2.2 Índice de saturación del mercado potencial</h4>
+
+              <p>
+                Para estimar el grado en que la oferta real de vehículos eléctricos de dos ruedas
+                (V2R-EV) cubre la demanda potencial identificada en los apartados previos,
+                se empleó el siguiente indicador:
+              </p>
+
+              <p class="text-center">
+                <strong>Índice de Saturación (IS) %</strong> = (Ventas o parque V2R-EV<sub>2024</sub>  ÷  Demanda potencial<sub>anual</sub>) × 100
+              </p>
+
+              <h5>Metodología de datos</h5>
+              <ul>
+                <li><strong>Ventas / parque 2024</strong> — se tomaron las unidades registradas o importadas durante 2024
+                  por empresas cotizadas y asociaciones sectoriales (ANDEMOS, eCycleElectric, IMARC, Precedence).</li>
+                <li><strong>Demanda potencial</strong> — proyecciones elaboradas a partir de:
+                  <ul>
+                    <li>Viajes diarios en bicicleta y cuota aspirada de conversión a eléctricos (Bogotá).</li>
+                    <li>Volumen anual de bicicletas vendidas (Colombia) y
+                        metas gubernamentales de electrificación (Latam y América).</li>
+                    <li>Número de bicicletas en uso a escala mundial (≈ 1 000 M) como techo
+                        de conversión posible (<em>long-run</em>).</li>
+                  </ul>
+                </li>
+                <li>Cuando los informes financieros dan ingresos (Latam), se transformaron
+                    a unidades usando un precio medio de USD 2 000 por e-bike, rango indicado por
+                    distribuidores especializados.</li>
+              </ul>
+
+              <h5>Resultados (2024)</h5>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Escala</th>
+                    <th>Potencial&nbsp;<br>(unid./año)</th>
+                    <th>Ventas / Parque 2024&nbsp;<br>(unid.)</th>
+                    <th>IS&nbsp;%</th>
+                    <th>Lectura estratégica</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Bogotá</td>
+                    <td>≈ 88 000<sup><a href="#ref1">[1]</a></sup></td>
+                    <td>≈ 400<sup><a href="#ref2">[2]</a></sup></td>
+                    <td><strong>0,5 %</strong></td>
+                    <td>Mercado casi virgen: gran holgura para entrada local.</td>
+                  </tr>
+                  <tr>
+                    <td>Colombia</td>
+                    <td>≈ 50 000<sup><a href="#ref1">[1]</a></sup></td>
+                    <td>1 324<sup><a href="#ref3">[3]</a></sup></td>
+                    <td><strong>2,6 %</strong></td>
+                    <td>Baja penetración; incentivos públicos pueden acelerar adopción.</td>
+                  </tr>
+                  <tr>
+                    <td>Latinoamérica</td>
+                    <td>≈ 2 000 000<sup><a href="#ref4">[4]</a></sup></td>
+                    <td>≈ 1 030 000<sup><a href="#ref4">[4]</a> <a href="#ref5">[5]</a></sup></td>
+                    <td><strong>51 %</strong></td>
+                    <td>Saturación media; foco en nichos urbanos premium.</td>
+                  </tr>
+                  <tr>
+                    <td>América (continente)</td>
+                    <td>≈ 6 000 000<sup><a href="#ref4">[4]</a></sup></td>
+                    <td>≈ 3 000 000<sup><a href="#ref5">[5]</a></sup></td>
+                    <td><strong>50 %</strong></td>
+                    <td>Mercado rumbo a madurez; diferenciación + costes clave.</td>
+                  </tr>
+                  <tr>
+                    <td>Mundial</td>
+                    <td>≈ 1 000 000 000<sup><a href="#ref6">[6]</a></sup></td>
+                    <td>≈ 300 000 000<sup><a href="#ref7">[7]</a></sup></td>
+                    <td><strong>30 %</strong></td>
+                    <td>Alto potencial restante; Asia lidera y arrastra oferta.</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h5>Implicaciones para <em>The Rolling Volts</em></h5>
+              <p>
+                Los niveles de saturación inferiores al 3 % en Bogotá y Colombia demuestran
+                que la oportunidad inicial sigue siendo doméstica: un jugador con
+                ensamblaje local y precios sub-USD 1 400 aún compite casi sin barreras
+                de saturación. La estrategia debe concentrarse, por tanto, en
+                <strong>educación del usuario, alianzas B2B de última milla y economías
+                de escala</strong> para preparar la expansión gradual a ciudades latinoamericanas
+                donde la saturación sea intermedia (&lt; 60 %).
               </p>
               
+              <h5>Referencias</h5>
+
+              <ol>
+                <li>
+                  <a href="https://www.larepublica.co/especiales/crecen-las-opciones-de-movilidad/el-97-de-las-bicicletas-que-se-venden-en-el-pais-son-importadas-3647876" target="_blank" rel="noopener">
+                    La República – “El 97 % de las bicicletas que se venden en el país son importadas” (2024)
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.eltiempo.com/vida/medio-ambiente/james-downer-el-estadounidense-que-se-quedo-en-colombia-fabricando-bicicletas-electricas-el-pais-tiene-una-esencia-especial-3395780" target="_blank" rel="noopener">
+                    El Tiempo – “Guajira Bikes espera cerrar 2024 con 400 e-bikes vendidas”
+                  </a>
+                </li>
+                <li>
+                  <a href="https://motolabelectric.com/motos-electricas-2024/" target="_blank" rel="noopener">
+                    Motolab Electric (ANDEMOS) – Ventas de motos eléctricas en Colombia 2024
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.imarcgroup.com/latin-america-electric-bicycle-market" target="_blank" rel="noopener">
+                    IMARC Group – Latin America Electric Bicycle Market Size 2024
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.ecycleelectric.com/blog/2025/2/12/how-big-is-the-usa-e-bike-market-in-2024-25" target="_blank" rel="noopener">
+                    eCycleElectric – Importaciones de e-bikes en EE. UU. 2024-25
+                  </a>
+                </li>
+                <li>
+                  <a href="https://runrepeat.com/cycling-statistics" target="_blank" rel="noopener">
+                    RunRepeat – Estadísticas: 1 000 M de bicicletas en uso mundial
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.precedenceresearch.com/insights/e-bike-market" target="_blank" rel="noopener">
+                    Precedence Research – Parque global de 300 M e-bikes (2023)
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.rei.com/learn/expert-advice/cost-electric-bikes.html" target="_blank" rel="noopener">
+                    REI Expert Advice – Coste promedio de una e-bike ≈ US $ 2 000
+                  </a>
+                </li>
+              </ol>
+
+            <h4>4.1.2.2.3 Análisis socioeconómico del mercado potencial</h4>
+
               <p>
-                📄 La hoja de cálculo con el análisis de costos inicial está disponible en el siguiente enlace al repositorio de GitHub de The Rolling Volts:<br>
-                <a href="https://github.com/The-rolling-volts/APM/blob/main/Evaluacion_economica_de_proyectos/Analisis%20de%20Mercado/Analisis_Costos_Inicial_The_Rolling_Volts.xlsx" target="_blank">
-                Ver archivo Excel de análisis de costos
-                </a>
+              El potencial de adopción de vehículos eléctricos de dos ruedas depende tanto del
+              tamaño demográfico como de la capacidad de gasto, los niveles de conectividad digital y
+              la desigualdad económica de cada territorio. A continuación se sintetizan los principales
+              indicadores socioeconómicos de referencia para <strong>Bogotá, Colombia, Latinoamérica,
+              América</strong> (continente) y el <strong>mundo</strong>.
               </p>
 
- 
-            <h4>4.1.2.1.3 El marketing mix</h4>
- 
-              <h5>4.1.2.1.3.1 Análisis del producto</h5>
- 
-              <h5>4.1.2.1.3.2 Análisis del precio</h5>
- 
-              <h5>4.1.2.1.3.3 Análisis de la política de comunicación</h5>
- 
-              <h5>4.1.2.1.3.4 Análisis de la distribución</h5>
- 
-          <h4>4.1.2.1.4 Determinación del mercado potencial</h4>
- 
-          <h4>4.1.2.1.5 Estudio de actitudes y expectativas del público objetivo</h4>
- 
-        <h3>4.1.2.2 Análisis externo</h3>
- 
-          <h4>4.1.2.2.1 Análisis del sector y del mercado de referencia</h4>
- 
-          <h4>4.1.2.2.2 Índice de saturación del mercado potencial</h4>
- 
-          <h4>4.1.2.2.3 Análisis socioeconómico del mercado potencial</h4>
- 
-          <h4>4.1.2.2.4 Expectativas del mercado y ciclo de vida del producto</h4>
- 
-          <h4>4.1.2.2.5 Análisis estratégico de la competencia</h4>
+              <h5>Indicadores clave por escala (2025)</h5>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Escala</th>
+                    <th>Población<br>(mill.)</th>
+                    <th>PIB&nbsp;per&nbsp;cápita<br>(US$ corr.)</th>
+                    <th>Urbanización<br>(%)</th>
+                    <th>Ingreso&nbsp;medio<br>/salario</th>
+                    <th>Gini<br>(0-100)</th>
+                    <th>Internet&nbsp;/<br>móvil&nbsp;%</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Bogotá</td>
+                    <td>≈ 8,1<sup>*</sup></td>
+                    <td>≈ 13 000</td>
+                    <td>≈ 100</td>
+                    <td>COP 5,4 M / USD 1 387 mes<sup>†</sup></td>
+                    <td>54 <em>(ciudad)</em></td>
+                    <td>85,9 <em>uso Internet</em></td>
+                  </tr>
+                  <tr>
+                    <td>Colombia</td>
+                    <td>52,7</td>
+                    <td>≈ 8 200</td>
+                    <td>81,7</td>
+                    <td>USD 12 347 año</td>
+                    <td>53,9</td>
+                    <td>86,2 <em>accesos móviles/100 hab.</em></td>
+                  </tr>
+                  <tr>
+                    <td>Latinoamérica</td>
+                    <td>≈ 668</td>
+                    <td>≈ 9 600</td>
+                    <td>82</td>
+                    <td>—</td>
+                    <td>≥ 45 prom.</td>
+                    <td>72 <em>usuarios móvil-Internet</em></td>
+                  </tr>
+                  <tr>
+                    <td>América<br>(continente)</td>
+                    <td>≈ 1 040</td>
+                    <td>≈ 21 000</td>
+                    <td>82 <em>(prom.)</em></td>
+                    <td>—</td>
+                    <td>40 aprox.</td>
+                    <td>78 <em>suscriptores móviles</em></td>
+                  </tr>
+                  <tr>
+                    <td>Mundial</td>
+                    <td>≈ 8 060</td>
+                    <td>≈ 13 440 PPP</td>
+                    <td>57</td>
+                    <td>—</td>
+                    <td>38 prom.</td>
+                    <td>66 usuarios Internet</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="footnote">
+              <sup>*</sup> Proyección DANE 2025.<br>
+              <sup>†</sup> Salario medio Bogotá, convertidos a USD al tipo de cambio promedio 2025.
+              </p>
 
-        <h2>4.1.3 Análisis DAFO</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, animi. <mark>Praesentium esse magnam sequi aut,
-            repellat pariatur beatae quis</mark>. Quidem harum dolores ab velit neque suscipit vitae pariatur,
-          perspiciatis voluptatum molestiae facere ad tempora. Non omnis fugiat libero magnam sapiente vel. Optio a,enim
-          explicabo totam amet omnis accusantium! Quod.</p>
+              <h5>Lectura estratégica</h5>
+              <ul class="list list--ul">
+                <li><strong>Capacidad de pago:</strong> el ingreso medio urbano de Bogotá (≈ USD 1 387/mes) permite financiar
+                    e-bikes de USD 1 000-1 400 en 6-12 cuotas sin superar el 10 % del ingreso mensual.</li>
+                <li><strong>Brecha digital como habilitador:</strong> la penetración de Internet de 86 % en Colombia y 72 % en
+                    LATAM facilita la adopción de <em>apps</em> de conectividad y modelos <em>direct-to-consumer</em>.</li>
+                <li><strong>Desigualdad y nichos:</strong> el coeficiente Gini &gt; 50 en Colombia indica alta concentración de
+                    ingresos; se requerirán versiones accesibles (sub-USD 1 000) para capturar estratos 3-4,
+                    mientras que modelos premium apuntan a estratos 5-6 y empresas de logística.</li>
+                <li><strong>Empleo e informalidad:</strong> una tasa de desempleo nacional de 9 % (mayo 2025) amplifica la
+                    demanda de opciones de auto-empleo (repartidores, <em>gig-workers</em>) que valoran bajo costo de
+                    operación y financiamiento flexible.</li>
+                <li><strong>Tendencia urbana:</strong> con 82 % de población urbana en LATAM y 100 % en Bogotá, la
+                    densidad favorece vehículos ligeros frente al automóvil. Regulaciones de <em>cero emisiones</em>
+                    en zonas céntricas refuerzan la oportunidad.</li>
+              </ul>
 
-        <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt soluta similique quia.
-        </blockquote>
+              <h5>Implicaciones para <em>The Rolling Volts</em></h5>
+              <ul class="list list--ul">
+                <li>Segmentar por <strong>nivel de ingreso y conectividad</strong>: planes de suscripción con
+                    batería incluida para estratos 3-4; venta directa con <em>add-ons</em> IoT a estratos 5-6.</li>
+                <li>Alianzas con <em>fintech</em> y bancos de nicho para ofrecer crédito “cero papeles” en
+                    pagos mensuales &lt; USD 35.</li>
+                <li>Campañas que destaquen el <strong>ahorro anual</strong> frente a motocicleta gasolina (≈ USD 650)
+                    y la reducción de CO<sub>2</sub> por viaje.</li>
+                <li>Mapeo de <strong>bolsas de empleo gig</strong> (delivery, courier) para programas de
+                    <em>leasing-operativo</em> con buy-back al año 2.</li>
+              </ul>
 
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat fuga architecto accusamus?</p>
+              <h5>Referencias</h5>
+              <ol>
+                <li><a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion" target="_blank" rel="noopener">DANE – Proyecciones de población Bogotá 2025</a></li>
+                <li><a href="https://www.remoti.io/blog/average-salary-in-colombia" target="_blank" rel="noopener">Remoti – Average salary in Bogotá 2024</a></li>
+                <li><a href="https://www.dane.gov.co/index.php/en/statistics-by-topic/labor-market/employment-and-unemployment" target="_blank" rel="noopener">DANE – Tasa de desocupación mayo 2025</a></li>
+                <li><a href="https://www.dane.gov.co/index.php/en/statistics-by-topic-1/technology-and-innovation/information-and-communication-technology-ict/basic-ict-indicators-in-homes" target="_blank" rel="noopener">DANE – Indicadores TIC en hogares 2023</a></li>
+                <li><a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=CO" target="_blank" rel="noopener">World Bank – GDP per capita Colombia 2024</a></li>
+                <li><a href="https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS?locations=ZJ-LA" target="_blank" rel="noopener">World Bank – Urban population Latin America 2024</a></li>
+                <li><a href="https://www.gsma.com/solutions-and-impact/connectivity-for-good/mobile-economy/latam/" target="_blank" rel="noopener">GSMA – Mobile Economy Latin America 2024</a></li>
+                <li><a href="https://data.worldbank.org/indicator/SI.POV.GINI?locations=CO" target="_blank" rel="noopener">World Bank – Gini index Colombia 2024</a></li>
+                <li><a href="https://blogs.worldbank.org/en/opendata/poverty-in-latin-america--10-facts-you-need-to-know-for-2024" target="_blank" rel="noopener">World Bank Blog – Poverty in Latin America 2024</a></li>
+                <li><a href="https://www.un.org/uk/desa/68-world-population-projected-live-urban-areas-2050-says-un" target="_blank" rel="noopener">UN DESA – Urbanization prospects 2024</a></li>
+              </ol>
 
+            <h4>4.1.2.2.4 Expectativas del mercado y ciclo de vida del producto</h4>
 
+              <p>
+              Las tendencias de micromovilidad eléctrica muestran un crecimiento sostenido a nivel mundial
+              y oportunidades de adopción temprana en Colombia. El despliegue de incentivos fiscales,
+              presión regulatoria por emisiones y la evolución tecnológica de las baterías sitúan al sector
+              en una <strong>fase de crecimiento</strong> global, mientras que a nivel local aún se encuentra
+              en <strong>introducción</strong>&nbsp;(Bogotá y Colombia). 
+              </p>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas unde nihil alias culpa voluptas quibusdam
-          aliquam, veniam nostrum. Vitae molestiae quia minima aut eligendi quidem expedita consequuntur recusandae ad
-          itaque.</p>
+              <h5>Curva de adopción por región</h5>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Región / Escala</th>
+                    <th>Fase actual (2025)</th>
+                    <th>CAGR 2025-2030</th>
+                    <th>Indicadores clave</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Bogotá</td>
+                    <td><em>Introducción</em></td>
+                    <td>≈ 24 % estimado*</td>
+                    <td>IS&nbsp;0,5 %; incentivos IVA 5 %, baja oferta local</td>
+                  </tr>
+                  <tr>
+                    <td>Colombia</td>
+                    <td><em>Introducción-crecimiento</em></td>
+                    <td>≈ 18 %*</td>
+                    <td>IS 2,6 %; plan gov. 600 k VE-2R a 2030</td>
+                  </tr>
+                  <tr>
+                    <td>Latinoamérica</td>
+                    <td><em>Crecimiento temprano</em></td>
+                    <td>12 % CAGR :contentReference[oaicite:0]{index=0}</td>
+                    <td>Mercado e-bikes USD 2,06 B 2024</td>
+                  </tr>
+                  <tr>
+                    <td>América (continente)</td>
+                    <td><em>Crecimiento</em></td>
+                    <td>8-10 % CAGR :contentReference[oaicite:1]{index=1}</td>
+                    <td>Importaciones e-bikes USA 1,7 M u. 2024</td>
+                  </tr>
+                  <tr>
+                    <td>Mundial</td>
+                    <td><em>Crecimiento-madurez inicial</em></td>
+                    <td>10,3 % CAGR :contentReference[oaicite:2]{index=2}</td>
+                    <td>Mercado e-bikes USD 113,6 B en 2030</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="footnote">*Proyección interna basada en elasticidad-precio y adopción de motos EV.</p>
 
-        <ol class="list list--ol">
-          <li>Lorem, ipsum</li>
-          <li>
-            Lorem ipsum dolor sit amet
-            <ol class="list list--ol">
-              <li>Lorem, ipsum</li>
-              <li>Lorem, ipsum</li>
-            </ol>
-          </li>
-          <li>Lorem, ipsum</li>
-        </ol>
+              <h5>Proyección de demanda y momentos de inflexión</h5>
+              <ul class="list list--ul">
+                <li><strong>2025-2027 (Intro):</strong> Crece la conciencia ambiental y la demanda de <em>gig-workers</em>;
+                    barreras principales: precio inicial y ansiedad de autonomía.</li>
+                <li><strong>2028-2032 (Crecimiento acelerado):</strong> Reducción del coste $/kWh a &lt; 70 USD,
+                    infraestructura de ciclovías y cargadores públicos; penetra 15 % del parque moto/bici.</li>
+                <li><strong>2033-2038 (Madurez temprana):</strong> Normas Euro-like para zonas CERO-CO₂,
+                    consolidación de marcas; ventas se estabilizan y la rentabilidad depende de posventa y servicios digitales.</li>
+              </ul>
 
-        <hr>
+              <h5>Estrategia de ciclo de vida del producto para <em>The Rolling Volts</em></h5>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Fase</th>
+                    <th>Objetivo&nbsp;clave</th>
+                    <th>Palanca de valor</th>
+                    <th>Métrica crítica</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Introducción<br>(2025-2027)</td>
+                    <td>Validar PMF* y ganar <em>mind-share</em></td>
+                    <td>Pruebas 48 h, créditos “cero papeles”</td>
+                    <td>≥ 5 000 prerreservas /año</td>
+                  </tr>
+                  <tr>
+                    <td>Crecimiento<br>(2028-2032)</td>
+                    <td>Escalar producción regional</td>
+                    <td>Alianzas B2B, ampliación gama (cargo, premium)</td>
+                    <td>Capacidad &gt; 250 k u./año</td>
+                  </tr>
+                  <tr>
+                    <td>Madurez<br>(2033-2038)</td>
+                    <td>Diversificar ingresos</td>
+                    <td>Suscripción batería, <em>fleet-as-a-service</em></td>
+                    <td>&gt; 35 % ingresos de servicios</td>
+                  </tr>
+                  <tr>
+                    <td>Renovación<br>(post-2038)</td>
+                    <td>Lanzar plataforma Gen-2</td>
+                    <td>Baterías Na-ion, integración V2G</td>
+                    <td>Tasa de renovación &gt; 60 %</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="footnote">*PMF = Product-Market Fit</p>
 
-        <div class="text-component__block text-component__block--outset">
-          <h3 class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae officiis
-            similique enim?</h3>
+              <h5>Oportunidades y riesgos</h5>
+              <ul class="list list--ul">
+                <li><b>Ventana verde 2025-2030:</b> subsidios y Zonas de Bajas Emisiones aceleran adopción (Bogotá, Medellín).</li>
+                <li><b>Commoditización de hardware:</b> presión de precios de Yadea y proveedores chinos
+                    — mitigar con servicio posventa y ensamblaje local.</li>
+                <li><b>Innovación de baterías:</b> transición a LFP y Na-ion puede extender vida útil 30 %,
+                    reducir coste y desplazar modelos 2025 ⮕ plan de <em>retro-fit</em>.</li>
+                <li><b>Efecto <em>gig-economy</em>:</b> demanda elástica a precio-cuota mensual &lt; USD 35; 
+                    crece con plataformas delivery.</li>
+                <li><b>Cambio regulatorio:</b> homologación UL 2271 y reciclaje obligatorio — invertir temprano
+                    en certificaciones para barrera de entrada.</li>
+              </ul>
+
+              <h5>Referencias</h5>
+              <ol>
+                <li><a href="https://www.grandviewresearch.com/industry-analysis/e-bikes-market-report" target="_blank" rel="noopener">
+                    Grand View Research – E-Bike Market Size 2024-2030</a></li>
+                <li><a href="https://www.grandviewresearch.com/horizon/outlook/smart-mobility-market/latin-america" target="_blank" rel="noopener">
+                    Grand View Research – LATAM Smart Mobility Outlook 2024-2033</a></li>
+                <li><a href="https://finance.yahoo.com/news/scooter-market-report-2025-long-134700712.html" target="_blank" rel="noopener">
+                    Yahoo Finance – Scooter Market Report 2025-2034</a></li>
+                <li><a href="https://www.mckinsey.com/industries/automotive-and-assembly/our-insights/spotlight-on-mobility-trends" target="_blank" rel="noopener">
+                    McKinsey – Spotlight on Mobility Trends (2024)</a></li>
+                <li><a href="https://www.businesswire.com/news/home/20250115119173/en/E-Bike-Market-Outlook-Trends-Report-2025-2030" target="_blank" rel="noopener">
+                    BusinessWire – E-Bike Market Outlook &amp; Trends 2025-2030</a></li>
+              </ol>
+
+            <h4>4.1.2.2.5 Análisis estratégico de la competencia</h4>
+
+              <p>
+              Para evaluar el espacio competitivo donde incursionará <strong>The Rolling Volts (TRV)</strong>
+              se revisaron los reportes financieros y comunicados más recientes de los líderes de
+              micromovilidad eléctrica (dos ruedas) en cada escala: <em>LOBO EV</em>, <em>Fly-E</em>,
+              <em>LiveWire</em>, <em>NIU</em>, <em>Bird</em>, <em>Yadea</em>, <em>Giant</em>, <em>Accell</em> y <em>Askoll</em>.
+              Se analizaron líneas de producto, estrategia de crecimiento, estructura de costes
+              y movimientos de I+D con el fin de identificar <em>gaps</em> y barreras de entrada.
+              </p>
+
+              <h5>1. Matriz competitiva (2024-25)</h5>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Empresa<br>(Ticker / Priv.)</th>
+                    <th>Escala<br>de acción</th>
+                    <th>Modelo de negocio</th>
+                    <th>Ventaja competitiva clave</th>
+                    <th>Riesgo / Debilidad</th>
+                    <th>Hecho relevante 2024-25</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Yadea</strong> (HKEX)<br><small>No. 1 mundial</small></td>
+                    <td>Mundial</td>
+                    <td>Fabricación masiva + retail propio</td>
+                    <td>Coste &lt; US$ 90/kWh;<br>16,5 M u. vendidas 2023</td>
+                    <td>Dependencia de exportación;<br>guerra de precios</td>
+                    <td>Alcanzó 100 M u. acumuladas<a href="https://yadea.com/news-and-events/news/Breaking%20Records%3A%20Yadea%27s%20Global%20Sales%20Top%20100%20Million%20Units" target="_blank">[1]</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>NIU</strong> (Nasdaq)</td>
+                    <td>América / UE / Asia</td>
+                    <td>D2C + flotas B2B</td>
+                    <td>Plataforma IoT app + ecosistema accesorios</td>
+                    <td>Márgenes presionados; <br>dólar fuerte encarece LATAM</td>
+                    <td>924 340 u. vendidas 2024<a href="https://ir.niu.com/news-releases/news-release-details/niu-technologies-provides-fourth-quarter-and-full-year-2024" target="_blank">[2]</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>LiveWire</strong> (NYSE)</td>
+                    <td>América del N.</td>
+                    <td>Motos premium + lifestyle</td>
+                    <td>Brand Harley-Davidson;<br>Puesta 0-60 mph &lt; 3 s</td>
+                    <td>Nicho caro; volúmenes &lt; 2 k u.</td>
+                    <td>Pérdida neta −US$ 93,9 M 2024<a href="https://investor.livewire.com/news-events-1/news/news-details/2025/LiveWire-Group-Inc.-Reports-2024-Fourth-Quarter-and-Full-Year-Financial-Results/default.aspx" target="_blank">[3]</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bird</strong> (Nasdaq)</td>
+                    <td>América / UE</td>
+                    <td><em>Sharing</em> & licencias software</td>
+                    <td>Alianzas municipales; datos tráfico urbano</td>
+                    <td>Rentabilidad crónica negativa</td>
+                    <td>10-K 2024 reporta déficit US$ 93 M<a href="https://www.sec.gov/Archives/edgar/data/1653909/000162828025012130/bird-20241231.htm" target="_blank">[4]</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>LOBO EV</strong> (Nasdaq)</td>
+                    <td>LatAm / Asia</td>
+                    <td>OEM + wholesale</td>
+                    <td>Portafolio e-bikes + trikes;<br>bajos CAPEX</td>
+                    <td>Escala limitada; I+D incipiente</td>
+                    <td>Ingresos US$ 21,2 M (+36,9 %) 2024<a href="https://www.globenewswire.com/news-release/2025/04/29/3070361/0/en/LOBO-EV-Technologies-Ltd-Announces-Fiscal-Year-2024-Financial-Results-Highlights-Strategic-Expansion-in-Global-Electric-Mobility-Markets.html" target="_blank">[5]</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Accell Group</strong> (OTC)</td>
+                    <td>UE</td>
+                    <td>Multimarcas (Haibike, Raleigh)</td>
+                    <td>Red de servicio posventa europea</td>
+                    <td>Caída ventas post-COVID;<br>deuda alta</td>
+                    <td>Ingresos € 1 294 M 2023<a href="https://www.accell-group.com/files/6/1/1/4/241223%20-%20Accell%20Group%20press%20release%20-%20BUSINESS%20UPDATE.pdf" target="_blank">[6]</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Askoll EVA</strong> (AIM-IT)</td>
+                    <td>UE (Sur)</td>
+                    <td>Venta & leasing e-scooters</td>
+                    <td>Pionera BSS* de baterías extraíbles</td>
+                    <td>Volumen bajo (ventas €9 M 2024)</td>
+                    <td>70 % facturación Italia<a href="https://live.euronext.com/en/product/equities/IT0005337123-EXGM/company-information" target="_blank">[7]</a></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="footnote"><small>*BSS = Battery-Swap System</small></p>
+
+              <h5>2. Porter Five Forces – síntesis</h5>
+              <ul class="list list--ul">
+                <li><strong>Amenaza de nuevos entrantes (Baja-Media):</strong>
+                    economías de escala en baterías y certificaciones UL 2271
+                    elevan el CAPEX mínimo; sin embargo, contratos <em>OEM white-label</em>
+                    reducen barreras para marcas de nicho.</li>
+                <li><strong>Poder de negociación de proveedores (Alto):</strong>
+                    60 % del BOM depende de celdas LFP/21700 fabricadas en China.
+                    Riesgo de concentración mitigable con acuerdos de offtake regionales.</li>
+                <li><strong>Poder de negociación de compradores (Media-Alta):</strong>
+                    B2B flotas compran en grandes volúmenes y presionan precio;
+                    usuarios B2C sensibles al financiamiento &lt; US$35/mes en LatAm.</li>
+                <li><strong>Amenaza de sustitutos (Media):</strong>
+                    motos ICE baratas y transporte público siguen dominando,
+                    pero restricciones a combustión reducen su atractivo.</li>
+                <li><strong>Rivalidad existente (Alta):</strong>
+                    líderes asiáticos compiten en precio; marcas premium (LiveWire)
+                    en desempeño. Diferenciarse vía servicio posventa local y
+                    <em>leasing</em> flexible es clave para TRV.</li>
+              </ul>
+
+              <h5>3. Oportunidades para <em>The Rolling Volts</em></h5>
+              <ul class="list list--ul">
+                <li><strong>Nicho de producción local:</strong>
+                    ningún competidor ensambla e-bikes en Colombia;
+                    tiempo de entrega de Yadea/NIU ≥ 90 d; ensamblaje “near-shore”
+                    permite  30 d y arancel 0 % TLC CAN.</li>
+                <li><strong>Diferenciación por servicio:</strong>
+                    garantía 3 años batería + GPS antirrobo ≤ US$60/año
+                    cubre la principal objeción detectada en el estudio de actitud.</li>
+                <li><strong>Sinergia Fintech:</strong>
+                    crédito digital instantáneo a estratos 3-4 crea barrera
+                    blanda para rivales de importación pura.</li>
+                <li><strong>Plataforma modular:</strong>
+                    ofrecer <em>kits</em> de conversión logística (baúl, llanta reforzada)
+                    y “upgrade de batería” extiende ciclo de vida
+                    y reduce la presión competitiva en fase de madurez.</li>
+              </ul>
+
+              <h5>Referencias</h5>
+              <ol>
+                <li><a href="https://yadea.com/news-and-events/news/Breaking%20Records%3A%20Yadea%27s%20Global%20Sales%20Top%20100%20Million%20Units" target="_blank" rel="noopener">Yadea — Global Sales Top 100 M Units (2024)</a></li>
+                <li><a href="https://ir.niu.com/news-releases/news-release-details/niu-technologies-provides-fourth-quarter-and-full-year-2024" target="_blank" rel="noopener">NIU Technologies — FY 2024 Results</a></li>
+                <li><a href="https://investor.livewire.com/news-events-1/news/news-details/2025/LiveWire-Group-Inc.-Reports-2024-Fourth-Quarter-and-Full-Year-Financial-Results/default.aspx" target="_blank" rel="noopener">LiveWire — FY 2024 Financial Results</a></li>
+                <li><a href="https://www.sec.gov/Archives/edgar/data/1653909/000162828025012130/bird-20241231.htm" target="_blank" rel="noopener">Bird Global — Form 10-K 2024</a></li>
+                <li><a href="https://www.globenewswire.com/news-release/2025/04/29/3070361/0/en/LOBO-EV-Technologies-Ltd-Announces-Fiscal-Year-2024-Financial-Results-Highlights-Strategic-Expansion-in-Global-Electric-Mobility-Markets.html" target="_blank" rel="noopener">LOBO EV — FY 2024 Results & Expansion</a></li>
+                <li><a href="https://www.accell-group.com/files/6/1/1/4/241223%20-%20Accell%20Group%20press%20release%20-%20BUSINESS%20UPDATE.pdf" target="_blank" rel="noopener">Accell Group — Business Update 2023</a></li>
+                <li><a href="https://live.euronext.com/en/product/equities/IT0005337123-EXGM/company-information" target="_blank" rel="noopener">Askoll EVA — Company Information 2024</a></li>
+              </ol>
+
+            <h2>4.1.3 Análisis DAFO</h2>
+              <div class="matrizDAFO">
+                <div class="bmc">
+                  <div><a href="#fortalezas">Fortalezas</a></div>
+                  <div><a href="#debilidades">Debilidades</a></div>
+                  <div><a href="#oportunidades">Oportunidades</a></div>
+                  <div><a href="#amenazas">Amenazas</a></div>
+                </div>
+              </div>
+
+              <h5 id="fortalezas">Fortalezas</h5>
+              <ul>
+                <li>Equipo multidisciplinario con experiencia en software industrial, impresión 3D y mecatrónica.</li>
+                <li>Acceso a licencias académicas y red de mentores de la universidad.</li>
+                <li>Diseño de línea de ensamble automatizada que permite economías de escala.</li>
+                <li>Portafolio inicial de tres modelos alineado con la segmentación de mercado.</li>
+              </ul>
+
+              <!-- Debilidades -->
+              <h5 id="debilidades">Debilidades</h5>
+              <ul>
+                <li>Falta de capital propio y de infraestructura de producción.</li>
+                <li>Dependencia de fondos semilla y convocatorias externas.</li>
+                <li>Marca nueva sin reconocimiento; alto coste de marketing por unidad.</li>
+                <li>Márgenes sensibles a la variación del precio de materias primas.</li>
+              </ul>
+
+              <!-- Oportunidades -->
+              <h5 id="oportunidades">Oportunidades</h5>
+              <ul>
+                <li>Creciente demanda global de micromovilidad eléctrica sostenible.</li>
+                <li>Escasez de fabricantes cotizados que ensamblen en Latinoamérica.</li>
+                <li>Necesidades de flotas logísticas de última milla con servicio local.</li>
+                <li>Incentivos gubernamentales y políticas de cero emisiones.</li>
+              </ul>
+
+              <!-- Amenazas -->
+              <h5 id="amenazas">Amenazas</h5>
+              <ul>
+                <li>Competidores consolidados (NIU, Yadea, Bird, LiveWire, Fly-E) con economías de escala.</li>
+                <li>Posible dumping de productos asiáticos que presione precios.</li>
+                <li>Cambios regulatorios en seguridad de baterías y responsabilidad posconsumo.</li>
+                <li>Volatilidad en el coste de baterías y transporte.</li>
+              </ul>
+
+              <!-- Referencias -->
+              <h5>Referencias</h5>
+              <ul>
+                <li><a href="https://ir.niu.com" target="_blank">NIU Investor Relations</a></li>
+                <li><a href="https://www.yadea.com/en/investor" target="_blank">Yadea Annual Report</a></li>
+                <li><a href="https://investor.livewire.com" target="_blank">LiveWire Investor Info</a></li>
+                <li><a href="https://www.sec.gov/edgar/browse/?CIK=0001961331" target="_blank">Fly-E SEC Filings</a></li>
+                <li>Datos internos del proyecto “The Rolling Volts” (index.html).</li>
+              </ul>
+
         </div>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis incidunt minus Vero deserunt illum
-          perspiciatis sed sit. Officia, quia at? Nisi dolores quis culpa nulla eveniet? Rem vel numquam ipsa voluptatum
-          voluptate illo minima, temporibus atque officia soluta magnam laborum neque alias consequuntur enim aliquid
-          consequatur non accusamus exercitationem. Perspiciatis dolorem a commodi alias, ad corporis iusto magnam in
-          quae deleniti incidunt facilis voluptatibus. Aliquid reprehenderit, provident, totam necessitatibus cumque vel
-          veniam consequuntur maxime iure accusamus explicabo recusandae neque quas?</p>
-
-        <figure class="text-component__block">
-          <img
-            src="https://cdn.dribbble.com/users/310943/screenshots/2281993/empty-state-illustrations_still_2x.gif?compress=1&resize=400x300"
-            alt="Image description here">
-          <figcaption>Image caption</figcaption>
-        </figure>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis incidunt minus Vero deserunt illum
-          perspiciatis sed sit. Officia, quia at? Nisi dolores quis culpa nulla eveniet? Rem vel numquam ipsa voluptatum
-          voluptate illo minima, temporibus atque officia soluta magnam laborum neque alias consequuntur enim aliquid
-          consequatur non accusamus exercitationem. Perspiciatis dolorem a commodi alias, ad corporis iusto magnam in
-          quae deleniti incidunt facilis voluptatibus. Aliquid reprehenderit, provident, totam necessitatibus cumque vel
-          veniam consequuntur maxime iure accusamus explicabo recusandae neque quas?</p>
-
-        <figure class="text-component__block text-component__block--left">
-          <img
-            src="https://cdn.dribbble.com/users/310943/screenshots/2281993/empty-state-illustrations_still_2x.gif?compress=1&resize=400x300"
-            alt="Image description here">
-          <figcaption>Image caption</figcaption>
-        </figure>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis incidunt minus Vero deserunt illum
-          perspiciatis sed sit. Officia, quia at? Nisi dolores quis culpa nulla eveniet? Rem vel numquam ipsa voluptatum
-          voluptate illo minima, temporibus atque officia soluta magnam laborum neque alias consequuntur enim aliquid
-          consequatur non accusamus exercitationem. Perspiciatis dolorem a commodi alias, ad corporis iusto magnam in
-          quae deleniti incidunt facilis voluptatibus. Aliquid reprehenderit, provident, totam necessitatibus cumque vel
-          veniam consequuntur maxime iure accusamus explicabo recusandae neque quas?</p>
-
-        <figure class="text-component__block text-component__block--outset text-component__block--right">
-          <img
-            src="https://cdn.dribbble.com/users/310943/screenshots/2281993/empty-state-illustrations_still_2x.gif?compress=1&resize=400x300"
-            alt="Image description here">
-          <figcaption>Image caption</figcaption>
-        </figure>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis incidunt minus Vero deserunt illum
-          perspiciatis sed sit. Officia, quia at? Nisi dolores quis culpa nulla eveniet? Rem vel numquam ipsa voluptatum
-          voluptate illo minima, temporibus atque officia soluta magnam laborum neque alias consequuntur enim aliquid
-          consequatur non accusamus exercitationem. Perspiciatis dolorem a commodi alias, ad corporis iusto magnam in
-          quae deleniti incidunt facilis voluptatibus. Aliquid reprehenderit, provident, totam necessitatibus cumque vel
-          veniam consequuntur maxime iure accusamus explicabo recusandae neque quas?</p>
-
       </div>
-    </div>
   </article>
 
   <article class="article-wrapper padding-y-lg article" id="article2">
@@ -417,7 +1740,7 @@
         </div>
       </div>
     </div>
-    <br/>
+    <br />
     <div class="text-component line-height-lg text-gap-md" id="customerSegments">
       <h2>Segmentos de mercado</h2>
       <p class="color-contrast-medium text-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni harum
