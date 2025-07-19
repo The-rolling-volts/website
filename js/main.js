@@ -14,7 +14,12 @@ window.onload = function () {
         './modulos/gestion/index.html':'modulos/gestion/index.html', // //
         './modulos/industria4/index.html':'modulos/industria4/index.html', // //
         './modulos/planeacion/index.html':'modulos/planeacion/index.html', // //
-        './modulos/evaluacionEconomica/index.html':'modulos/evaluacionEconomica/index.html', // //
+        './modulos/evaluacionEconomica/index.html': 'modulos/evaluacionEconomica/index.html',
+        './modulos/evaluacionEconomica/estudioDeMercado.html': 'modulos/evaluacionEconomica/estudioDeMercado.html',
+        './modulos/evaluacionEconomica/index.html#article1':'modulos/evaluacionEconomica/index.html#article1',
+        './modulos/evaluacionEconomica/index.html#article2':'modulos/evaluacionEconomica/index.html#article2',
+        './modulos/evaluacionEconomica/index.html#article3':'modulos/evaluacionEconomica/index.html#article3',
+        './modulos/evaluacionEconomica/index.html#article4':'modulos/evaluacionEconomica/index.html#article4',
         './modulos/celdaManufactura/index.html':'modulos/celdaManufactura/index.html', // //
         './modulos/digitalFactory/index.html':'modulos/digitalFactory/index.html', // //
         './modulos/PLC/index.html':'modulos/PLC/index.html', // //
@@ -56,6 +61,7 @@ window.onload = function () {
     const footer = new WebComponent(path, document.createElement('footer'), urlMapFooter, 'footer', 'footer.html', '.footer');
 
     if (document.documentElement.hasAttribute('data-article-navbar')) { 
+        const articleNavbarCSS = new ScriptTag('link', '', `href;${path}css/articleNavbar.css`, 'rel;stylesheet preload prefetch', 'as;style', 'async;true');
 /* ----------------------------------------------------------
 ➊ Construir dinámicamente el índice de artículo
 ---------------------------------------------------------- */

@@ -579,3 +579,53 @@ color: #000000;
   background:#f5f5f5;
 }
 
+
+/* --- Paginador ----------------------------------------------------------- */
+.pagination {
+  display: flex;                  /* coloca “Previous … Next” en línea       */
+  justify-content: space-between; /* extremos opuestos                       */
+  align-items: center;            /* ✨ centra verticalmente                  */
+  width: 100%;                    /* se adapta al ancho del contenedor       */
+  height: 40px;                   /* alto fijo del control                   */
+  font-family: 'Inter', sans-serif;
+  color: #6b7280;                 /* gris base                               */
+  border-block: 1px solid #e5e7eb;/* línea arriba y abajo                    */
+  margin-bottom:1px;
+}
+
+/* Enlaces del paginador */
+.pagination a {
+  display: flex;                  /* icono + texto en la misma fila          */
+  align-items: center;            /* centra verticalmente el par icono-texto */
+  padding: 8px 16px;              /* 8 px arriba/abajo, 16 px laterales      */
+  color: #9ca3af;                 /* gris claro                              */
+  text-decoration: none;
+  border-block: 2px solid transparent; /* para el estado activo/hover        */
+}
+
+/* Estados interactivos */
+.pagination a:hover {
+  border-color: #d1d5db;
+  color: #374151;
+}
+.pagination a:active,
+.pagination a.current {
+  border-color: #f59e0b;          /* naranja activo                          */
+  color: #374151;
+}
+
+/* Ajustes de cada extremo */
+.pagination a.previous {          /* ← Previous */
+  padding-inline-end: 4px;        /* acorta lado derecho                     */
+}
+.pagination a.next {              /* Next → */
+  padding-inline-start: 4px;      /* acorta lado izquierdo                   */
+}
+
+/* Iconos (los <svg>) */
+.pagination a svg {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+}
+.pagination a.previous svg { margin-right: 20px; }
+.pagination a.next svg    { margin-left: 20px; transform: scaleX(-1); }
