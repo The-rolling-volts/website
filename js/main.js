@@ -60,7 +60,7 @@ window.onload = function () {
     );
     const footer = new WebComponent(path, document.createElement('footer'), urlMapFooter, 'footer', 'footer.html', '.footer');
 
-    if (document.documentElement.hasAttribute('data-article-navbar')) { 
+        { 
         const articleNavbarCSS = new ScriptTag('link', '', `href;${path}css/articleNavbar.css`, 'rel;stylesheet preload prefetch', 'as;style', 'async;true');
 /* ----------------------------------------------------------
 ➊ Construir dinámicamente el índice de artículo
@@ -83,6 +83,8 @@ window.onload = function () {
         const articleNavbarJS = new ScriptTag('script', 'last', `src;${path}js/articleNavbar.js`, 'as;script', 'async;true', 'type;text/javascript');
 
         const headerArticleJS = new ScriptTag('script', 'last', `src;${path}js/headerArticle.js`, 'as;script', 'async;true', 'type;text/javascript');
+    
+        const paginationJS      = new ScriptTag('script','last',`src;${path}js/pagination.js`,'as;script','async;true','type;module');
         
     }
 
