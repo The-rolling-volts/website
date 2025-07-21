@@ -12,8 +12,25 @@ window.onload = function () {
         './productoDeIngenieria/index.html':'productoDeIngenieria/index.html', //
         './modulos/index.html':'modulos/index.html', //
         './modulos/gestion/index.html':'modulos/gestion/index.html', // //
+        './modulos/gestion/index.html#article1':'modulos/gestion/index.html#article1', // //
+        './modulos/gestion/index.html#article2':'modulos/gestion/index.html#article2', // //
+        './modulos/gestion/index.html#article3':'modulos/gestion/index.html#article3', // //
+        './modulos/gestion/index.html#article4':'modulos/gestion/index.html#article4', // //
         './modulos/industria4/index.html':'modulos/industria4/index.html', // //
+        './modulos/industria4/index.html#article1':'modulos/industria4/index.html#article1', // //
+        './modulos/industria4/index.html#article2':'modulos/industria4/index.html#article2', // //
+        './modulos/industria4/index.html#article3':'modulos/industria4/index.html#article3', // //
+        './modulos/industria4/index.html#article4':'modulos/industria4/index.html#article4', // //
+        './modulos/industria4/index.html':'modulos/industria4/index.html', // //
+        './modulos/industria4/index.html#article1':'modulos/industria4/index.html#article1', // //
+        './modulos/industria4/index.html#article2':'modulos/industria4/index.html#article2', // //
+        './modulos/industria4/index.html#article3':'modulos/industria4/index.html#article3', // //
+        './modulos/industria4/index.html#article4':'modulos/industria4/index.html#article4', // //
         './modulos/planeacion/index.html':'modulos/planeacion/index.html', // //
+        './modulos/planeacion/index.html#article1':'modulos/planeacion/index.html#article1', // //
+        './modulos/planeacion/index.html#article2':'modulos/planeacion/index.html#article2', // //
+        './modulos/planeacion/index.html#article3':'modulos/planeacion/index.html#article3', // //
+        './modulos/planeacion/index.html#article4':'modulos/planeacion/index.html#article4', // //
         './modulos/evaluacionEconomica/index.html': 'modulos/evaluacionEconomica/index.html',
         './modulos/evaluacionEconomica/estudioDeMercado.html': 'modulos/evaluacionEconomica/estudioDeMercado.html',
         './modulos/evaluacionEconomica/index.html#article1':'modulos/evaluacionEconomica/index.html#article1',
@@ -21,9 +38,25 @@ window.onload = function () {
         './modulos/evaluacionEconomica/index.html#article3':'modulos/evaluacionEconomica/index.html#article3',
         './modulos/evaluacionEconomica/index.html#article4':'modulos/evaluacionEconomica/index.html#article4',
         './modulos/celdaManufactura/index.html':'modulos/celdaManufactura/index.html', // //
+        './modulos/celdaManufactura/index.html#article1':'modulos/celdaManufactura/index.html#article1', // //
+        './modulos/celdaManufactura/index.html#article2':'modulos/celdaManufactura/index.html#article2', // //
+        './modulos/celdaManufactura/index.html#article3':'modulos/celdaManufactura/index.html#article3', // //
+        './modulos/celdaManufactura/index.html#article4':'modulos/celdaManufactura/index.html#article4', // //
         './modulos/digitalFactory/index.html':'modulos/digitalFactory/index.html', // //
+        './modulos/digitalFactory/index.html#article1':'modulos/digitalFactory/index.html#article1', // //
+        './modulos/digitalFactory/index.html#article2':'modulos/digitalFactory/index.html#article2', // //
+        './modulos/digitalFactory/index.html#article3':'modulos/digitalFactory/index.html#article3', // //
+        './modulos/digitalFactory/index.html#article4':'modulos/digitalFactory/index.html#article4', // //
         './modulos/PLC/index.html':'modulos/PLC/index.html', // //
+        './modulos/PLC/index.html#article1':'modulos/PLC/index.html#article1', // //
+        './modulos/PLC/index.html#article2':'modulos/PLC/index.html#article2', // //
+        './modulos/PLC/index.html#article3':'modulos/PLC/index.html#article3', // //
+        './modulos/PLC/index.html#article4':'modulos/PLC/index.html#article4', // //
         './modulos/SCADA/index.html':'modulos/SCADA/index.html', // //
+        './modulos/SCADA/index.html#article1':'modulos/SCADA/index.html#article1', // //
+        './modulos/SCADA/index.html#article2':'modulos/SCADA/index.html#article2', // //
+        './modulos/SCADA/index.html#article3':'modulos/SCADA/index.html#article3', // //
+        './modulos/SCADA/index.html#article4':'modulos/SCADA/index.html#article4', // //
         './productos/index.html':'productos/index.html', //
         './Nosotros/index.html': 'Nosotros/index.html',
         './img/mountainBike.png': 'img/mountainBike.png',

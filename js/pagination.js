@@ -11,40 +11,40 @@ const svgArrow = `
 
 const PAGINATION_MAP = {
   'modulos/industria4/index.html': {
-    prev: { href: 'index.html',                                  text: 'Inicio'      },
-    next: { href: 'modulos/gestion/index.html',                  text: 'Modulo 2'    }
+    prev: { href: 'index.html', text: 'Inicio' },
+    next: { href: 'modulos/gestion/index.html', text: 'Modulo 2' }
   },
   'modulos/gestion/index.html': {
-    prev: { href: 'modulos/industria4/index.html',               text: 'Modulo 1'    },
-    next: { href: 'modulos/planeacion/index.html',               text: 'Modulo 3'    }
+    prev: { href: 'modulos/industria4/index.html', text: 'Modulo 1' },
+    next: { href: 'modulos/planeacion/index.html', text: 'Modulo 3' }
   },
   'modulos/planeacion/index.html': {
-    prev: { href: 'modulos/gestion/index.html',                  text: 'Modulo 2'    },
-    next: { href: 'modulos/evaluacionEconomica/index.html',      text: 'Modulo 4'    }
+    prev: { href: 'modulos/gestion/index.html', text: 'Modulo 2' },
+    next: { href: 'modulos/evaluacionEconomica/estudioDeMercado.html', text: 'Modulo 4' }
   },
   'modulos/evaluacionEconomica/estudioDeMercado.html': {
-    prev: { href: 'modulos/planeacion/index.html',               text: 'Modulo 3'    },
-    next: { href: 'modulos/evaluacionEconomica/index.html',      text: 'Modulo 4.2'  }
+    prev: { href: 'modulos/planeacion/index.html', text: 'Modulo 3' },
+    next: { href: 'modulos/evaluacionEconomica/index.html', text: 'Modulo 4.2' }
   },
   'modulos/evaluacionEconomica/index.html': {
     prev: { href: 'modulos/evaluacionEconomica/estudioDeMercado.html', text: 'Modulo 4.1' },
-    next: { href: 'modulos/celdaManufactura/index.html',         text: 'Modulo 5'    }
+    next: { href: 'modulos/celdaManufactura/index.html', text: 'Modulo 5' }
   },
   'modulos/celdaManufactura/index.html': {
-    prev: { href: 'modulos/evaluacionEconomica/index.html', text: 'Modulo 4.2'    },
-    next: { href: 'modulos/digitalFactory/index.html',           text: 'Modulo 6'    }
+    prev: { href: 'modulos/evaluacionEconomica/index.html', text: 'Modulo 4.2' },
+    next: { href: 'modulos/digitalFactory/index.html', text: 'Modulo 6' }
   },
   'modulos/digitalFactory/index.html': {
-    prev: { href: 'modulos/celdaManufactura/index.html',         text: 'Modulo 5'    },
-    next: { href: 'modulos/PLC/index.html',                      text: 'Modulo 7'    }
+    prev: { href: 'modulos/celdaManufactura/index.html', text: 'Modulo 5' },
+    next: { href: 'modulos/PLC/index.html', text: 'Modulo 7' }
   },
   'modulos/PLC/index.html': {
-    prev: { href: 'modulos/digitalFactory/index.html',           text: 'Modulo 6'    },
-    next: { href: 'modulos/SCADA/index.html',                    text: 'Modulo 8'    }
+    prev: { href: 'modulos/digitalFactory/index.html', text: 'Modulo 6' },
+    next: { href: 'modulos/SCADA/index.html', text: 'Modulo 8' }
   },
   'modulos/SCADA/index.html': {
-    prev: { href: 'modulos/PLC/index.html',                      text: 'Modulo 7'    },
-    next: { href: 'index.html',                                  text: 'Inicio'      }
+    prev: { href: 'modulos/PLC/index.html', text: 'Modulo 7' },
+    next: { href: 'index.html', text: 'Inicio' }
   }
 };
 
