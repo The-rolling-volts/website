@@ -31,7 +31,7 @@ const PAGINATION_MAP = {
     next: { href: 'modulos/celdaManufactura/index.html',         text: 'Modulo 5'    }
   },
   'modulos/celdaManufactura/index.html': {
-    prev: { href: 'modulos/evaluacionEconomica/estudioDeMercado.html', text: 'Modulo 4'    },
+    prev: { href: 'modulos/evaluacionEconomica/index.html', text: 'Modulo 4.2'    },
     next: { href: 'modulos/digitalFactory/index.html',           text: 'Modulo 6'    }
   },
   'modulos/digitalFactory/index.html': {
