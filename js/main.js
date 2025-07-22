@@ -93,7 +93,7 @@ window.onload = function () {
     );
     const footer = new WebComponent(path, document.createElement('footer'), urlMapFooter, 'footer', 'footer.html', '.footer');
 
-        { 
+    if( document.documentElement.getAttribute('data-article-navbar') != null){ 
         const articleNavbarCSS = new ScriptTag('link', '', `href;${path}css/articleNavbar.css`, 'rel;stylesheet preload prefetch', 'as;style', 'async;true');
 /* ----------------------------------------------------------
 ➊ Construir dinámicamente el índice de artículo
