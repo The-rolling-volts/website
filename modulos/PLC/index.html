@@ -32,13 +32,14 @@
             <a href="#article2" class="btn btn_3">Ver</a>
           </article>
         </li>
+        <!--
         <li data-modulo="Módulo 7.3">
           <article class="center-y padding_2x">
             <h3 class="big title"><em>Modificar</em></h3>
-            <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>-->
+            <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             <a href="#article3" class="btn btn_3">Ver</a>
           </article>
-        </li>
+        </li>-->
       </ul>
       <aside>
       </aside>
@@ -51,32 +52,144 @@
         <h1>M7 Controladores Industriales (PLC)</h1>
       </div>
     </div>
+    <div class="text-component line-height-lg text-gap-md">
+      <p>
+        Para la sección de SCADA y controladores industriales, el proceso se desglosó en dos partes: una correspondiente
+        al
+        <strong>lavado y pintura de los marcos</strong>, y otra al <strong>ensamble de las bicicletas</strong>,
+        referenciadas como
+        <strong>parte&nbsp;1</strong> y <strong>parte&nbsp;2</strong>, respectivamente.
+      </p>
+      <p>
+        La lógica de la parte 1 fue programada en un <strong>PLC S7-1200 de Siemens</strong>, mientras que la lógica de
+        la parte 2 se implementó en un
+        <strong>CompactLogix 5330 ERM de Allen-Bradley</strong>. Para permitir la comunicación entre ambos
+        controladores, se utilizaron
+        <strong>dos módulos SIMATIC IoT2040</strong> ejecutando <strong>Node-RED</strong>. La comunicación se estableció
+        mediante
+        <strong>MQTT</strong>, permitiendo el intercambio de <em>tags</em> entre los dos sistemas.
+      </p>
+      <p>
+        Para el servidor MQTT (broker), se utilizó <strong>HiveMQ</strong>, desplegado en la nube a través de un
+        contenedor en <strong>AWS</strong>.
+        Los módulos IoT se suscribían a los tópicos correspondientes y enviaban la información a sus respectivos PLCs.
+      </p>
+    </div>
   </article>
 
   <article class="article-wrapper padding-y-lg article" id="article1">
     <div class="container max-width-xs margin-bottom-lg">
       <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
-        <h1>M7.1 Implementación</h1>
+        <h1>M7.1 Programación PLC SIEMENS S1200</h1>
       </div>
+    </div>
+    <div class="text-component line-height-lg text-gap-md">
+      <p>
+        Para la programación del controlador, se realizó un <strong>análisis por etapas (GRAFCET)</strong> del
+        subproceso.
+      </p>
+      <figure class="container max-width-lg margin-bottom-lg">
+        <img src="./img/webp/Parte_1_Grafcet.webp" loading="lazy" decoding="async" alt="Parte_1_Grafcet" />
+      </figure>
+      <p>
+        El proceso inicia al <strong>encender el horno</strong> y esperar a que alcance el <strong>humbral de
+          precalentamiento adecuado</strong>.
+        Una vez cumplida esta condición (<strong>Transición 2</strong>), se <strong>enciende la banda 1</strong>,
+        iniciando el flujo de bicicletas.
+      </p>
+      <p>
+        Aparece una <strong>bifurcación AND</strong> con cuatro subprocesos paralelos (lavado y pintura). Para
+        <strong>optimizar los recursos</strong>, los actuadores se apagan automáticamente si detectan un slot vacío y
+        se mantienen así hasta que
+        vuelva a detectarse una bicicleta, alineándose con los principios de <strong>Lean Manufacturing</strong>.
+      </p>
+      <p>
+        Esta lógica se implementa en <strong>LADDER</strong> mediante subprocesos separados. El programa consta de:
+      </p>
+      <ul>
+        <li><code>MAIN</code></li>
+        <li><code>Automatic</code></li>
+        <li><code>Block_1</code> (variables analógicas)</li>
+      </ul>
+      <p>
+        En <code>MAIN</code> se procesan las <strong>entradas analógicas</strong> (<code>IW64</code>,
+        <code>IW66</code>) y se llama a
+        <code>Automatic</code>, habilitado desde el <em>dashboard</em> de Node-RED.
+      </p>
+      <figure class="container max-width-lg margin-bottom-lg">
+        <img src="./img/webp/Bloque_MAIN_TIA_PORTAL.webp" loading="lazy" decoding="async"
+          alt="Bloque MAIN_TIA_PORTAL" />
+      </figure>
+      <p>
+        En <code>Block_1</code> las variables analógicas se <strong>normalizan</strong> y escalan (0→100). Sus valores
+        se almacenan en una
+        <strong>base de datos</strong> accesible desde Node-RED.
+      </p>
+      <figure class="container max-width-lg margin-bottom-lg">
+        <img src="./img/webp/Bloque_Block_1_TIA.webp" loading="lazy" decoding="async" alt="Bloque Block_1_TIA" />
+      </figure>
+      <p>
+        El bloque <code>Automatic</code> contiene la rutina automática; energiza los <strong>actuadores</strong> según
+        las transiciones del GRAFCET.
+      </p>
+      <figure class="container max-width-lg margin-bottom-lg">
+        <img src="./img/webp/Bloque_Auto_TIA_1.webp" loading="lazy" decoding="async" alt="Bloque Auto_TIA_1" />
+      </figure>
+      <figure class="container max-width-lg margin-bottom-lg">
+        <img src="./img/webp/Bloque_Auto_TIA_2.webp" loading="lazy" decoding="async" alt="Bloque Auto_TIA_2" />
+      </figure>
     </div>
   </article>
 
   <article class="article-wrapper padding-y-lg article" id="article2">
     <div class="container max-width-xs margin-bottom-lg">
       <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
-        <h1>M7.2 Modificar</h1>
+        <h1>M7.2 Programación PLC CompactLogix 5330</h1>
       </div>
     </div>
+    <div class="text-component line-height-lg text-gap-md">
+      <p>
+        La segunda parte dispone de una <strong>línea principal de ensamble</strong> con varias
+        <strong>subestaciones</strong>. La banda solo avanza
+        cuando <strong>todas</strong> las estaciones reportan <em>OK</em>.
+      </p>
+      <p>
+        Cada estación cuenta con una <strong>botonera</strong>; la banda se detiene al llegar la bicicleta a la
+        posición de referencia.
+        La lógica se documentó en <strong>GRAFCET</strong> y se implementó en <strong>LADDER</strong>.
+      </p>
+      <p>
+        A continuación, el <strong>esquemático funcional</strong> del proceso:
+      </p>
+      <figure class="container max-width-lg margin-bottom-lg">
+        <img src="./img/webp/Parte_2_Grafcet.webp" loading="lazy" decoding="async" alt="Parte_2_Grafcet" />
+      </figure>
+      <p>
+        Cada subestación incluye un <strong>monitor industrial</strong> que indica al operario el producto a ensamblar
+        y la producción restante.
+      </p>
+      <p>
+        Para más detalles, consulte el archivo <code>.ACD</code> (convenciones: <code>T</code>=transiciones,
+        <code>E</code>=estaciones, comunicación con
+        variador vía <em>tags</em> de Node-RED).
+      </p>
+      <hr>
+    </div>
   </article>
-
+  <!--
   <article class="article-wrapper padding-y-lg article" id="article3">
     <div class="container max-width-xs margin-bottom-lg">
       <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
         <h1>M7.3 Modificar</h1>
       </div>
     </div>
-  </article>
 
+    <div class="text-component line-height-lg text-gap-md">
+      <p>
+      </p>
+    </div>
+  </article>
+  -->
   <script type="module" src="../../js/main.js"></script>
 
 </body>

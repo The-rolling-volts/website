@@ -13,7 +13,15 @@ import { WebComponent } from "./WebComponent.js";
     './img/celda.webp': 'modulos/img/celda.webp',
     './img/digitalFactory.webp': 'modulos/img/digitalFactory.webp',
     './img/PLC.webp': 'modulos/img/PLC.webp',
-    './img/SCADA.webp': 'modulos/img/SCADA.webp'
+    './img/SCADA.webp': 'modulos/img/SCADA.webp',
+    './modulos/gestion/index.html': 'modulos/gestion/index.html',
+    './modulos/industria4/index.html':'modulos/industria4/index.html',
+    './modulos/planeacion/index.html': 'modulos/planeacion/index.html',
+    './modulos/evaluacionEconomica/index.html': 'modulos/evaluacionEconomica/index.html',
+    './modulos/celdaManufactura/index.html': 'modulos/celdaManufactura/index.html',
+    './modulos/digitalFactory/index.html': 'modulos/digitalFactory/index.html',
+    './modulos/PLC/index.html': 'modulos/PLC/index.html',
+    './modulos/SCADA/index.html':'modulos/SCADA/index.html'
   };
 
   const articleNewsCardCSS = new ScriptTag(
@@ -29,7 +37,7 @@ import { WebComponent } from "./WebComponent.js";
     urlMapModulos,
     'containerArticleCard',
     'modulos.html',
-    '.thumbnail',
+    '.post-module',
     'last'
   );
 //});

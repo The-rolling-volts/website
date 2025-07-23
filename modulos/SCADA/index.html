@@ -22,69 +22,146 @@
         </li>
         <li data-modulo="Módulo 8.1" style="background-color:black;">
           <article class="center-y padding_2x">
-            <h3 class="big title"><em>Desarrollo</em> de HMI</h3>
+            <h3 class="big title"><em>Arquitectura</em> de Comunicaciones</h3>
             <a href="#article1" class="btn btn_3">Ver</a>
           </article>
         </li>
         <li data-modulo="Módulo 8.2">
           <article class="center-y padding_2x">
-            <h3 class="big title"><em>Incorporación</em> HMI</h3>
+            <h3 class="big title"><em>Node-RED</em> y SCADA</h3>
             <a href="#article2" class="btn btn_3">Ver</a>
           </article>
         </li>
+        <!--
         <li data-modulo="Módulo 8.3">
           <article class="center-y padding_2x">
             <h3 class="big title"><em>Modificar</em></h3>
-            <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>-->
+            <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             <a href="#article3" class="btn btn_3">Ver</a>
           </article>
-        </li>
+        </li>-->
       </ul>
       <aside>
       </aside>
     </section>
   </header>
 
-  <article class="article-wrapper padding-y-lg article">
+  <article class="article-wrapper padding-y-lg article" id="article">
     <div class="container max-width-xs margin-bottom-lg">
       <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
         <h1>M8 SCADA</h1>
       </div>
     </div>
-
-    <figure class="container max-width-lg margin-bottom-lg">
-      <iframe style="width:100%;height:100%;"
-        src="https://youtube.com/embed/Vl7T_qhmRME"
-        allowfullscreen>
-      </iframe>
-    </figure>
-
+    <div class="text-component line-height-lg text-gap-md">
+      <p>
+        Para la sección de SCADA y controladores industriales, el proceso se desglosó en dos partes: una correspondiente
+        al
+        <strong>lavado y pintura de los marcos</strong>, y otra al <strong>ensamble de las bicicletas</strong>,
+        referenciadas como
+        <strong>parte&nbsp;1</strong> y <strong>parte&nbsp;2</strong>, respectivamente.
+      </p>
+      <p>
+        La lógica de la parte 1 fue programada en un <strong>PLC S7-1200 de Siemens</strong>, mientras que la lógica de
+        la parte 2 se implementó en un
+        <strong>CompactLogix 5330 ERM de Allen-Bradley</strong>. Para permitir la comunicación entre ambos
+        controladores, se utilizaron
+        <strong>dos módulos SIMATIC IoT2040</strong> ejecutando <strong>Node-RED</strong>. La comunicación se estableció
+        mediante
+        <strong>MQTT</strong>, permitiendo el intercambio de <em>tags</em> entre los dos sistemas.
+      </p>
+      <p>
+        Para el servidor MQTT (broker), se utilizó <strong>HiveMQ</strong>, desplegado en la nube a través de un
+        contenedor en <strong>AWS</strong>.
+        Los módulos IoT se suscribían a los tópicos correspondientes y enviaban la información a sus respectivos PLCs.
+      </p>
+    </div>
   </article>
 
   <article class="article-wrapper padding-y-lg article" id="article1">
     <div class="container max-width-xs margin-bottom-lg">
       <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
-        <h1>M8.1 Desarrollo HMI</h1>
+        <h1>M8.1 Arquitectura de Comunicaciones</h1>
       </div>
+    </div>
+    <div class="text-component line-height-lg text-gap-md">
+      <p>
+        Se plantea conectar los diferentes <strong>sensores ambientales</strong> a los módulos IoT mediante
+        <strong>Modbus</strong>, mientras que los
+        <strong>sensores de presencia o conteo</strong> estarán asociados directamente a su respectivo PLC. Toda la
+        información recolectada será
+        enviada a un <strong>servidor MQTT</strong>, centralizando los datos para su monitoreo y análisis.
+      </p>
+
+      <figure class="container max-width-lg margin-bottom-lg">
+        <img src="./img/webp/Arquitectura_de_comunicaciones_SCADA.webp" loading="lazy" decoding="async"
+          alt="Arquitectura de comunicaciones SCADA" />
+      </figure>
     </div>
   </article>
 
   <article class="article-wrapper padding-y-lg article" id="article2">
     <div class="container max-width-xs margin-bottom-lg">
       <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
-        <h1>M8.2 Incorporación HMI</h1>
+        <h1>M8.2 Node-RED y SCADA</h1>
       </div>
     </div>
-  </article>
+    <div class="text-component line-height-lg text-gap-md">
+        <p>Se desarrollaron <strong>tres flujos principales</strong>:</p>
+        <ol class="list list--ol">
+          <li><strong>Supervisión de sensores y máquinas</strong>.</li>
+          <li><strong>Supervisión de variables ambientales</strong> (temperatura, humedad, partículas).</li>
+          <li><strong>Control manual de equipos y actuadores</strong>.</li>
+        </ol>
 
+        <p>
+          Además, existe una <strong>sección de alarmas</strong> que se activa cuando alguna variable excede sus
+          límites.
+        </p>
+
+        <figure class="container max-width-lg margin-bottom-lg">
+          <img src="./img/webp/SCADA_1.webp" loading="lazy" decoding="async" alt="SCADA_1" />
+        </figure>
+        <figure class="container max-width-lg margin-bottom-lg">
+          <img src="./img/webp/SCADA_2.webp" loading="lazy" decoding="async" alt="SCADA_2" />
+        </figure>
+        <figure class="container max-width-lg margin-bottom-lg">
+          <img src="./img/webp/SCADA_3.webp" loading="lazy" decoding="async" alt="SCADA_3" />
+        </figure>
+
+        <p>Flujos en Node-RED:</p>
+
+        <h2>Flujo de Supervisión</h2>
+        <figure class="container max-width-lg margin-bottom-lg">
+          <img src="./img/webp/Node-Red_FLUJO_SUPERVISION.webp" loading="lazy" decoding="async"
+            alt="Node-Red_FLUJO_SUPERVISION" />
+        </figure>
+
+        <h2>Flujo MODBUS / Sensor Ambiental</h2>
+        <figure class="container max-width-lg margin-bottom-lg">
+          <img src="./img/webp/Node-Red_FLUJO_SENSOR_AMBIENTE.webp" loading="lazy" decoding="async"
+            alt="Node-Red_FLUJO SENSOR AMBIENTE" />
+        </figure>
+
+        <h2>Flujo Indicadores de Producción</h2>
+        <figure class="container max-width-lg margin-bottom-lg">
+          <img src="./img/webp/Node-Red_FLUJO_ORDENES_DEL_DIA.webp" loading="lazy" decoding="async"
+            alt="Node-Red_FLUJO ORDENES DEL DIA" />
+        </figure>
+    </div>
+  </article>
+<!--
   <article class="article-wrapper padding-y-lg article" id="article3">
     <div class="container max-width-xs margin-bottom-lg">
       <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
         <h1>M8.3 Modificar</h1>
       </div>
     </div>
+    <div class="text-component line-height-lg text-gap-md">
+      <p>
+      </p>
+    </div>
   </article>
-
+-->
   <script type="module" src="../../js/main.js"></script>
 
 </body>
