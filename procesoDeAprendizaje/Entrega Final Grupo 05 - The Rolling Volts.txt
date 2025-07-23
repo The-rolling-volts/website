@@ -5,7 +5,7 @@ Link de la pagina web:
 www.therollingvolts.com
 
 El video de la entrega final se encuentra en la sección de proceso de aprendizaje de la pagina web:
-www.therollingvolts.com/procesoDeAprendizaje/index.html#videoEntregaFinal
+    www.therollingvolts.com/procesoDeAprendizaje/index.html#videoEntregaFinal
 
 Integrantes:
 David Santiago Rodriguez Almanza
