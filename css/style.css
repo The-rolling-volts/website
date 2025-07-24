@@ -629,3 +629,16 @@ color: #000000;
 }
 .pagination a.previous svg { margin-right: 20px; }
 .pagination a.next svg    { margin-left: 20px; transform: scaleX(-1); }
+/* Wrapper para cualquier imagen “panorámica” o muy ancha */
+.img-scroll {
+  width: 100%;         /* ocupa todo el ancho del artículo/section */
+  overflow-x: auto;    /* muestra barra horizontal si la imagen desborda */
+}
+
+/* Imagen dentro del wrapper */
+.img-scroll > img {
+  display: block;      /* quita el espacio inferior del inline-block */
+  width: 100%;         /* se escalará con el contenedor */
+  height: auto;
+  min-width: 900px;    /* NO se encoge por debajo de 900 px */
+}
