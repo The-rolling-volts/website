@@ -1,0 +1,7 @@
+OPERARIOS:
+EN PRIMERA PARTE:
+    - Un operario que pone las bicicletas en la parte 1?
+    - Un operario que traslada las biciletas de la parte 1 a las dos
+    - 12 operarios en la linea final de ensamblaje
+    - Debe haber un operario por cada maquina de lacing (¿cuantas maquinas de lacing hay?)
+    -

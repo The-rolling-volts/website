@@ -1,0 +1,30 @@
+PREGUNTAS FRECUENTAS:
+    ¿Qué es un sistema de power and frame?
+        Un sistema de actuadores mecanicos que se encuentran en un marco o estructura, en este caso. La banda transportadora aerea
+
+    ¿Que es un pulse line system?
+        Un Pulse Line System es un tipo de línea de ensamblaje modular e intermitente, en la que:
+            - Cada estación trabaja de forma independiente hasta completar su operación.
+            - El operador presiona un botón (normalmente llamado pulse button) para liberar el producto al siguiente módulo o estación.
+            - También suele haber un botón de parada (stop) en caso de problemas o para detener la línea.
+            - Se utiliza especialmente cuando se requiere control manual o semiautomático del flujo de productos.
+            
+    ¿Qué es Lacing en bicicletas?
+        Lacing es el proceso de insertar y posicionar los radios (spokes) en el rin (rim) y el eje (hub) de una rueda de bicicleta. Es el primer paso del armado de la rueda antes de tensionar y centrar.
+    ¿Qué es Tensioning en el armado de ruedas de bicicleta?
+        Tensioning (en español: tensado o ajuste de tensión) es el proceso de ajustar la tensión de los radios (spokes) después de haberlos colocado en el rin (lacing). Su objetivo es lograr que todos los radios tengan una tensión equilibrada, lo cual es esencial para:
+            Que la rueda gire recta (sin tambaleo lateral ni vertical).
+            Que soporte cargas de manera uniforme.
+            Que sea duradera y segura.
+    ¿¿Cómo se hace el truing?
+        Truing es el proceso de centrar y alinear el rin (rim) después del tensado de los radios (tensioning). El objetivo es asegurarse de que la rueda gire de forma perfectamente recta y balanceada, sin movimientos laterales (desviaciones) ni verticales (saltos).
+    
+    ¿que son las dos mesas que estan al lado contrario de la segunda banda?
+
+    ¿Cuales son los availabilities de cada maquina?
+    ¿Cuales son los tiempos de reparacion?
+        Cuales son las maquinas y sus tiempos minimos de reparacion?
+        Maquinas de Holland mechanics en 5 minutos
+        Cuales son los setup time del horno?
+        
+

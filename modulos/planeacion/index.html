@@ -22,13 +22,14 @@
             <a href="#article1" class="btn btn_3">Ver</a>
           </article>
         </li>
-        <!--
+        
         <li data-modulo="Módulo 3.2">
           <article class="center-y padding_2x">
-            <h3 class="big title"><em>Modificar</em></h3>
+            <h3 class="big title"><em>EDT</em></h3>
             <a href="#article2" class="btn btn_3">Ver</a>
           </article>
         </li>
+        <!--
         <li data-modulo="Módulo 3.3">
           <article class="center-y padding_2x">
             <h3 class="big title"><em>Modificar</em></h3>
@@ -36,9 +37,9 @@
             <a href="#article3" class="btn btn_3">Ver</a>
           </article>
         </li>-->
-      </ul>
-      <aside>
-      </aside>
+        </ul>
+        <aside>
+        </aside>
     </section>
   </header>
 
@@ -53,31 +54,110 @@
   <article class="article-wrapper padding-y-lg article" id="article1">
     <div class="container max-width-xs margin-bottom-lg">
       <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
-        <h1>M3.1 Cronograma</h1>      
+        <h1>M3.1 Cronograma</h1>
       </div>
       <div class="text-component line-height-lg text-gap-md">
         <p>
-          La planeción y seguimiento del proyecto se realizó utilizando la herramienta Jira, el proyecto se puede ver en el siguiente Link: 
+          La planeción y seguimiento del proyecto se realizó utilizando la herramienta Jira, el proyecto se puede ver en
+          el siguiente Link:
         </p>
-        <a href="https://unal-team-nw5gzpw7.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-11&atlOrigin=eyJpIjoiM2ZkN2ViOWM5MTY4NGM0ZjhiNmZkM2ZmYzIwNGZkMjgiLCJwIjoiaiJ9">Click aqui para ver planeación de Proyecto en Jira</a>
+        <a
+          href="https://unal-team-nw5gzpw7.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?selectedIssue=SCRUM-11&atlOrigin=eyJpIjoiM2ZkN2ViOWM5MTY4NGM0ZjhiNmZkM2ZmYzIwNGZkMjgiLCJwIjoiaiJ9">Click
+          aqui para ver planeación de Proyecto en Jira</a>
         <p>
-          Se adopto una metodología SCRUM, donde se divide el proyecto en sprints, a continución se muestra el diagrama de GANTT hecho de forma dínamica en jira:
+          Se adopto una metodología SCRUM, donde se divide el proyecto en sprints, a continución se muestra el diagrama
+          de GANTT hecho de forma dínamica en jira:
         </p>
         <figure class="container max-width-lg margin-bottom-lg">
-          <img src="./img/SCRUM.webp" loading="lazy" decoding="async"/>
+          <img src="./img/SCRUM.webp" loading="lazy" decoding="async" />
         </figure>
-      </div>
-    </div>
-  </article>
-  <!--
-  <article class="article-wrapper padding-y-lg article" id="article2">
-    <div class="container max-width-xs margin-bottom-lg">
-      <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
-        <h1>M3.2 Modificar</h1>
+        <p>
+          Ahora bien, se parte de estos 8 sprints como objetivos del proyecto para finalemente estructurar un EDT
+        </p>
       </div>
     </div>
   </article>
 
+  <article class="article-wrapper padding-y-lg article" id="article2">
+    <div class="container max-width-xs margin-bottom-lg">
+      <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
+        <h1>M3.2 Estructura de Desglose de Trabajo EDT</h1>
+      </div>
+    </div>
+    <div class="text-component line-height-lg text-gap-md">
+      <ul class="list list--ul">
+        <li>
+          <h2>1. Gestión y planeación del proyecto</h2>
+          <ol class="list list--ol">
+            <li>Cronograma</li>
+            <li>Flujo del producto</li>
+            <li>Lista de partes y procesos por producto</li>
+          </ol>
+        </li>
+        <li>
+          <h2>2. Análisis y selección de productos</h2>
+          <ol class="list list--ol">
+            <li>Selección de los 3 productos</li>
+            <li>Análisis de producción</li>
+          </ol>
+        </li>
+        <li>
+          <h2>3. Diseño del proceso y arquitectura de automatización</h2>
+          <ol class="list list--ol">
+            <li>Arquitectura de control y comunicaciones</li>
+            <li>Consideración de aspectos de pre-automatización, diagramas VSM pre y pos, aplicación de Lean, etc.</li>
+          </ol>
+        </li>
+        <li>
+          <h2>Celda de manufactura robotizada</h2>
+          <ol class="list list--ol">
+            <li>Análisis para justificar una robotización y su valor agregado</li>
+            <li>Diseño de celda robotizada (espacio, flujo de producto, interacción hombre-máquina)</li>
+            <li>Animación de movimientos (simulación en video)</li>
+            <li>Identificación de peligros y gestión del riesgo</li>
+            <li>Diseño y modelado del efector final</li>
+            <li>Modelado de la celda en Robot Studio</li>
+          </ol>
+        </li>
+        <li>
+          <h2> 5. Simulación y gemelo digital</h2>
+          <ol class="list list--ol">
+            <li>Análisis con software de simulación (fallas, rendimiento)</li>
+            <li>Publicación del video del prototipo en GitHub/YouTube</li>
+            <li>Modelado de los equipos</li>
+            <li>Modelado de sensores y actuadores</li>
+            <li>Comprobación de funcionamiento lógico con el gemelo digital</li>
+          </ol>
+        </li>
+        <li>
+          <h2>6. Automatización y control industrial</h2>
+          <ol class="list list--ol">
+            <li>Desglose del problema de control secuencial</li>
+            <li>Desarrollo y validación de la interfaz HMI</li>
+            <li>Programación de los controladores industriales</li>
+          </ol>
+        </li>
+        <li>
+          <h2>7. Integración con sistemas MES y transformación digital</h2>
+          <ol class="list list--ol">
+            <li>Determinación de las tecnologías de Industria 4.0 utilizadas</li>
+            <li>Propuesta para conectar la planta con un sistema MES</li>
+          </ol>
+        </li>
+        <li>
+          <h2>8. Evaluación económica</h2>
+          <ol class="list list--ol">
+            <li>Estudio de mercado</li>
+            <li>Presupuesto (adquisiciones, costos, flujo de fondos)</li>
+            <li>Indicadores financieros (VPN, TIR, Payback)</li>
+            <li>Oferta comercial de la solución.</li>
+          </ol>
+        </li>
+      </ul>
+
+    </div>
+  </article>
+  <!--
   <article class="article-wrapper padding-y-lg article" id="article3">
     <div class="container max-width-xs margin-bottom-lg">
       <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
