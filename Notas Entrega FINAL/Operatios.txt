@@ -3,5 +3,7 @@ EN PRIMERA PARTE:
     - Un operario que pone las bicicletas en la parte 1?
     - Un operario que traslada las biciletas de la parte 1 a las dos
     - 12 operarios en la linea final de ensamblaje
-    - Debe haber un operario por cada maquina de lacing (¿cuantas maquinas de lacing hay?)
-    -
+    - Debe haber un operario por cada maquina de lacing (¿cuantas maquinas de lacing hay?) 4 maquinas?  
+    - Hay una maquina CNC, entonces debe haber un operario para esa maquina
+    - Debe haber operario para el robot tambien
+

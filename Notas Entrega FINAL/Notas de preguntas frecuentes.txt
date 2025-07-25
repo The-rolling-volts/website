@@ -26,5 +26,9 @@ PREGUNTAS FRECUENTAS:
         Cuales son las maquinas y sus tiempos minimos de reparacion?
         Maquinas de Holland mechanics en 5 minutos
         Cuales son los setup time del horno?
-        
+
+Hay un tiempo de Setup cada 20 piezas, porque es el ciclo de renovación del agua y la pintura
+
+¿Cuanta agua y pintura se va por minuto?
+¿Cual es el thourput time de cada maquina?
 
