@@ -58,10 +58,14 @@ window.onload = function () {
         './modulos/SCADA/index.html#article3':'modulos/SCADA/index.html#article3', // //
         './modulos/SCADA/index.html#article4':'modulos/SCADA/index.html#article4', // //
         './productos/index.html':'productos/index.html', //
+        './productos/index.html#article1':'productos/index.html#article1', //
+        './productos/index.html#article2':'productos/index.html#article2', //
+        './productos/index.html#article3':'productos/index.html#article3', //
         './Nosotros/index.html': 'Nosotros/index.html',
-        './img/mountainBike.png': 'img/mountainBike.png',
-        './img/scooter.PNG': 'img/scooter.PNG',
-        './img/cargoBike.PNG': 'img/cargoBike.PNG',
+        './img/mountainBike.webp': 'img/mountainBike.webp',
+        './img/mountain1.webp':'img/mountain1.webp',
+        './img/scooter.webp': 'img/scooter.webp',
+        './img/cargoBike.webp': 'img/cargoBike.webp',
         '#': 'index.html'
     };
     const urlMapFooter = {
