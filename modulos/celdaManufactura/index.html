@@ -64,181 +64,1063 @@
 
   </article>
 
-  <article class="article-wrapper padding-y-lg article" id="article1">
+  <article class="article-wrapper padding-y-lg article" id="article2">
     <div class="container max-width-xs margin-bottom-lg">
       <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
-        <h1>M5.1 Análisis de Robotización</h1>
+        <h1>M5.1. Explicación del proceso que se desea robotizar</h1>
       </div>
     </div>
+
     <div class="text-component line-height-lg text-gap-md">
-      <h2>M5.1.1. Celdas</h2>
+      <!-- Texto tomado de la imagen proporcionada -->
+      <div class="container max-width-adaptive-sm">
+        <p>
+          El proceso de ensamblaje de las ruedas de las bicicletas eléctricas hace uso de
+          4&nbsp;máquinas fabricadas por la compañía <strong>Holland Mechanics</strong>:
+        </p>
 
-      <h3>M5.1.1.1. Pasos del diseño de una celda robotizada</h3>
+        <ol type="a" class="list list--ol">
+          <li>
+            Hub Filling
+            (<a href="https://hollandmechanics.com/bicycle-wheel/hub-filling-station-hfs/" target="_blank">
+              https://hollandmechanics.com/bicycle-wheel/hub-filling-station-hfs/</a>)
+          </li>
+          <li>
+            Inline Lacing
+            (<a href="https://hollandmechanics.com/bicycle-wheel/inline-lacing-il/" target="_blank">
+              https://hollandmechanics.com/bicycle-wheel/inline-lacing-il/</a>)
+          </li>
+          <li>
+            Robot Quattro
+            (<a href="https://hollandmechanics.com/bicycle-wheel/robot-quattro/" target="_blank">
+              https://hollandmechanics.com/bicycle-wheel/robot-quattro/</a>)
+          </li>
+          <li>
+            Tyre Mounting Console
+            (<a href="https://hollandmechanics.com/bicycle-wheel/tyre-mounting-console-tmc/" target="_blank">
+              https://hollandmechanics.com/bicycle-wheel/tyre-mounting-console-tmc/</a>)
+          </li>
+        </ol>
 
-      <h3>M5.1.1.2. Etapas con celdas robotizadas</h3>
-      <p>Hemos seleccionado la etapa de ensamblaje del módulo de baterías y la instalación del
-        motor eléctrico como las etapas del proceso de fabricación de motocicletas eléctricas
-        en las que diseñaremos una celda de trabajo automatizada con robots.</p>
+        <p>
+          La primera etapa, realizada por <strong>Hub Filling</strong>, pone los radios en el buje o
+          <em>hub</em>. La segunda etapa, realizada por <strong>Inline Lacing</strong>, toma el buje con
+          radios y conecta el otro extremo de cada uno en el rin. La tercera etapa, realizada por
+          <strong>Robot Quattro</strong>, tiempla los radios para que queden bien tensionados. Y por
+          último, la quinta etapa, realizada por <strong>Tyre Mounting Console</strong>, agrega el
+          neumático y lo infla.
+        </p>
 
-      <p>Estas etapas fueron elegidas debido a los siguientes factores:</p>
-      <ul class="list list--ul">
-        <li>Precisión requerida: La manipulación e instalación de baterías y motores exige alta
-          precisión para asegurar el rendimiento, la seguridad y la eficiencia del sistema
-          eléctrico.</li>
-        <li>Repetitividad del proceso: Estas tareas son repetitivas y estandarizadas, lo cual
-          las hace adecuadas para la automatización.</li>
-        <li>Riesgo para operarios: Las baterías pueden ser pesadas o contener componentes
-          sensibles que requieren manipulación cuidadosa, lo cual puede representar riesgos
-          ergonómicos o eléctricos para los trabajadores.</li>
-        <li>Posibilidad de integración con sistemas de visión artificial y control de calidad:
-          Se pueden integrar sensores y cámaras para verificar la correcta instalación de los
-          componentes antes de continuar con la línea de producción.</li>
-      </ul>
+        <p>
+          De esas cuatro máquinas, solo <strong>Hub Filling</strong> y
+          <strong>Robot Quattro</strong> son totalmente automáticas; mientras que
+          <strong>Inline Lacing</strong> y <strong>Tyre Mounting Console</strong> requieren de la
+          ejecución del trabajo de manera conjunta con un humano para funcionar.
+        </p>
 
-      <p>La celda de trabajo robótica diseñada permitirá realizar estas tareas de forma
-        eficiente, segura y precisa, aumentando así la productividad y calidad del proceso
-        de fabricación.</p>
-
-      <h3>M5.1.1.3. Aplicación de los robots en las celdas</h3>
-      <ul class="list list--ul">
-        <li>Aplicación de los robots en la celda:
-          <ul class="list list--ul">
-            <li>Pick &amp; Place: El robot tomará los módulos de batería o el motor eléctrico
-              desde un área de almacenamiento o bandeja de entrada y los colocará con precisión
-              en el chasis de la motocicleta.</li>
-            <li>Ensamblaje / Atornillado automático: Se podrá integrar una herramienta de
-              atornillado o sujeción para fijar los componentes al bastidor.</li>
-            <li>Inspección con visión artificial (opcional): Para verificar la orientación
-              correcta, posición de montaje y detectar posibles defectos antes y después del
-              ensamblaje.</li>
-          </ul>
-        </li>
-        <li>Estado de entrada del material o producto a la celda:
-          <ul class="list list--ul">
-            <li>Módulos de batería y motores eléctricos precargados en bandejas, transportadores
-              o carros automatizados.</li>
-            <li>Bastidor o chasis de la motocicleta posicionado en una estación de trabajo
-              mediante un sistema de transporte (por ejemplo, una cinta transportadora o AGV).</li>
-          </ul>
-        </li>
-        <li>Estado de salida del material o producto de la celda:
-          <ul class="list list--ul">
-            <li>Chasis con batería o motor ya instalado y asegurado, listo para pasar a la
-              siguiente estación (por ejemplo, pruebas eléctricas o montaje de carenado).</li>
-            <li>Registro digital del ensamblaje realizado (si se usa visión artificial o sensores
-              de torque) para trazabilidad.</li>
-          </ul>
-        </li>
-        <li>Takt time previsto:
-          <ul class="list list--ul">
-            <li>Aproximadamente 90 segundos por unidad, considerando el tiempo necesario para
-              manipulación, posicionamiento, fijación y verificación. (Este valor puede
-              ajustarse según la demanda y velocidad de la línea de producción.)</li>
-          </ul>
-        </li>
-        <li>Throughput time previsto:
-          <ul class="list list--ul">
-            <li>90 a 120 segundos por motocicleta ensamblada en esta celda, dependiendo del
-              nivel de automatización, número de robots y complejidad del montaje. (El throughput
-              time es ligeramente mayor que el takt time ya que incluye todo el tiempo que el
-              producto pasa dentro de la celda.)</li>
-          </ul>
-        </li>
-      </ul>
-
-      <h3>M5.1.1.4. Listado de elementos de la celda robotizada</h3>
-      <ul class="list list--ul">
-        <li>Máquinas de proceso:
-          <ul class="list list--ul">
-            <li>Estación de atornillado o fijación automática (para asegurar la batería y el
-              motor al chasis).</li>
-            <li>Estación de verificación de torque (para control de calidad del apriete).</li>
-          </ul>
-        </li>
-        <li>Manipuladores:
-          <ul class="list list--ul">
-            <li>Brazo(s) robótico(s) de 6 ejes para realizar operaciones de pick &amp; place y
-              ensamblaje de componentes.</li>
-            <li>Herramientas de fin de brazo (grippers o efectores finales) adaptadas a baterías
-              y motores.</li>
-          </ul>
-        </li>
-        <li>Séptimos ejes:
-          <ul class="list list--ul">
-            <li>Sistema lineal (eje adicional) para ampliar el alcance del robot si es necesario
-              cubrir varias estaciones dentro de la misma celda.</li>
-          </ul>
-        </li>
-        <li>Elementos de transporte:
-          <ul class="list list--ul">
-            <li>Cinta transportadora o sistema de transferencia lineal para el movimiento del
-              chasis de la motocicleta a través de la celda.</li>
-            <li>Carros móviles o bandejas para el suministro de módulos de batería y motores
-              eléctricos.</li>
-          </ul>
-        </li>
-        <li>Componentes de control de calidad:
-          <ul class="list list--ul">
-            <li>Cámaras de visión artificial para verificación de posicionamiento correcto y
-              detección de defectos visuales.</li>
-            <li>Sensores de torque o fuerza para verificar la correcta sujeción de los
-              componentes.</li>
-            <li>Sistema de registro digital (software SCADA o HMI) para trazabilidad del
-              ensamblaje.</li>
-          </ul>
-        </li>
-        <li>Otros elementos:
-          <ul class="list list--ul">
-            <li>Barreras de seguridad y cortinas de luz para protección de los operarios.</li>
-            <li>Panel de control y sistema PLC para la automatización de la celda.</li>
-            <li>Estación de operador para supervisión, carga de piezas y mantenimiento.</li>
-          </ul>
-        </li>
-      </ul>
+        <p>La imagen a continuación ilustra lo anteriormente explicado:</p>
+      </div>
     </div>
+
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img1.webp" loading="lazy" decoding="async" />
+    </figure>
+
+    <div class="container max-width-adaptive-sm">
+      <p>
+        Suponiendo el caso de que se fabriquen las ruedas <em>sin intervención robótica</em>,
+        se requieren cuatro obreros numerados del&nbsp;1&nbsp;al&nbsp;4 en la figura anterior.
+        El <strong>obrero&nbsp;1</strong> coloca el <em>hub</em> o buje en la alimentación de la
+        máquina&nbsp;A (<strong>Hub&nbsp;Filling</strong>); el buje con los radios sale de esta
+        máquina para que el <strong>obrero&nbsp;2</strong> lo instale en la máquina&nbsp;B
+        (<strong>Inline&nbsp;Lacing</strong>). Como se mencionó anteriormente, la máquina&nbsp;B
+        requiere la acción conjunta del <strong>obrero&nbsp;3</strong> para poder realizar su
+        trabajo. Al finalizar la máquina&nbsp;B, el <strong>obrero&nbsp;2</strong> toma el producto
+        y lo lleva a la máquina&nbsp;C (<strong>Robot&nbsp;Quattro</strong>), la cual dispone de un
+        sistema de alimentación por rieles. Finalmente, el <strong>obrero&nbsp;4</strong> toma el
+        producto obtenido de la salida de la máquina&nbsp;C (<strong>Robot&nbsp;Quattro</strong>),
+        instala el neumático y lo infla con ayuda de la máquina&nbsp;4.
+      </p>
+
+      <p>
+        Todas las cuatro máquinas están comunicadas y configuradas de tal forma que
+        <strong>no liberen el producto</strong> en su salida mientras la siguiente aún no lo
+        haya procesado. De esa manera, no existen acumulaciones y no se requieren contenedores
+        para almacenar productos intermedios entre estaciones.
+      </p>
+
+      <p>
+        A partir de videos de
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener">Youtube</a>,
+        se ha determinado que una persona demora aproximadamente
+        <strong>8&nbsp;segundos</strong> en insertar y asegurar el <em>hub</em> y el rin en la
+        máquina&nbsp;B. Si a ello se suman los
+        <strong>≈6&nbsp;metros</strong> que debe caminar para ir y volver de una máquina a otra,
+        a una velocidad razonable de 1&nbsp;m/s, entonces la máquina&nbsp;B&nbsp; tendrá que esperar aproximadamente 14
+        segundos desde que termina un trabajo hasta que comienza el siguiente, representando esto un cuello de botella.
+      </p>
+    </div>
+
+
   </article>
 
   <article class="article-wrapper padding-y-lg article" id="article2">
     <div class="container max-width-xs margin-bottom-lg">
       <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
-        <h1>M5.2 Diseño de Celda Robotizada</h1>
+        <h1>M5.2. Justificación de la implementación de la celda robótica mediante la obtención del ROI</h1>
       </div>
     </div>
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img2.webp" loading="lazy" decoding="async" />
+    </figure>
+    <p>
+      Las tareas realizadas por los obreros 1 y 2 son altamente repetitivas y predecibles, lo cual es perfecto para
+      programar en un robot. Además, los robots son mucho más adecuados en este tipo de tareas ya que suelen llevarlas
+      a cabo de manera más eficiente, sin cansancio y sin distracciones, eliminando errores humanos y reduciendo el
+      nivel de riesgo laboral. Es por esto que, en la industria, el tending es una de las aplicaciones más comunes de
+      celdas robóticas. Por estos motivos, se ha propuesto que, de toda la línea de producción, la fabricación de las
+      ruedas es la etapa más adecuada para implementar una celda robótica.
+      <br>
+      Gracias a la velocidad de los robots, precisión y coordinación con las otras máquinas, el tiempo de 14 segundos
+      realizado por el obrero 2 para tomar la pieza de la salida de la máquina A y alimentar la entrada de la máquina
+      B, puede ser reducido bastante. Teniendo en cuenta que, de acuerdo al fabricante, el tiempo de ciclo mínimo de
+      las máquinas A, B, C y D es de 30 segundos, entonces mediante una regla de 3 se puede demostrar que en 1 hora la
+      línea con humanos producirá 81 unidades (3600/(30+14)), pero con un robot del doble de velocidad, se alcanzarían
+      a fabricar 97 unidades (3600/(30+7)). Esto representa una ganancia de productividad del 19.75%.
+      <br>
+      Como se explicó anteriormente, dos de las máquinas son totalmente automáticas, por lo que solo necesitan ser
+      alimentadas con materia prima. En la celda de manufactura sin robots explicada en el apartado anterior, dos
+      obreros son los encargados de alimentarlas: el obrero 1 alimenta a la máquina A, mientras el obrero 2 alimenta a
+      la máquina B (y también la C). Si se implementa la celda robótica para realizar estas tareas, el personal
+      necesario para el proceso pasaría de 4 obreros a solo 2, una reducción del 50%.
+      <br>
+      Por otro lado, supongamos como primera iteración una inversión inicial aproximada de 70000 dólares para la
+      implementación de la celda. Adicionalmente recordemos que la fábrica trabaja a doble jornada de lunes a sábado,
+      y que cada obrero de la celda le cuesta a la empresa 1000 dólares mensuales incluyendo prestaciones, lo cual
+      representa 13000 dólares anuales incluyendo prima.
+      <br>
+      Con estos datos podemos hacer uso de la siguiente herramienta web <a
+        href="https://www.automate.org/robotics-roi-calculator">(ver aqui calculadora)</a> la cual nos permite obtener
+      un estimativo del retorno de la inversión. A continuación, mostramos una captura de pantalla de sus parámetros
+      de entrada:
+    </p>
 
     <figure class="container max-width-lg margin-bottom-lg">
-      <iframe style="width:100%;height:100%;" src="https://youtube.com/embed/hfISdA64f0c" allowfullscreen>
-      </iframe>
+      <img src="./img/img3.webp" loading="lazy" decoding="async" />
     </figure>
 
-    <div class="text-component line-height-lg text-gap-md">
-      <p>
-      </p>
-    </div>
+    <p>
+      Y a continuación se muestran los resultados arrojados por la herramienta web:
+    </p>
+
+
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img4.webp" loading="lazy" decoding="async" />
+    </figure>
+
+    <p>
+      Esto significa que después de 2 años y 7 meses, la empresa va a recuperar el dinero invertido (ROI), un
+      resultado considerado casi siempre como suficiente para la mayoría de las empresas. Adicionalmente, la página
+      nos arroja información de las ganancias obtenidas después de 15 años gracias a la celda robótica respecto a la
+      celda sin robot: casi 450000 dólares por ahorro en gastos de personal y 90000 dólares por aumento de la
+      productividad.
+      <br>
+      También se comparte información más detallada de cada año como se muestra en la siguiente captura de pantalla:
+    </p>
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img5.webp" loading="lazy" decoding="async" />
+    </figure>
+    <p>
+      Vale la pena aclarar que la aplicación web asume una inflación del 2% efectivo anual.
+      <br>
+      Estos resultados parciales los consideramos argumentos suficientes por lo menos para hacer el diseño de la celda
+      robotizada. Más adelante, cuando el diseño haya finalizado, tendremos valores más realistas que nos permitirán
+      darnos una idea de manera más confiable si realmente vale la pena o no la inversión.
+    </p>
   </article>
 
-  <article class="article-wrapper padding-y-lg article" id="article3">
+  <article class="article-wrapper padding-y-lg article" id="article2">
     <div class="container max-width-xs margin-bottom-lg">
       <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
-        <h1>M5.3 Celda en RobotStudio</h1>
+        <h1>3. Diseño de la celda robotizada</h1>
       </div>
     </div>
+
+    <p>
+      Como se mencionó en el anterior apartado, la idea es que el robot realice las tareas de los obreros 1 y 2. Por
+      lo tanto, con el fin de que el robot pueda interactuar con la máquina A, B y C de la manera más práctica y
+      óptima, se decide implementar un layout en U. Entonces se ubican las 4 máquinas siguiendo este patrón como se
+      muestra a continuación:
+    </p>
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img6.webp" loading="lazy" decoding="async" />
+    </figure>
+    <p>
+      El robot tendrá que interactuar con las máquinas A, B y C; y también con un inventario de hubs y bujes para
+      alimentar a la máquina A. Con base en esta información, dibujamos el área de acción aproximada que deberá tener
+      el robot, como se muestra en la imagen a continuación:
+    </p>
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img7.webp" loading="lazy" decoding="async" />
+    </figure>
+    <p>
+      Por lo tanto, el espacio de trabajo del robot debe cubrir un área de 10m x 3.4m. La propuesta para lograr esto
+      es usar un riel de 10m a lo largo del cual un robot con alcance horizontal mayor a 1.7m se pueda mover
+      linealmente. Con esta información, y sabiendo que el peso máximo de una rueda de bicicleta es de 2.5kg y el del
+      hub es de 2.3kg, entonces pasamos a seleccionar un robot adecuado que satisfaga nuestras necesidades teniendo en
+      cuenta esas características.
+      <br>
+      Se decide seleccionar el Robot KUKA KR 8 R2010-2. En la captura de pantalla de su Datasheet se muestran sus
+      especificaciones de espacio de trabajo:
+    </p>
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img8.webp" loading="lazy" decoding="async" />
+    </figure>
+    <p>
+      Como se puede observar tiene un alcance de 2.01 m, por lo que cumple con las exigencias de la aplicación. Así
+      mismo, a continuación se muestra sus especificaciones de carga:
+    </p>
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img9.webp" loading="lazy" decoding="async" />
+    </figure>
+    <p>
+      La curva de carga en función de su alejamiento al TCP, muestra que puede cargar más de los 4.8kg que pesa la
+      rueda con Hub, incluso cuando el peso está concentrado hasta 20cm alejado del plano perpendicular del eje de
+      aproximación del efector. Esto significa que también cumple con el requerimiento de la aplicación.
+      <br>
+      Mencionar que en Alibaba el robot cuesta 26.000 dolares puesto en el puerto de Schenzen China, como se observa a
+      continuación.
+    </p>
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img10.webp" loading="lazy" decoding="async" />
+    </figure>
     <div class="text-component line-height-lg text-gap-md">
       <p>
+        El siguiente paso consiste en seleccionar el controlador para el robot, el cual según manual debe ser el Kuka
+        KRC4 que en Ebay cuesta 19700 dólares puesto también en el puerto de Shenzen China.
       </p>
     </div>
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img11.webp" loading="lazy" decoding="async" />
+    </figure>
+    <p>
+      Ahora se selecciona un riel de 10 metros, encontrándose el modelo ABB IRBT 6004 el cual se muestra a continuación
+      y cuesta 6240 dólares.
+    </p>
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img12.webp" loading="lazy" decoding="async" />
+    </figure>
+    <p>
+      Para alimentar a la celda robótica, se usan vehículos AGV de dos tipos. El primer tipo, sirve para el transporte
+      de los neumáticos, los hub o bujes, el rin y como inventario de salida. Se seleccionó modelo XBOT-AGV600YK con
+      capacidad de 600kg, cuyo precio es de 3450 dolares en Alibaba China, como se observa en la siguiente captura:
+    </p>
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img13.webp" loading="lazy" decoding="async" />
+    </figure>
+    <p>
+      Por otro lado, también se seleccionó un vehículo AGV para transportar los bujes, modelo Zhejuang Caroon 5T. A este
+      vehículo se le adecuo una especie de estantería, específicamente para que el robot pudiera agarrar los bujes
+      fácilmente. Cesta 7420 dólares en Alibaba como se muestra a continuación.
+    </p>
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img14.webp" loading="lazy" decoding="async" />
+    </figure>
+    <p>
+      Finalmente, a continuación se muestra la celda robótica diseñada, con cada una de sus partes y una breve
+      explicación de su función:
+    </p>
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img15.webp" loading="lazy" decoding="async" />
+    </figure>
+    <div class="container max-width-adaptive-sm">
+      <ol class="list list--ol">
+        <li>
+          <strong>Zhejiang Caroon 5T con estantería</strong>:
+          Vehículo AGV que se encarga de transportar los bujes desde el área de recepción
+          de materiales hasta la celda robótica; una vez allí, sirve como inventario para
+          que el robot pueda tomarlos fácilmente.
+        </li>
+
+        <li>
+          <strong>Holland Hub Filling</strong>:
+          Máquina automática que introduce los radios al buje.
+        </li>
+
+        <li>
+          <strong>KUKA KRC4</strong>:
+          Controlador del robot&nbsp;KUKA&nbsp;KR 8 R2010-2.
+        </li>
+
+        <li>
+          <strong>Tablero eléctrico de la celda robótica</strong>:
+          Contiene el PLC, elementos de protección, fuente y todo lo necesario para que la
+          celda funcione.
+        </li>
+
+        <li>
+          <strong>XBOT-AGV600YK</strong>:
+          Vehículo AGV que sirve para transportar y funciona como inventario de rines.
+        </li>
+
+        <li>
+          <strong>Holland Inline Lacing</strong>:
+          Máquina que ayuda al operario 1 a poner los radios en el rin.
+        </li>
+
+        <li>
+          <strong>Operario 1</strong>:
+          Persona que usa la Holland Inline Lacing para poner los radios en el rin.
+        </li>
+
+        <li>
+          <strong>Robot KUKA KR 8 R2010-2</strong>:
+          Robot que hace <em>tending</em> alimentando a la Holland Hub Filling, a la
+          Holland Inline Lacing y a la Robot Quattro. También retira el producto de la
+          Holland Hub Filling.
+        </li>
+
+        <li>
+          <strong>XBOT-AGV600YK</strong>:
+          Vehículo AGV que sirve para transportar y funciona como inventario de neumáticos.
+        </li>
+
+        <li>
+          <strong>Operario 2</strong>:
+          Persona que usa la máquina Holland Tyre Mounting Console para colocar el
+          neumático en el rin e inflarlo.
+        </li>
+      </ol>
+
+      <hr />
+
+      <ol class="list list--ol" start="11">
+        <li>
+          <strong>Holland Tyre Mounting Console</strong>:
+          Máquina que ayuda al operario 2 a poner el neumático en el rin.
+        </li>
+
+        <li>
+          <strong>ABB IRBT 6004</strong>:
+          Riel de 10 metros que da movimiento lineal al robot KUKA KR 8 R2010-2,
+          aumentando su espacio de trabajo.
+        </li>
+
+        <li>
+          <strong>XBOT-AGV600YK</strong>:
+          Vehículo AGV que sirve como inventario de salida de la celda y transporta las
+          llantas finalizadas a la línea de producción principal.
+        </li>
+
+        <li>
+          <strong>Robot Quattro</strong>:
+          Máquina automática que tiempla los radios en el rin, dejándolos bien tensos y
+          firmes.
+        </li>
+      </ol>
+    </div>
+
   </article>
 
-  <article class="article-wrapper padding-y-lg article" id="article3">
+  <article class="article-wrapper padding-y-lg article" id="article2">
     <div class="container max-width-xs margin-bottom-lg">
       <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
-        <h1>M5.4 Análisis y Gestión de Riesgos</h1>
+        <h1>M5.4. Diseño de la herramienta efector final</h1>
       </div>
     </div>
-    <div class="text-component line-height-lg text-gap-md">
+    <p>
+      El objeto que siempre va a agarrar el robot es el hub o buje. Por lo tanto, para poder diseñar el efector final,
+      el primer paso consiste en analizar la geometría y las características del hub y decidir de donde lo va a agarrar.
+      A continuación, se muestra el hub usado en nuestra planta.
+    </p>
+
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img16.webp" loading="lazy" decoding="async" />
+    </figure>
+
+    <p>
+      Como se puede observar, posee una rosca 3/8 a ambos lados. Consideramos que la manera más conveniente para que el
+      robot lo agarre, es a través de esta rosca. Entonces diseñamos un efector final especialmente adaptado a estas
+      dimensiones, para que cuando cierre, lo agarre de esa parte. Una imagen del CAD realizado se muestra a
+      continuación:
+    </p>
+
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img17.webp" loading="lazy" decoding="async" />
+    </figure>
+
+    <p>Es importante mencionar, que para evitar dañar la rosca del hub o buje, la parte interna de la pinza está
+      cubierta con una delgada espuma. En el cuerpo del efector se encuentra un motor eléctrico para abrir y cerrar la
+      pinza. Su base encaja perfectamente con el flanche del robot, y requiere de 8 tuercas métricas M5 para su ajuste.
+      Debido a su geometría, el uso de tornillos no es posible. A continuación se muestra este efector final instalado
+      en el CAD del robot.</p>
+
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img18.webp" loading="lazy" decoding="async" />
+    </figure>
+
+  </article>
+
+  <article class="article-wrapper padding-y-lg article" id="article2">
+    <div class="container max-width-xs margin-bottom-lg">
+      <div class="text-component text-center line-height-lg text-gap-md margin-bottom-md">
+        <h1>M5.5.5. Análisis y gestión de riesgos</h1>
+      </div>
+    </div>
+    <p>
+      Para el análisis y gestión de riesgos, nos basamos en el siguiente flujo sacado de las diapositivas de clase:
+    </p>
+
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img19.webp" loading="lazy" decoding="async" />
+    </figure>
+
+    <h2> Determinación de los límites de la máquina</h2>
+
+    <p>
+      Para determinar los límites de la máquina, se realizó un análisis de la zona de trabajo, como se muestra a
+      continuación:
+    </p>
+
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img20.webp" loading="lazy" decoding="async" />
+    </figure>
+
+    <p>
+      Gracias a esta figura, se pudieron identificar <strong>3&nbsp;zonas de precaución</strong>:
+    </p>
+
+    <ul class="list list--ul">
+      <li>
+        <strong>Zona&nbsp;1:</strong>
+        Corresponde a la intersección o zona compartida entre el área de trabajo del
+        obrero&nbsp;2 y el área de trabajo del robot.
+      </li>
+
+      <li>
+        <strong>Zona&nbsp;2:</strong>
+        Es la zona más crítica, ya que no solo comprende la intersección entre el área
+        de trabajo del obrero&nbsp;1 y la del robot, sino que además tanto el robot como
+        el obrero&nbsp;1 colocan y recogen piezas en el mismo lugar.
+      </li>
+
+      <li>
+        <strong>Zona&nbsp;3:</strong>
+        Corresponde a las inmediaciones alrededor del riel. Aunque en esta zona no haya
+        obreros trabajando de forma continua, es un área a la que periódicamente accede
+        el personal de mantenimiento de las máquinas. Asimismo, para hacer
+        <em>setup</em> a las máquinas, es necesario ingresar a esta zona.
+      </li>
+    </ul>
+
+    <h2>Identificacion de peligros</h2>
+
+    <p>
+      Basados en la anterior imagen, se identificaron los siguientes peligros:
+    </p>
+
+    <ul class="list list--ul">
+      <li>
+        <strong>Golpe del robot a las personas:</strong>
+        Hay dos trabajadores dentro del área de alcance del robot y del riel,
+        correspondiente a la zona de precaución&nbsp;1 y&nbsp;2. El robot podría
+        golpearlas.
+      </li>
+    </ul>
+
+    <hr />
+
+    <ul class="list list--ul">
+      <li>
+        <strong>Atropellamiento del riel a las personas:</strong>
+        Aunque la mayor parte del tiempo no hay personas en las inmediaciones
+        directas del riel, sí puede haber durante procesos de mantenimiento o
+        <em>setup</em> de las máquinas&nbsp;Holland. Una persona podría ser
+        atropellada.
+      </li>
+
+      <li>
+        <strong>Atrapamiento en el riel:</strong>
+        Entre el chasis del riel y la estructura, las guías del riel pueden generar
+        puntos de atrapamiento para los obreros. Asimismo, las poleas, engranajes y
+        demás mecanismos del riel también podrían representar puntos de atrapamiento.
+      </li>
+
+      <li>
+        <strong>Atropellamiento del AGVs a las personas:</strong>
+        Los obreros y los vehículos&nbsp;AGV comparten espacios de trabajo. Por lo
+        tanto, podría haber un atropellamiento cuando uno de estos esté entrando o
+        saliendo.
+      </li>
+    </ul>
+
+    <h2>Evaluación de riesgos</h2>
+    <p>
+      Para realizar la evaluación de riesgos existen varios métodos. Por su claridad y facilidad de usos nosotros hemos
+      seleccionado el “Hazard rating number”. Este método multiplica cuatro índices los cuales hemos mostrado en la
+      siguiente figura:
+    </p>
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img21.webp" loading="lazy" decoding="async" />
+    </figure>
+    <p>
+      Al resultado de esa multiplicación se le ha llamado índice HRC y se lo evalúa usando la tabla mostrada a
+      continuación:
+    </p>
+
+    <figure class="container max-width-lg margin-bottom-lg">
+      <img src="./img/img22.webp" loading="lazy" decoding="async" />
+    </figure>
+
+    <p>
+      Por lo tanto vamos a realizar este proceso para cada uno de los peligros, como se observa en la siguiente tabla.
+    </p>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th rowspan="2">Peligro</th>
+          <th colspan="2">Frecuencia de exposición&nbsp;(F)</th>
+          <th colspan="2">Severidad de lesión&nbsp;(S)</th>
+          <th colspan="2">Probabilidad de ocurrencia&nbsp;(O)</th>
+          <th colspan="2">Número de personas&nbsp;(P)</th>
+          <th rowspan="2">HRN&nbsp;Total</th>
+        </tr>
+        <tr>
+          <th>Valoración</th>
+          <th>Valor</th>
+          <th>Valoración</th>
+          <th>Valor</th>
+          <th>Valoración</th>
+          <th>Valor</th>
+          <th>Valoración</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Golpe del robot a las personas</td>
+          <td>Constante</td>
+          <td>5</td>
+          <td>Fatalidad</td>
+          <td>15</td>
+          <td>No sería sorprendente</td>
+          <td>8</td>
+          <td>1&nbsp;o&nbsp;2</td>
+          <td>1</td>
+          <td>600</td>
+        </tr>
+
+        <tr>
+          <td>Atropellamiento del riel a las personas</td>
+          <td>Diario</td>
+          <td>2.5</td>
+          <td>Fractura de hueso mayor</td>
+          <td>4</td>
+          <td>Podría pasar</td>
+          <td>5</td>
+          <td>1&nbsp;o&nbsp;2</td>
+          <td>1</td>
+          <td>50</td>
+        </tr>
+
+        <tr>
+          <td>Atrapamiento en el riel</td>
+          <td>Diario</td>
+          <td>2.5</td>
+          <td>Pérdida de una extremidad</td>
+          <td>6</td>
+          <td>Podría pasar</td>
+          <td>5</td>
+          <td>1&nbsp;o&nbsp;2</td>
+          <td>1</td>
+          <td>75</td>
+        </tr>
+
+        <tr>
+          <td>Atropellamiento del AGVs a las personas</td>
+          <td>Constante</td>
+          <td>5</td>
+          <td>Fractura hueso menor</td>
+          <td>2</td>
+          <td>Improbable</td>
+          <td>1.5</td>
+          <td>1&nbsp;o&nbsp;2</td>
+          <td>1</td>
+          <td>15</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+
+      Por lo tanto riesgo de “Golpe del robot a las personas” es muy alto, el riesgo de “Atropellamiento del riel a las
+      personas” está entre medio y alto, el riesgo de “Atrapamiento en el riel” es alto y el riesgo de “Atropellamiento
+      del AGVs a las personas” es bajo.
+
+    </p>
+    <h2>Medidas de prevención</h2>
+
+    <div class="container max-width-adaptive-sm">
       <p>
+        Se tomaron las siguientes medidas con el fin de reducir los riesgos:
+      </p>
+
+      <ul class="list list--ul">
+        <!-- 1. Golpe del robot -->
+        <li>
+          <strong>Golpe del robot a las personas</strong>
+          <ul class="list list--ul">
+            <li>Cambiar el robot por un robot colaborativo.</li>
+            <li>Capacitar al personal sobre zonas de riesgo y operación segura del robot.</li>
+          </ul>
+        </li>
+
+        <!-- 2. Atropellamiento del riel -->
+        <li>
+          <strong>Atropellamiento del riel a las personas</strong>
+          <ul class="list list--ul">
+            <li>
+              Cercar las inmediaciones directas del riel para evitar acceso a menos
+              que haya mantenimiento.
+            </li>
+            <li>
+              Instalar sensores de presencia que detengan el movimiento del riel si
+              detectan personas en su trayectoria.
+            </li>
+            <li>
+              Establecer una lógica de enclavamiento que impida el movimiento del
+              riel si el robot no está en posición segura.
+            </li>
+            <li>
+              Capacitar al personal sobre los riesgos asociados al movimiento del riel.
+            </li>
+          </ul>
+        </li>
+
+        <!-- 3. Atrapamiento en el riel -->
+        <li>
+          <strong>Atrapamiento en el riel</strong>
+          <ul class="list list--ul">
+            <li>
+              Cercar las inmediaciones directas del riel para evitar acceso a menos
+              que haya mantenimiento.
+            </li>
+            <li>
+              Cubrir los puntos de atrapamiento entre el riel y otras estructuras
+              con resguardos físicos.
+            </li>
+            <li>
+              Instalar una varilla de emergencia accesible con el pie a lo largo del
+              recorrido del riel.
+            </li>
+            <li>
+              Realizar inspecciones periódicas para garantizar el correcto
+              funcionamiento de los resguardos.
+            </li>
+            <li>
+              Capacitar al personal sobre la identificación de zonas de atrapamiento
+              y cómo evitarlas.
+            </li>
+          </ul>
+        </li>
+
+        <!-- 4. Atropellamiento de los AGVs -->
+        <li>
+          <strong>Atropellamiento de los AGVs a las personas</strong>
+          <ul class="list list--ul">
+            <li>
+              Configurar velocidades de operación seguras para las zonas compartidas
+              con personas.
+            </li>
+            <li>
+              Implementar señalización visual y auditiva (luces, alarmas) en los AGVs
+              para advertir su presencia.
+            </li>
+            <li>
+              o Capacitar a los trabajadores sobre las rutas y comportamientos seguros al interactuar con AGVs.
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Segunda evaluación de riesgos</h2>
+
+      <p>
+        Después de realizar las medidas de mitigación, se recalcula la evaluación de riesgos como se observa a
+        continuación:
+      </p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th rowspan="2">Peligro</th>
+            <th colspan="2">Frecuencia de exposición (F)</th>
+            <th colspan="2">Severidad de lesión (S)</th>
+            <th colspan="2">Probabilidad de ocurrencia (O)</th>
+            <th colspan="2">Número de personas (P)</th>
+            <th rowspan="2">HRN Total</th>
+          </tr>
+          <tr>
+            <th>Valoración</th>
+            <th>Valor</th>
+            <th>Valoración</th>
+            <th>Valor</th>
+            <th>Valoración</th>
+            <th>Valor</th>
+            <th>Valoración</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Golpe del robot a las personas</td>
+            <td>Constante</td>
+            <td>5</td>
+            <td>Herida superficial</td>
+            <td>0.1</td>
+            <td>Improbable</td>
+            <td>1.5</td>
+            <td>1 o 2</td>
+            <td>1</td>
+            <td>0.75</td>
+          </tr>
+          <tr>
+            <td>Atropellamiento del riel a las personas</td>
+            <td>Anual</td>
+            <td>0.5</td>
+            <td>Fractura de hueso mayor</td>
+            <td>4</td>
+            <td>Improbable</td>
+            <td>1.5</td>
+            <td>1 o 2</td>
+            <td>1</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Atrapamiento en el riel</td>
+            <td>Anual</td>
+            <td>0.5</td>
+            <td>Pérdida de una extremidad</td>
+            <td>6</td>
+            <td>Improbable</td>
+            <td>1.5</td>
+            <td>1 o 2</td>
+            <td>1</td>
+            <td>4.5</td>
+          </tr>
+          <tr>
+            <td>Atropellamiento del AGVs a las personas</td>
+            <td>Constante</td>
+            <td>5</td>
+            <td>Moretón</td>
+            <td>0.1</td>
+            <td>Muy Improbable</td>
+            <td>1</td>
+            <td>1 o 2</td>
+            <td>1</td>
+            <td>0.5</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Como se puede observar, todos los HRN totales son inferiores a 5 y por lo tanto no hay que implementar más
+        medidas.
+      </p>
+      <h2> Reselección del robot </h2>
+      <p>
+        Debido a que una de las medidas de mitigación fue remplazar el robot previamente seleccionado por uno
+        colaborativo, aquí se mostrará el nuevo motor seleccionado. Se trata del Fanuc CRX-25iA, el cual como se observa
+        a continuación su capacidad de carga es hasta de 30kg y tiene un alcance de 1.89 m. En otras palabras, también
+        cumple con los requerimientos. Cuesta 50.000 dolares.
+      </p>
+
+      <figure class="container max-width-lg margin-bottom-lg">
+        <img src="./img/img23.webp" loading="lazy" decoding="async" />
+      </figure>
+
+      <h2>Diseño de celda robótica terminada</h2>
+      <p>
+        Después de tomar, las medidas de mitigación correspondientes, a continuación, se muestra el diseño de la celda
+        robotizada completamente finalizada.
+      </p>
+
+      <figure class="container max-width-lg margin-bottom-lg">
+        <img src="./img/img24.webp" loading="lazy" decoding="async" />
+      </figure>
+      <p>Aquí ya se puede observar la cerca instalada y el nuevo robot.</p>
+
+      <h2>BOM y reevaluación del retorno de la inversión</h2>
+      <p>
+        Como ya se conocen todas las partes, se hace una investigación de sus precios y se muestra la lista de partes
+        BOM a continuación:
+      </p>
+
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Pieza</th>
+            <th>Cantidad</th>
+            <th>Precio por unidad&nbsp;(COP)</th>
+            <th>Total&nbsp;(COP)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Robot CRX-25iA</td>
+            <td>1</td>
+            <td>200,000,000</td>
+            <td>200,000,000</td>
+          </tr>
+          <tr>
+            <td>R30iB mini controller</td>
+            <td>1</td>
+            <td>58,000,000</td>
+            <td>58,000,000</td>
+          </tr>
+          <tr>
+            <td>Cerca de&nbsp;10 × 2&nbsp;metros</td>
+            <td>1</td>
+            <td>800,000</td>
+            <td>800,000</td>
+          </tr>
+          <tr>
+            <td>Vehículo AGV XBOT-AGV600YK</td>
+            <td>6</td>
+            <td>14,000,000</td>
+            <td>84,000,000</td>
+          </tr>
+          <tr>
+            <td>Vehículo AGV Zhejiang Caroon 5T</td>
+            <td>2</td>
+            <td>30,000,000</td>
+            <td>60,000,000</td>
+          </tr>
+          <tr>
+            <td>Robot Track ABB IRBT 6004</td>
+            <td>1</td>
+            <td>25,000,000</td>
+            <td>25,000,000</td>
+          </tr>
+          <tr>
+            <td>Holland Hub Filling</td>
+            <td>1</td>
+            <td>240,000,000</td>
+            <td>240,000,000</td>
+          </tr>
+          <tr>
+            <td>Holland Inline Lacing</td>
+            <td>1</td>
+            <td>200,000,000</td>
+            <td>280,000,000</td>
+          </tr>
+          <tr>
+            <td>Holland Robot Quattro</td>
+            <td>1</td>
+            <td>280,000,000</td>
+            <td>280,000,000</td>
+          </tr>
+          <tr>
+            <td>Holland Tyre Mounting Console</td>
+            <td>1</td>
+            <td>16,000,000</td>
+            <td>16,000,000</td>
+          </tr>
+          <tr>
+            <td>Tablero eléctrico celda</td>
+            <td>1</td>
+            <td>12,000,000</td>
+            <td>12,000,000</td>
+          </tr>
+          <tr>
+            <td>Riel de alimentación Robot Quattro</td>
+            <td>2</td>
+            <td>800,000</td>
+            <td>800,000</td>
+          </tr>
+          <tr>
+            <td>Herramienta efector final</td>
+            <td>1</td>
+            <td>4,500,000</td>
+            <td>4,500,000</td>
+          </tr>
+          <tr>
+            <td>Flete</td>
+            <td>1</td>
+            <td>40,000,000</td>
+            <td>40,000,000</td>
+          </tr>
+          <tr>
+            <td>Impuestos de nacionalización</td>
+            <td>1</td>
+            <td>239,000,000</td>
+            <td>239,000,000</td>
+          </tr>
+          <tr>
+            <td>Adecuaciones e instalación</td>
+            <td>1</td>
+            <td>40,000,000</td>
+            <td>40,000,000</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <th colspan="3" class="text-right">Total</th>
+            <th>1,580,100,000</th>
+          </tr>
+        </tfoot>
+      </table>
+
+
+
+      <p>
+        Y ese sería el BOM de toda la Celda.
+        <br>
+        Con el objetivo de recalcular el retorno de inversión ROI, se eliminan las cosas que ya estaban, como se
+        observa:
+      </p>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Pieza</th>
+            <th>Cantidad</th>
+            <th>Precio por unidad&nbsp;(COP)</th>
+            <th>Total&nbsp;(COP)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Robot&nbsp;CRX-25iA</td>
+            <td>1</td>
+            <td>200,000,000</td>
+            <td>200,000,000</td>
+          </tr>
+          <tr>
+            <td>R30iB&nbsp;mini&nbsp;controller</td>
+            <td>1</td>
+            <td>58,000,000</td>
+            <td>58,000,000</td>
+          </tr>
+          <tr>
+            <td>Cerca&nbsp;de&nbsp;10&nbsp;×&nbsp;2&nbsp;metros</td>
+            <td>1</td>
+            <td>800,000</td>
+            <td>800,000</td>
+          </tr>
+
+          <tr>
+            <td>Vehículo&nbsp;AGV&nbsp;XBOT-AGV600YK</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Vehículo&nbsp;AGV&nbsp;Zhejiang&nbsp;Caroon&nbsp;5T</td>
+            <td>2</td>
+            <td>30,000,000</td>
+            <td>60,000,000</td>
+          </tr>
+          <tr>
+            <td>Robot&nbsp;Track&nbsp;ABB&nbsp;IRBT&nbsp;6004</td>
+            <td>1</td>
+            <td>25,000,000</td>
+            <td>25,000,000</td>
+          </tr>
+
+          <tr>
+            <td>Holland&nbsp;Hub&nbsp;Filling</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Holland&nbsp;Inline&nbsp;Lacing</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Holland&nbsp;Robot&nbsp;Quattro</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Holland&nbsp;Tyre&nbsp;Mounting&nbsp;Console</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Tablero&nbsp;eléctrico&nbsp;celda</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>Riel&nbsp;de&nbsp;alimentación&nbsp;Robot&nbsp;Quattro</td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Herramienta&nbsp;efector&nbsp;final</td>
+            <td>1</td>
+            <td>4,500,000</td>
+            <td>4,500,000</td>
+          </tr>
+          <tr>
+            <td>Flete</td>
+            <td></td>
+            <td>40,000,000</td>
+            <td>40,000,000</td>
+          </tr>
+          <tr>
+            <td>Impuestos&nbsp;de&nbsp;nacionalización</td>
+            <td>1</td>
+            <td>81,377,000</td>
+            <td>81,377,000</td>
+          </tr>
+          <tr>
+            <td>Adecuaciones&nbsp;e&nbsp;instalación</td>
+            <td>1</td>
+            <td>40,000,000</td>
+            <td>40,000,000</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <th colspan="3" class="text-right">Total</th>
+            <th>509,677,000</th>
+          </tr>
+        </tfoot>
+      </table>
+
+      <p>
+        Y se calcula el ROI usando la herramienta web, con este nuevo valor total convertido en dólares, es decir
+        127.419 dolares, obteniendo el siguiente resultado:
+      </p>
+
+      <figure class="container max-width-lg margin-bottom-lg">
+        <img src="./img/img25.webp" loading="lazy" decoding="async" />
+      </figure>
+      <p>
+        Entonces el retorno de la inversión ROI es de 4 años y 8 meses, y ya depende de la junta directiva determinar si
+        vale la pena o no. En nuestra opinión, consideramos que casi 5 años es demasiado largo, y por lo tanto pensamos
+        que no vale la pena.
       </p>
     </div>
+
   </article>
+
 
   <script type="module" src="../../js/main.js"></script>
 </body>
