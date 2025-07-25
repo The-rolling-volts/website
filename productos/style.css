@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+/* ------------------------------------------------------------------------------------------------------------------
+   Global base & wrapper scope
+   ------------------------------------------------------------------------------------------------------------------ */
+.card-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    /* set default typography only once at the wrapper level so icon fonts are not overwritten */
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+}
+
+/* universal reset (typography moved to .card-wrapper above so Font Awesome keeps its own font-family) */
+.card-wrapper *,
+.card-wrapper *::before,
+.card-wrapper *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------
+   Images
+   ------------------------------------------------------------------------------------------------------------------ */
+.card-wrapper img {
+    width: 100%;
+    display: block;
+}
+
+.card-wrapper .img-display {
+    overflow: hidden;
+}
+
+.card-wrapper .img-showcase {
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.card-wrapper .img-showcase img {
+    min-width: 100%;
+}
+
+.card-wrapper .img-select {
+    display: flex;
+}
+
+/* --- Miniaturas uniformes ----------------------------------- */
+.card-wrapper .img-item{
+  /* el tamaño que prefieras para todas las miniaturas */
+  width: 80px;          /* ancho fijo  */
+  height: 80px;         /* alto  fijo  */
+  flex: 0 0 80px;       /* evita que crezcan/encojan           */
+  overflow: hidden;     /* recorta el exceso si la imagen es
+                           más grande que el cuadro            */
+
+  /* centrado de la imagen dentro del cuadro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* la imagen ocupa todo el cuadro, manteniendo proporción
+   y centrada (se recorta si no cabe) */
+.card-wrapper .img-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* ajusta y recorta */
+  object-position: center;
+}
+
+.card-wrapper .img-item:nth-child(1),
+.card-wrapper .img-item:nth-child(2),
+.card-wrapper .img-item:nth-child(3) {
+    margin-right: 0;
+}
+
+.card-wrapper .img-item:hover {
+    opacity: 0.8;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------
+   Product content
+   ------------------------------------------------------------------------------------------------------------------ */
+.card-wrapper .product-content {
+    padding: 2rem 1rem;
+}
+
+.card-wrapper .product-title {
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
+}
+
+.card-wrapper .product-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+
+.card-wrapper .product-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: #256eff;
+    color: #fff;
+    padding: 0 0.3rem;
+    transition: all 0.5s ease;
+}
+
+.card-wrapper .product-link:hover {
+    opacity: 0.9;
+}
+
+.card-wrapper .product-rating {
+    color: #ffc107;
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+}
+
+.card-wrapper .product-rating span {
+    font-weight: 600;
+    color: #252525;
+    margin-left: 0.25rem;
+}
+
+.card-wrapper .product-price {
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.card-wrapper .product-price span {
+    font-weight: 400;
+}
+
+.card-wrapper .last-price span {
+    color: #f64749;
+    text-decoration: line-through;
+}
+
+.card-wrapper .new-price span {
+    color: #256eff;
+}
+
+.card-wrapper .product-detail h2 {
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+
+.card-wrapper .product-detail p {
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+}
+
+.card-wrapper .product-detail ul {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.card-wrapper .product-detail ul li {
+    list-style: none;
+    background: url(https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/checked.png) left center no-repeat;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.card-wrapper .product-detail ul li span {
+    font-weight: 400;
+}
+
+.card-wrapper .purchase-info {
+    margin: 1.5rem 0;
+}
+
+.card-wrapper .purchase-info input,
+.card-wrapper .purchase-info .btn {
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.card-wrapper .purchase-info input {
+    width: 60px;
+}
+
+.card-wrapper .purchase-info .btn {
+    cursor: pointer;
+    color: #fff;
+}
+
+.card-wrapper .purchase-info .btn:first-of-type {
+    background: #256eff;
+}
+
+.card-wrapper .purchase-info .btn:last-of-type {
+    background: #f64749;
+}
+
+.card-wrapper .purchase-info .btn:hover {
+    opacity: 0.9;
+}
+
+.card-wrapper .social-links {
+    display: flex;
+    align-items: center;
+}
+
+.card-wrapper .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #000;
+    border: 1px solid #000;
+    margin: 0 0.2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.5s ease;
+}
+
+.card-wrapper .social-links a:hover {
+    background: #000;
+    border-color: transparent;
+    color: #fff;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------
+   Responsive adjustments
+   ------------------------------------------------------------------------------------------------------------------ */
+@media screen and (min-width: 992px) {
+    .card-wrapper .card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+
+    /* centre the card on very wide viewports */
+    .card-wrapper {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-wrapper .product-imgs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card-wrapper .product-content {
+        padding-top: 0;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------
+   Font‑Awesome icon fix (restore correct typeface after global reset)
+   ------------------------------------------------------------------------------------------------------------------ */
+.card-wrapper .fa,
+.card-wrapper .fas,
+.card-wrapper .far,
+.card-wrapper .fal,
+.card-wrapper .fab {
+    font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Pro', 'FontAwesome';
+    font-weight: 900;
+}

@@ -1676,14 +1676,14 @@
       <figure class="container max-width-lg margin-bottom-lg">
         <picture>
           <!-- Landscape ⇒ ancho > alto -->
-          <source media="(orientation: landscape)" srcset="./img/ventasAnualesEBikeDiagramaPastelLandscape.webp">
+          <source media="(orientation: landscape)" srcset="./img/ventasAnualesEBikeDiagramaPastelLandscape.webp" loading="lazy" decoding="async" >
 
           <!-- Portrait ⇒ ancho ≤ alto -->
-          <source media="(orientation: portrait)" srcset="./img/ventasAnualesEBikeDiagramaPastelPortrait.webp">
+          <source media="(orientation: portrait)" srcset="./img/ventasAnualesEBikeDiagramaPastelPortrait.webp" loading="lazy" decoding="async" >
 
           <!-- Fallback (por si el navegador no soporta <picture>) -->
           <img class="block width-100% radius-lg" src="./img/ventasAnualesEBikeDiagramaPastelLandscape.webp"
-            alt="Diagrama de pastel de ventas anuales de e-bikes por país">
+            alt="Diagrama de pastel de ventas anuales de e-bikes por país" loading="lazy" decoding="async" >
         </picture>
       </figure>
 
